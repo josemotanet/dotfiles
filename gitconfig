@@ -1,0 +1,21 @@
+[user]
+	name = José Mota
+  email = josemota.net@gmail.com
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  remote = auto
+[alias]
+  s = status
+  d = diff
+  co = checkout
+  cb = checkout -b
+  a = add
+  l = log --graph --abbrev-commit --date=relative
+  la = log --graph --abbrev-commit --date=relative --all
+  lp = log -p
+  p = add -p
+  c = commit
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
