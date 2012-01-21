@@ -1,6 +1,11 @@
+set nocompatible
+
+call pathogen#infect()
+call pathogen#helptags()
+
 let mapleader = ","
 syntax enable
-set foldmethod syntax
+"set foldmethod=syntax
 set ignorecase
 set hlsearch
 set autoindent
@@ -14,7 +19,7 @@ inoremap <C-l> <space>=><space>
 map <leader>p :Hammer<CR>
 vnoremap < <gv
 vnoremap > >gv
-nnoremap <leader>rs :!rspec spec<CR>
+nnoremap <leader>rs :!clear;rspec --color spec<CR>
 nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>gs :Gstatus<CR>
 
@@ -36,8 +41,6 @@ set guioptions-=Be
 set number
 set noswapfile
 set visualbell
-
-call pathogen#infect()
 
 " match ErrorMsg '\%>80v.\+'
 set cc=80
@@ -64,4 +67,38 @@ au! Syntax gherkin source ~/.vim/syntax/cucumber.vim
 " Previewheight for Fugitive's status window
 set previewheight=20
 
-source $HOME/.vim/settings.vim
+" Statusline {{{
+" ----------------------------------------------------------------------------------------------------
+hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
+hi User2 ctermbg=red      ctermfg=white   guibg=#aa0000 guifg=#89a1a1
+
+function! GetCWD()
+  return expand(":pwd")
+endfunction
+
+function! IsHelp()
+  return &buftype=='help'?' (help) ':''
+endfunction
+
+function! GetName()
+  return expand("%:t")==''?'<none>':expand("%:t")
+endfunction
+
+set statusline=%1*[%{GetName()}]\ 
+set statusline+=%<pwd:%{getcwd()}\ 
+set statusline+=%2*%{&modified?'\[+]':''}%*
+set statusline+=%{IsHelp()}
+set statusline+=%{&readonly?'\ (ro)\ ':''}
+set statusline+=[
+set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
+set statusline+=%{&ff}\|
+set statusline+=%{strlen(&ft)?&ft:'<none>'}
+set statusline+=]\ 
+set statusline+=%=
+set statusline+=c%c
+set statusline+=,l%l
+set statusline+=/%L\ 
+
+" }}}
+
+set laststatus=2
