@@ -7,6 +7,6 @@ task :default do
   sh "echo Symlinking: #{files.join(", ")}"
 
   files.each do |file|
-    exec "ln -vfs #{current_path}#{file} ~/.#{file}"
+    sh "ln -vfs #{current_path}#{file} ~/.#{file}"
   end  
 end
