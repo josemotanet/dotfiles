@@ -4,7 +4,7 @@ task :default do
   current_path = File.dirname(__FILE__) + "/"
 
   # Print start message
-  sh "echo Symlinking: #{files.join(", ")}"
+  p "Symlinking: #{files.join(", ")}"
 
   files.each do |file|
     sh "ln -vfs #{current_path}#{file} ~/.#{file}"
