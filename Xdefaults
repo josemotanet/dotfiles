@@ -28,4 +28,4 @@ URxvt*inheritPixmap: true
 URxvt*tintColor: white
 URxvt*shading: 60
 URxvt*scrollBar: false
-URxvt*termName: rxvt
+URxvt.font: xft:DejaVu Sans Mono:size=8
