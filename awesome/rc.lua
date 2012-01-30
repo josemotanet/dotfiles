@@ -318,6 +318,9 @@ clientbuttons = awful.util.table.join(
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
 
+-- Conky status bar
+mystatusbar = awful.wibox({ position = "bottom", screen = 1, ontop = false, width = 1, height = 16 })
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
@@ -337,8 +340,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    { rule = { class = "Chromium" },
+    -- Set Chrome to always map on tags number 3 of screen 1.
+    { rule = { class = "google-chrome" },
       properties = { tag = tags[1][3] } },
 }
 -- }}}
@@ -373,3 +376,6 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- Startup items
+awful.util.spawn_with_shell("conky")
