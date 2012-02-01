@@ -24,8 +24,7 @@
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
 
-URxvt*inheritPixmap: true
+URxvt*inheritPixmap: false
 URxvt*tintColor: white
-URxvt*shading: 60
 URxvt*scrollBar: false
-URxvt.font: xft:terminus:size=9
+URxvt.font: xft:DejaVu Sans Mono:size=9
