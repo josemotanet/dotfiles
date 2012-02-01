@@ -6,6 +6,7 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
+require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -40,8 +41,6 @@ beautiful.init("/home/jose/.config/awesome/themes/josemota/theme.lua")
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
-
-theme.wallpaper_cmd = { "feh /home/jose/.config/awesome/black.jpg" }
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -166,6 +165,10 @@ for s = 1, screen.count() do
                                               return awful.widget.tasklist.label.currenttags(c, s)
                                           end, mytasklist.buttons)
 
+-- Vicious widgets
+memwidget = widget({type = "textbox"})
+vicious.register(memwidget,vicious.widgets.mem, "$1% ($2MB/$3MB)", 13)
+
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
     -- Add widgets to the wibox - order matters
@@ -177,6 +180,7 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
+        memwidget,
         mytextclock,
         s == 1 and mysystray or nil,
         mytasklist[s],
