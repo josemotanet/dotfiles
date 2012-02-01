@@ -1,16 +1,17 @@
--- Standard awesome library
+--- { Requires
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
--- Theme handling library
 require("beautiful")
--- Notification library
 require("naughty")
 require("vicious")
+--- }
+
+-- { Startup items
+-- awful.util.spawn_with_shell("conky")
+-- }
 
 -- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",
@@ -34,7 +35,7 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- Themes define colours, icons, and wallpapers
+
 beautiful.init("/home/jose/.config/awesome/themes/josemota/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
@@ -68,7 +69,6 @@ layouts =
 -- }}}
 
 -- {{{ Tags
--- Define a tag table which hold all screen tags.
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -165,27 +165,51 @@ for s = 1, screen.count() do
                                               return awful.widget.tasklist.label.currenttags(c, s)
                                           end, mytasklist.buttons)
 
--- Vicious widgets
-memwidget = widget({type = "textbox"})
-vicious.register(memwidget,vicious.widgets.mem, "$1% ($2MB/$3MB)", 13)
+spacer = widget({ type = 'textbox', name = "spacer" })
+spacer.text = " | "
 
-    -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
-    -- Add widgets to the wibox - order matters
-    mywibox[s].widgets = {
-        {
-            mylauncher,
-            mytaglist[s],
-            mypromptbox[s],
-            layout = awful.widget.layout.horizontal.leftright
-        },
-        mylayoutbox[s],
-        memwidget,
-        mytextclock,
-        s == 1 and mysystray or nil,
-        mytasklist[s],
-        layout = awful.widget.layout.horizontal.rightleft
-    }
+-- { RAM widget
+
+ramwtext = widget({ type = 'textbox', name = "ramwtext" })
+  ramwtext.text = "<span color='white'>RAM: </span>"
+
+ramw2 = widget({ type = 'textbox', name = "ramw2" })
+  vicious.register(ramw2, vicious.widgets.mem, "$2 MiB ", 5)
+
+ramw = awful.widget.progressbar()
+  ramw:set_width(30)
+  ramw:set_height(6)
+  ramw:set_vertical(false)
+  ramw:set_background_color("#494B4F")
+  ramw:set_border_color("#cccccc")
+  ramw:set_color("#ffffff")
+  awful.widget.layout.margins[ramw.widget] = {top = 6}
+    vicious.register(ramw, vicious.widgets.mem, "$1", 5)
+
+-- }
+
+-- Create the wibox
+mywibox[s] = awful.wibox({ position = "top", screen = s })
+-- Add widgets to the wibox - order matters
+mywibox[s].widgets = {
+    {
+        mylauncher,
+        mytaglist[s],
+        mypromptbox[s],
+        layout = awful.widget.layout.horizontal.leftright
+    },
+    mylayoutbox[s],
+    mytextclock,
+    spacer,
+    ramw.widget,
+    ramw2,
+    ramwtext,
+    spacer,
+    s == 1 and mysystray or nil,
+    mytasklist[s],
+    layout = awful.widget.layout.horizontal.rightleft
+}
+
 end
 -- }}}
 
@@ -380,6 +404,3 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
--- Startup items
-awful.util.spawn_with_shell("conky")
