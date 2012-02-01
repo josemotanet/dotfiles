@@ -4,9 +4,9 @@
 
 theme = {}
 
-theme.font          = "sans 8"
+theme.font          = "terminus 8"
 
-theme.bg_normal     = "#ffffff22"
+theme.bg_normal     = "#222222"
 theme.bg_focus      = "#222733aa"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
@@ -90,7 +90,7 @@ theme.layout_tiletop = "/home/jose/.config/awesome/themes/josemota/layouts/tilet
 theme.layout_spiral  = "/home/jose/.config/awesome/themes/josemota/layouts/spiralw.png"
 theme.layout_dwindle = "/home/jose/.config/awesome/themes/josemota/layouts/dwindlew.png"
 
-theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
+theme.awesome_icon = "/home/jose/.config/awesome/themes/josemota/logo.png"
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80
