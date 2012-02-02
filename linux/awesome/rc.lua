@@ -7,6 +7,8 @@ require("naughty")
 require("vicious")
 --- }
 
+local home = os.getenv("HOME")
+
 -- { Startup items
 -- awful.util.spawn_with_shell("conky")
 -- }
@@ -187,6 +189,8 @@ ramw = awful.widget.progressbar()
     vicious.register(ramw, vicious.widgets.mem, "$1", 5)
 
 -- }
+
+-- Network widget
 
 -- Create the wibox
 mywibox[s] = awful.wibox({ position = "top", screen = s })
