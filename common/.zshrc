@@ -1,0 +1,24 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zsh-histfile
+HISTSIZE=1000
+SAVEHIST=1000
+unsetopt beep
+bindkey -v
+
+zstyle :compinstall filename '/home/jose/.zshrc'
+
+autoload -Uz compinit && compinit
+autoload -Uz colors && colors
+
+setopt PROMPT_SUBST
+
+function git_branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PROMPT='[%~]%{$fg[yellow]%}$(git_branch)%{$reset_color%} $ '
+
+alias ls='ls --color=auto'
+alias v=vim
+alias r=rails
+alias g=git
