@@ -191,6 +191,19 @@ ramw = awful.widget.progressbar()
 -- }
 
 -- Network widget
+netuptext = widget({ type = 'textbox', name = "netuptext" })
+  netuptext.text = "<span color='#9f9'>u </span>"
+
+netupwidget = widget({ type = 'textbox', name = "netupwidget" })
+  vicious.cache(vicious.widgets.net)
+  vicious.register(netupwidget, vicious.widgets.net, "${eth0 up_kb} ", 1)
+
+netdowntext = widget({ type = 'textbox', name = "netdowntext" })
+  netdowntext.text = "<span color='#f99'>d </span>"
+
+netdownwidget = widget({ type = 'textbox', name = "netdownwidget" })
+  vicious.cache(vicious.widgets.net)
+  vicious.register(netdownwidget, vicious.widgets.net, "${eth0 down_kb}", 1)
 
 -- Create the wibox
 mywibox[s] = awful.wibox({ position = "top", screen = s })
@@ -208,6 +221,11 @@ mywibox[s].widgets = {
     ramw.widget,
     ramw2,
     ramwtext,
+    spacer,
+    netdownwidget,
+    netdowntext,
+    netupwidget,
+    netuptext,
     spacer,
     s == 1 and mysystray or nil,
     mytasklist[s],
@@ -349,9 +367,6 @@ clientbuttons = awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
-
--- Conky status bar
-mystatusbar = awful.wibox({ position = "bottom", screen = 1, ontop = false, width = 1, height = 16 })
 
 -- Set keys
 root.keys(globalkeys)
