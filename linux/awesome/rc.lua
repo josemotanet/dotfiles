@@ -38,7 +38,7 @@ end
 
 -- {{{ Variable definitions
 
-beautiful.init("/home/jose/.config/awesome/themes/josemota/theme.lua")
+beautiful.init(home .. "/.config/awesome/themes/josemota/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -87,7 +87,13 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
+utils_menu = {
+  { "Netbeans", "netbeans" },
+  { "Google Chrome", "google-chrome" }
+}
+
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "utils", utils_menu },
                                     { "open terminal", terminal }
                                   }
                         })
