@@ -35,7 +35,7 @@ set winheight=999
 
 set list
 set listchars=tab:▸\ ,eol:¬
-set guifont=Menlo:h12
+set guifont=DejaVu\ Sans\ Mono:h12
 set guioptions=aAc
 set guioptions-=Be
 set number
