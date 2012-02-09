@@ -88,7 +88,8 @@ myawesomemenu = {
 }
 
 utils_menu = {
-  { "Netbeans", "netbeans" },
+  { "File Manager", "thunar" },
+  { "Netbeans", "/home/jose/bin/netbeans-7.0.1/bin/netbeans" },
   { "Google Chrome", "google-chrome" }
 }
 
@@ -282,6 +283,7 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
+    awful.key({ modkey,           }, "e",      function () awful.util.spawn("thunar") end),
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),

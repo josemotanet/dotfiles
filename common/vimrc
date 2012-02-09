@@ -22,6 +22,8 @@ vnoremap > >gv
 nnoremap <leader>rs :!clear;rspec --color spec<CR>
 nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>gs :Gstatus<CR>
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>a
 
 set smartcase
 set gdefault

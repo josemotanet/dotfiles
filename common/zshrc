@@ -17,6 +17,7 @@ function git_branch() {
 }
 
 PROMPT='[%~]%{$fg[yellow]%}$(git_branch)%{$reset_color%} $ '
+TERM="rxvt-unicode"
 
 alias ls='ls --color=auto'
 alias v=vim

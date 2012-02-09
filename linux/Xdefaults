@@ -1,5 +1,5 @@
 *background: #002b36
-*foreground: #95abb3
+*foreground: #b5cbd3
 
 *color0:    #073642
 *color1:    #dc322f
@@ -18,7 +18,7 @@
 *color14:   #93a1a1
 *color15:   #fdf6f3
 
-*fading: 40
+*fading: 15 
 *fadeColor: #002b36
 *cursorColor: #93a1a1
 *pointerColorBackground: #586e75
@@ -27,6 +27,6 @@
 #URxvt*inheritPixmap: false
 #URxvt*tintColor: white
 URxvt*scrollBar: false
-URxvt.font: xft:DejaVu Sans Mono:size=9
+URxvt.font: xft:Monospace:size=9
 URxvt*transparent: true
-URxvt*shading: 50
+URxvt*shading: 85
