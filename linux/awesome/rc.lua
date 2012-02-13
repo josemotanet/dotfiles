@@ -90,11 +90,12 @@ myawesomemenu = {
 utils_menu = {
   { "File Manager", "thunar" },
   { "Netbeans", "/home/jose/bin/netbeans-7.0.1/bin/netbeans" },
-  { "Google Chrome", "google-chrome" }
+  { "Google Chrome", "google-chrome" },
+  { "Weechat", awful.util.spawn_with_shell("weechat-ncurses") }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "utils", utils_menu },
+                                    { "apps", utils_menu },
                                     { "open terminal", terminal }
                                   }
                         })
@@ -283,6 +284,9 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
+    awful.key({                   }, "XF86AudioRaiseVolume", function() awful.util.spawn("vol_up") end),
+    awful.key({                   }, "XF86AudioLowerVolume", function() awful.util.spawn("vol_down") end),
+    awful.key({                   }, "XF86AudioMute", function() awful.util.spawn("pamixer --toggle-mute") end),
     awful.key({ modkey,           }, "e",      function () awful.util.spawn("thunar") end),
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
