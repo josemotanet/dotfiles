@@ -16,7 +16,6 @@ set ts=2 sts=2 sw=2 expandtab
 
 inoremap <C-l> <space>=><space>
 inoremap <C-s> <Esc>:w<CR>a
-nnoremap
 nnoremap <C-s> :w<CR>
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>gs :Gstatus<CR>
