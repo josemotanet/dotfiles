@@ -91,7 +91,7 @@ utils_menu = {
   { "File Manager", "thunar" },
   { "Netbeans", "/home/jose/bin/netbeans-7.0.1/bin/netbeans" },
   { "Google Chrome", "google-chrome" },
-  { "Weechat", awful.util.spawn_with_shell("weechat-ncurses") }
+  { "Weechat", terminal .. " -e weechat-curses" }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
