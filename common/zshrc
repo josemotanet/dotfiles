@@ -1,4 +1,6 @@
 # Lines configured by zsh-newuser-install
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
 HISTFILE=~/.zsh-histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -17,9 +19,9 @@ function git_branch() {
 }
 
 PROMPT='[%~]%{$fg[yellow]%}$(git_branch)%{$reset_color%} $ '
-TERM="rxvt-unicode"
+TERM="xterm-color"
 
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias v=vim
 alias r=rails
 alias g=git
