@@ -71,3 +71,4 @@ Append:
 
     -J-Dawt.useSystemAAFontSettings=on
     -J-Dswing.aatext=true
+    --laf com.sun.java.swing.plaf.gtk.GTKLookAndFeel
