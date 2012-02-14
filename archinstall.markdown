@@ -66,6 +66,7 @@ Append:
     /server add freenode irc.freenode.net
     /set irc.server.freenode.autoconnect = on
     /set irc.server.freenode.nicks = "josemota"
+    /set irc.server.freenode.command = "/msg nickserv identify ****"
 
 ### Netbeans default options to be added
 

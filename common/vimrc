@@ -14,16 +14,17 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set ts=2 sts=2 sw=2 expandtab
 
-nnoremap <leader>ev :vs $MYVIMRC<CR>
 inoremap <C-l> <space>=><space>
-map <leader>p :Hammer<CR>
+inoremap <C-s> <Esc>:w<CR>a
+nnoremap <C-s> :w<CR>
+nnoremap <leader>ev :vs $MYVIMRC<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>m :NERDTreeToggle<CR>
+nnoremap <leader>rs :!clear;rspec --color spec<CR>
 vnoremap < <gv
 vnoremap > >gv
-nnoremap <leader>rs :!clear;rspec --color spec<CR>
-nnoremap <leader>m :NERDTreeToggle<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>a
+nnoremap n nzz
+nnoremap N Nzz
 
 set smartcase
 set gdefault
@@ -43,6 +44,7 @@ set guioptions-=Be
 set number
 set noswapfile
 set visualbell
+set cursorline
 
 " match ErrorMsg '\%>80v.\+'
 set cc=80

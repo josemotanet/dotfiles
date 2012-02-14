@@ -74,7 +74,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "sh", "vim", "www", "irc", "misc" }, s, layouts[8])
+    tags[s] = awful.tag({ "sh", "vim", "www", "irc", "misc" }, s, layouts[6])
 end
 -- }}}
 
@@ -90,11 +90,13 @@ myawesomemenu = {
 utils_menu = {
   { "File Manager", "thunar" },
   { "Netbeans", "/home/jose/bin/netbeans-7.0.1/bin/netbeans" },
-  { "Google Chrome", "google-chrome" }
+  { "Google Chrome", "google-chrome" },
+  { "Vim", terminal .. " -e vim" },
+  { "Weechat", terminal .. " -e weechat-curses" }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "utils", utils_menu },
+                                    { "apps", utils_menu },
                                     { "open terminal", terminal }
                                   }
                         })
@@ -212,31 +214,35 @@ netdownwidget = widget({ type = 'textbox', name = "netdownwidget" })
   vicious.cache(vicious.widgets.net)
   vicious.register(netdownwidget, vicious.widgets.net, "${eth0 down_kb}", 1)
 
+mpdwidget = widget({ type = "textbox" })
+  vicious.register(mpdwidget, vicious.widgets.mpd,
+  function (widget, args)
+    if args["{state}"] == "Stop" then 
+      return "music off"
+    else 
+      return args["{Artist}"]..' - '.. args["{Title}"]
+    end
+  end, 10)
+
 -- Create the wibox
 mywibox[s] = awful.wibox({ position = "top", screen = s })
 -- Add widgets to the wibox - order matters
 mywibox[s].widgets = {
-    {
-        mylauncher,
-        mytaglist[s],
-        mypromptbox[s],
-        layout = awful.widget.layout.horizontal.leftright
-    },
-    mylayoutbox[s],
-    mytextclock,
-    spacer,
-    ramw.widget,
-    ramw2,
-    ramwtext,
-    spacer,
-    netdownwidget,
-    netdowntext,
-    netupwidget,
-    netuptext,
-    spacer,
-    s == 1 and mysystray or nil,
-    mytasklist[s],
-    layout = awful.widget.layout.horizontal.rightleft
+  {
+      mylauncher,
+      mytaglist[s],
+      mypromptbox[s],
+      layout = awful.widget.layout.horizontal.leftright
+  },
+  mylayoutbox[s],
+  mytextclock, spacer,
+  ramw.widget,
+  ramw2, ramwtext, spacer,
+  netdownwidget, netdowntext, netupwidget, netuptext, spacer,
+  mpdwidget, spacer,
+  s == 2 and mysystray or nil,
+  mytasklist[s],
+  layout = awful.widget.layout.horizontal.rightleft
 }
 
 end
@@ -283,6 +289,12 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
+    awful.key({                   }, "XF86AudioRaiseVolume", function() awful.util.spawn("vol_up") end),
+    awful.key({                   }, "XF86AudioLowerVolume", function() awful.util.spawn("vol_down") end),
+    awful.key({                   }, "XF86AudioMute", function() awful.util.spawn("pamixer --toggle-mute") end),
+    awful.key({                   }, "XF86AudioPrev", function() awful.util.spawn("mpc prev") end),
+    awful.key({                   }, "XF86AudioPlay", function() awful.util.spawn("mpc toggle") end),
+    awful.key({                   }, "XF86AudioNext", function() awful.util.spawn("mpc next") end),
     awful.key({ modkey,           }, "e",      function () awful.util.spawn("thunar") end),
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
