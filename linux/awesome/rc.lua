@@ -89,7 +89,7 @@ myawesomemenu = {
 
 utils_menu = {
   { "File Manager", "thunar" },
-  { "Netbeans", "/home/jose/bin/netbeans-7.0.1/bin/netbeans" },
+  { "Netbeans", "/home/jose/bin/netbeans-7.1/bin/netbeans" },
   { "Google Chrome", "google-chrome" },
   { "Vim", terminal .. " -e vim" },
   { "Weechat", terminal .. " -e weechat-curses" }
