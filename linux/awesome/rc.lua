@@ -214,13 +214,11 @@ netdownwidget = widget({ type = 'textbox', name = "netdownwidget" })
   vicious.cache(vicious.widgets.net)
   vicious.register(netdownwidget, vicious.widgets.net, "${eth0 down_kb}", 1)
 
--- Initialize widget
 mpdwidget = widget({ type = "textbox" })
--- Register widget
-vicious.register(mpdwidget, vicious.widgets.mpd,
+  vicious.register(mpdwidget, vicious.widgets.mpd,
   function (widget, args)
     if args["{state}"] == "Stop" then 
-      return " - "
+      return "music off"
     else 
       return args["{Artist}"]..' - '.. args["{Title}"]
     end
