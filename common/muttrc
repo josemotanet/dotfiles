@@ -6,9 +6,12 @@ set message_cachedir =~/.mutt/cache/bodies
 set certificate_file =~/.mutt/certificates
 
 set move = no  #Stop asking to "move read messages to mbox"!
-set imap_keepalive = 900
+set imap_keepalive = 400
+set mail_check=300
 
 set sort = 'threads'
 set sort_aux = 'last-date-received'
 
-set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'
+set editor='vim + -c "set textwidth=79" -c "set wrap" -c "set nocp" -c "?^$"'
+
+
