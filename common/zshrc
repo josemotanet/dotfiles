@@ -22,7 +22,7 @@ TERM="rxvt-unicode"
 stty stop undef
 stty start undef
 
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias v=vim
 alias r=rails
 alias g=git
