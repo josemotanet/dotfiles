@@ -14,14 +14,43 @@ autoload -Uz colors && colors
 
 setopt PROMPT_SUBST
 
+function git_status() {
+  local st="$(git status 2> /dev/null)"
+  local ret=""
+  local color="green"
+
+  if [[ $st == *Untracked* ]] then
+    ret="${ret} @"
+    color="magenta"
+  fi
+
+  if [[ $st == *"not staged for commit"* ]] then
+    ret="${ret} ?"
+    color="red"
+  fi
+
+  if [[ $st == *"to be committed"* ]] then
+    ret="${ret} !"
+    color="yellow"
+  fi
+
+  if [[ $st == *clean* ]] then
+    ret="${ret} √"
+    color="green"
+  fi
+
+  echo "%{$fg[$color]%}$ret%{$reset_color%}"
+}
+
 function git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 PROMPT='[%~]%{$fg[yellow]%}$(git_branch)%{$reset_color%} $ '
+RPROMPT='$(git_status)'
 TERM="xterm-color"
 
 alias ls='ls -G'
-alias v=vim
+alias v='/usr/local/Cellar/vim/7.3.333/bin/vim'
 alias r=rails
 alias g=git
