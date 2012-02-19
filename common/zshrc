@@ -46,8 +46,7 @@ function git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-PROMPT='[%~]%{$fg[yellow]%}$(git_branch)%{$reset_color%} $ '
-RPROMPT='$(git_status)'
+PROMPT='[%~]%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status) $ '
 TERM="xterm-color"
 
 alias ls='ls -G'
