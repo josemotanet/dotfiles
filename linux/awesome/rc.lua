@@ -90,10 +90,12 @@ myawesomemenu = {
 utils_menu = {
   { "File Manager" , "thunar"                                     },
   { "Google Chrome", "google-chrome"                              },
+  { "Mutt Email"   , terminal .. " -e mutt"                       },
   { "Ncmcpp Music" , terminal .. " -e ncmpcpp"                    },
   { "Netbeans"     , "/home/jose/bin/netbeans-7.0.1/bin/netbeans" },
   { "Vim"          , terminal .. " -e vim"                        },
-  { "Weechat"      , terminal .. " -e weechat-curses"             }
+  { "Weechat"      , terminal .. " -e weechat-curses"             },
+  { "Audio mixer"  , "xfce4-mixer"                                }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
