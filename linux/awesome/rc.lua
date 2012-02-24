@@ -296,8 +296,8 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
-    awful.key({                   }, "XF86AudioRaiseVolume", function() awful.util.spawn("vol_up") end),
-    awful.key({                   }, "XF86AudioLowerVolume", function() awful.util.spawn("vol_down") end),
+    awful.key({                   }, "XF86AudioRaiseVolume", function() awful.util.spawn("mpc volume +5") end),
+    awful.key({                   }, "XF86AudioLowerVolume", function() awful.util.spawn("mpc volume -5") end),
     awful.key({                   }, "XF86AudioMute", function() awful.util.spawn("pamixer --toggle-mute") end),
     awful.key({                   }, "XF86AudioPrev", function() awful.util.spawn("mpc prev") end),
     awful.key({                   }, "XF86AudioPlay", function() awful.util.spawn("mpc toggle") end),
