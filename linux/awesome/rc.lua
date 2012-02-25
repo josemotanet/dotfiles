@@ -88,11 +88,12 @@ myawesomemenu = {
 }
 
 utils_menu = {
-  { "File Manager", "thunar" },
-  { "Netbeans", "/home/jose/bin/netbeans-7.1/bin/netbeans" },
-  { "Google Chrome", "google-chrome" },
-  { "Vim", terminal .. " -e vim" },
-  { "Weechat", terminal .. " -e weechat-curses" }
+  { "File Manager" , "thunar"                                     },
+  { "Google Chrome", "google-chrome"                              },
+  { "Ncmcpp Music" , terminal .. " -e ncmpcpp"                    },
+  { "Netbeans"     , "/home/jose/bin/netbeans-7.0.1/bin/netbeans" },
+  { "Vim"          , terminal .. " -e vim"                        },
+  { "Weechat"      , terminal .. " -e weechat-curses"             }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
@@ -224,6 +225,9 @@ mpdwidget = widget({ type = "textbox" })
     end
   end, 10)
 
+volwidget = widget({ type = "textbox" })
+  vicious.register(volwidget, vicious.widgets.volume, "$2 $1%", 2, "PCM -c 0")
+
 -- Create the wibox
 mywibox[s] = awful.wibox({ position = "top", screen = s })
 -- Add widgets to the wibox - order matters
@@ -239,6 +243,7 @@ mywibox[s].widgets = {
   ramw.widget,
   ramw2, ramwtext, spacer,
   netdownwidget, netdowntext, netupwidget, netuptext, spacer,
+  volwidget, spacer,
   mpdwidget, spacer,
   s == 2 and mysystray or nil,
   mytasklist[s],
