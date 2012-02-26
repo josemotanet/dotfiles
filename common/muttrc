@@ -14,4 +14,25 @@ set sort_aux = 'last-date-received'
 
 set editor='vim + -c "set textwidth=79" -c "set wrap" -c "set nocp" -c "?^$"'
 
-
+color   attachment  blue         default
+color   header      green        default  "^message-id:"
+color   header      green        default  "^x-mailer:"
+color   header      green        default  "^user-agent:"
+color   header      blue         default  "^date: "
+color   header      brightblue   default  "^from: "
+color   header      green        default  "^subject: "
+color   header      brightblue   default  "^to: "
+color   header      brightblue   default  "^cc: "
+color   header      brightblue   default  "^reply-to: "
+color   index       green        default  ~F
+color   index       red          default  ~D
+color   index       blue         default  ~T
+color   index       brightblue   default  ~N
+color   indicator   brightwhite  blue
+color   markers     red          default
+color   quoted      magenta      default
+color   signature   brightblue   default
+color   status      brightwhite  green
+color   tilde       cyan         default
+color   tree        blue         default
+color   body        black        default  "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
