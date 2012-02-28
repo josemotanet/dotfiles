@@ -228,7 +228,7 @@ mpdwidget = widget({ type = "textbox" })
   end, 10)
 
 volwidget = widget({ type = "textbox" })
-  vicious.register(volwidget, vicious.widgets.volume, "$2 $1%", 2, "PCM -c 0")
+  vicious.register(volwidget, vicious.widgets.volume, "$2 $1%", 2, "Master")
 
 -- Create the wibox
 mywibox[s] = awful.wibox({ position = "top", screen = s })
