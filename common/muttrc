@@ -12,6 +12,8 @@ set mail_check=300
 set sort = 'threads'
 set sort_aux = 'last-date-received'
 
+set query_command = "abook --mutt-query '%s'"
+
 set editor='vim + -c "set textwidth=79" -c "set wrap" -c "set nocp" -c "?^$"'
 
 color   attachment  blue         default
