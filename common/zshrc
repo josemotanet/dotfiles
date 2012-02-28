@@ -53,3 +53,4 @@ alias ls='ls -G'
 alias v='/usr/local/Cellar/vim/7.3.333/bin/vim'
 alias r=rails
 alias g=git
+alias rspec="clear; rspec"
