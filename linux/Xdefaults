@@ -29,4 +29,4 @@
 URxvt*scrollBar: false
 URxvt.font: xft:Monospace:size=9
 URxvt*transparent: true
-URxvt*shading: 85
+URxvt*shading: 30
