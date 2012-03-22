@@ -21,6 +21,7 @@ nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>rs :!clear;rspec --color spec<CR>
+nnoremap <leader>a :Ack 
 vnoremap < <gv
 vnoremap > >gv
 nnoremap n nzz
