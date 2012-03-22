@@ -93,7 +93,7 @@ utils_menu = {
   { "Mutt Email"   , terminal .. " -e mutt"                       },
   { "Ncmcpp Music" , terminal .. " -e ncmpcpp"                    },
   { "Netbeans"     , "/home/jose/bin/netbeans-7.1.1/bin/netbeans" },
-  { "Vim"          , terminal .. " -e vim"                        },
+  { "Vim"          , "gvim"                        },
   { "Weechat"      , terminal .. " -e weechat-curses"             },
   { "Audio mixer"  , "xfce4-mixer"                                }
 }
