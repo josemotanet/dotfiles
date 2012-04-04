@@ -47,7 +47,18 @@ function git_branch() {
 }
 
 PROMPT='[%~]%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status) $ '
-TERM="xterm-color"
+TERM="xterm-256color"
+
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+  # if no session is started, start a new session
+  test -z ${TMUX} && tmux
+
+  # when quitting tmux, try to attach
+  while test -z ${TMUX}; do
+    tmux attach || break
+  done
+fi
 
 alias ls='ls -G'
 alias v='/usr/local/Cellar/vim/7.3.333/bin/vim'
