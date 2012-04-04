@@ -13,6 +13,7 @@ set fileencoding=utf-8
 set encoding=utf-8
 set backspace=indent,eol,start
 set ts=2 sts=2 sw=2 expandtab
+set paste
 
 inoremap <C-l> <space>=><space>
 inoremap <C-s> <Esc>:w<CR>a
@@ -60,7 +61,7 @@ function! <SID>SynStack()
 endfunc
 
 set background=dark
-"colorscheme solarized
+colorscheme solarized
 
 ".ru files are Ruby.
 au BufRead,BufNewFile *.ru setfiletype ruby
