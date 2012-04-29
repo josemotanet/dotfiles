@@ -13,7 +13,6 @@ set fileencoding=utf-8
 set encoding=utf-8
 set backspace=indent,eol,start
 set ts=2 sts=2 sw=2 expandtab
-set paste
 
 inoremap <C-l> <space>=><space>
 inoremap <C-s> <Esc>:w<CR>a
@@ -23,6 +22,7 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>rs :!clear;rspec --color spec<CR>
 nnoremap <leader>a :Ack 
+nnoremap <cr> :noh<cr>
 vnoremap < <gv
 vnoremap > >gv
 nnoremap n nzz
