@@ -18,7 +18,7 @@ inoremap <C-l> <space>=><space>
 inoremap <C-s> <Esc>:w<CR>a
 nnoremap <C-s> :w<CR>
 nnoremap <leader>ev :vs $MYVIMRC<CR>
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gs :Gstatus<CR><C-W>15+
 nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>rs :!clear;rspec --color spec<CR>
 nnoremap <leader>a :Ack 
