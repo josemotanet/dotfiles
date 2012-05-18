@@ -22,7 +22,9 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>rs :!clear;rspec --color spec<CR>
 nnoremap <leader>a :Ack 
-nnoremap <cr> :noh<cr>
+nnoremap <leader>d :bd<CR> 
+nnoremap <leader>w :w<CR>
+nnoremap <leader><cr> :noh<CR>
 vnoremap < <gv
 vnoremap > >gv
 nnoremap n nzz
