@@ -47,7 +47,7 @@ function git_branch() {
 }
 
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
-PROMPT="%{$fg[magenta]%}♦ %{$reset_color%}"
+PROMPT="%{$fg[yellow]%}→ %{$reset_color%}"
 TERM="xterm-256color"
 
 # TMUX
@@ -63,8 +63,9 @@ fi
 
 alias ls='ls -G'
 alias v='/usr/local/Cellar/vim/7.3.333/bin/vim'
-alias r=rails
+alias r="bundle exec rails"
 alias g=git
 alias rspec="clear; rspec"
 
 export PATH=$PATH:/usr/local/sbin
+export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules
