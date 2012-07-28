@@ -17,7 +17,7 @@ layouts =
 tags = {}
 
 -- Create tags for each screen if you have multiple monitors
-for screen = 1, screen.count() do
+for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[screen] = awful.tag({ "sh", "vim", "www", "irc", "misc" }, screen, layouts[2])
+    tags[s] = awful.tag({ "sh", "vim", "www", "irc", "misc" }, s, layouts[2])
 end
