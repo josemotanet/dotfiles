@@ -1,37 +1,38 @@
 require("awful")
+require("awful.menu")
 require("awful.autofocus")
 require("awful.rules")
 require("beautiful")
 require("naughty")
 require("vicious")
 
---- Variables and settings
+-- Variables and settings
 require("config.settings") 
 
---- Startup items
+-- Theme
+beautiful.init(home .. "/.config/awesome/themes/josemota/theme.lua")
+
+-- Startup items
 require("config.startup")
 
---- Error handling
+-- Error handling
 require("config.error-handling")
 
---- Menu
+-- Menu
 require("config.menu")
 
 --- Tags
 require("config.tags")
 
---- Signals
+-- Signals
 require("config.signals")
 
---- Key bindings
+-- Key bindings
 require("config.keys")
 
---- Rules
+-- Rules
 require("config.rules")
 
 --- Widgets
 require("config.widgets")
-
---- Theme
-beautiful.init(home .. "/.config/awesome/themes/josemota/theme.lua")
 

@@ -1,10 +1,11 @@
+local beautiful = require("beautiful")
 myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
+  { "manual", terminal .. " -e man awesome" },
+  { "edit config", editor_cmd .. " " .. awesome.conffile },
+  { "restart", awesome.restart },
+  { "quit", awesome.quit }
 }
-
+-- 
 utils_menu = {
   { "File Manager" , "thunar"                                     },
   { "Google Chrome", "google-chrome"                              },
@@ -15,12 +16,16 @@ utils_menu = {
   { "Weechat"      , terminal .. " -e weechat-curses"             },
   { "Audio mixer"  , "xfce4-mixer"                                }
 }
+-- 
+mymainmenu = awful.menu({
+  items = { 
+    { "awesome", myawesomemenu, beautiful.awesome_icon },
+    { "apps", utils_menu },
+    { "open terminal", terminal }
+  }
+})
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "apps", utils_menu },
-                                    { "open terminal", terminal }
-                                  }
-                        })
-
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-                                     menu = mymainmenu })
+mylauncher = awful.widget.launcher({ 
+  image = image(beautiful.awesome_icon),
+  menu = mymainmenu
+})
