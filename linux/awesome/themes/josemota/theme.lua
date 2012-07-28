@@ -92,7 +92,7 @@ theme.layout_tiletop = home .. "/.config/awesome/themes/josemota/layouts/tiletop
 theme.layout_spiral  = home .. "/.config/awesome/themes/josemota/layouts/spiralw.png"
 theme.layout_dwindle = home .. "/.config/awesome/themes/josemota/layouts/dwindlew.png"
 
-theme.awesome_icon = home .. "/.config/awesome/themes/josemota/logo.png"
+theme.awesome_icon = home .. "/.config/awesome/themes/josemota/arch.png"
 
 return theme
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80
+
