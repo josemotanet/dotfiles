@@ -5,7 +5,7 @@ Applications to install
 -----------------------
 
 * archey
-* chromium
+* chromium or firefox
 * cmus
 * dropbox
 * evince
@@ -17,7 +17,7 @@ Applications to install
 * ncdu
 * netbeans
 * packer
-* rxvt-unicode
+* rxvt-unicode-patched
 * scrot
 * skype
 * sudo

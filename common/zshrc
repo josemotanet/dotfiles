@@ -69,3 +69,5 @@ alias rspec="clear; rspec"
 
 export PATH=$PATH:/usr/local/sbin
 export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
