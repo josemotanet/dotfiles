@@ -6,14 +6,14 @@ local home = os.getenv("HOME")
 
 theme = {}
 
-theme.font          = "terminus 8"
+theme.font          = "inconsolata 8"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#222733aa"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 
-theme.fg_normal     = "#777777"
+theme.fg_normal     = "#888888"
 theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
@@ -31,7 +31,8 @@ theme.border_marked = "#91231c"
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 -- mouse_finder_[color|timeout|animate_timeout|radius|factor]
 -- Example:
---theme.taglist_bg_focus = "#ff0000"
+theme.taglist_bg_focus  = "#333333"
+theme.taglist_bg_urgent = "#990000"
 
 -- Display the taglist squares
 theme.taglist_squares_sel   = home .. "/.config/awesome/themes/josemota/taglist/squarefw.png"
