@@ -46,8 +46,23 @@ function git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+function total_tasks() {
+  num=`todo.sh ls | wc -l`
+  let todos=num-2
+  if [ $todos != 0 ]
+  then
+    echo "✔ $todos"
+  else
+    echo ""
+  fi
+}
+
+function show_tasks() {
+  todo.sh list 2>/dev/null
+}
+
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
-PROMPT="%{$fg[yellow]%}→ %{$reset_color%}"
+PROMPT="%{$fg[magenta]%}$(total_tasks) %{$fg[yellow]%}→ %{$reset_color%}"
 TERM="xterm-256color"
 
 # TMUX
@@ -66,6 +81,11 @@ alias v='/usr/local/Cellar/vim/7.3.333/bin/vim'
 alias r="bundle exec rails"
 alias g=git
 alias rspec="clear; rspec"
+alias t=todo.sh
 
 export PATH=$PATH:/usr/local/sbin
 export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules
+
+source ~/.zshenv
+
+show_tasks
