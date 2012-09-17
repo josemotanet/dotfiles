@@ -8,6 +8,7 @@ unsetopt beep
 bindkey -v
 
 zstyle :compinstall filename '/home/jose/.zshrc'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
@@ -83,9 +84,9 @@ alias g=git
 alias rspec="clear; rspec"
 alias t=todo.sh
 
-export PATH=$PATH:/usr/local/sbin
-export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules
-
 source ~/.zshenv
 
 show_tasks
+
+export PATH=$PATH:/usr/local/sbin:$HOME/.rvm/bin
+export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules:$NODE_PATH

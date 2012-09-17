@@ -1,5 +1,4 @@
 set nocompatible
-
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -43,7 +42,7 @@ set winheight=999
 
 set list
 set listchars=tab:▸\ ,eol:¬,nbsp:⋅
-set guifont=DejaVu\ Sans\ Mono:h12
+set guifont=PragmataPro
 set guioptions=aAc
 set guioptions-=Be
 set number
