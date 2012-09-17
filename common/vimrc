@@ -9,6 +9,7 @@ syntax enable
 set ignorecase
 set hlsearch
 set autoindent
+set smartindent
 set fileencoding=utf-8
 set encoding=utf-8
 set backspace=indent,eol,start
@@ -41,7 +42,7 @@ set winminheight=5
 set winheight=999
 
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,nbsp:⋅
 set guifont=DejaVu\ Sans\ Mono:h12
 set guioptions=aAc
 set guioptions-=Be
