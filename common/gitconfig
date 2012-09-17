@@ -9,6 +9,7 @@
 [alias]
   s = status
   d = diff
+  dc = diff --cached
   co = checkout
   cb = checkout -b
   a = add
@@ -21,3 +22,5 @@
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an %ae>%Creset
 [branch]
   autosetuprebase = always
+[github]
+  user = josemota
