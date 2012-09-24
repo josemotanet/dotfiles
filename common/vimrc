@@ -110,3 +110,5 @@ set statusline+=/%L\
 " }}}
 
 set laststatus=2
+
+set shell=/bin/sh
