@@ -83,7 +83,7 @@ alias r="bundle exec rails"
 alias g=git
 alias rspec="clear; rspec"
 alias t=todo.sh
-alias i=bundle exec iridium
+alias i="bundle exec iridium"
 
 source ~/.zshenv
 
