@@ -64,7 +64,7 @@ function! <SID>SynStack()
 endfunc
 
 set background=dark
-colorscheme solarized
+colorscheme Tomorrow-Night
 
 ".ru files are Ruby.
 au BufRead,BufNewFile *.ru setfiletype ruby
