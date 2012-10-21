@@ -25,6 +25,7 @@ nnoremap <leader>a :Ack
 nnoremap <leader>d :bd<CR> 
 nnoremap <leader>w :w<CR>
 nnoremap <leader><cr> :noh<CR>
+nnoremap <leader>l :ls<CR>:b
 vnoremap < <gv
 vnoremap > >gv
 nnoremap n nzz
