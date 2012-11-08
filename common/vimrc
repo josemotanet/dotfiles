@@ -50,6 +50,7 @@ set number
 set noswapfile
 set visualbell
 set cursorline
+set term=screen-256color
 
 " match ErrorMsg '\%>80v.\+'
 set cc=80
