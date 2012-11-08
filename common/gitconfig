@@ -6,8 +6,9 @@
   diff = auto
   branch = auto
   remote = auto
+  ui = 1
 [alias]
-  s = status
+  s = status -sb
   d = diff
   dc = diff --cached
   co = checkout
