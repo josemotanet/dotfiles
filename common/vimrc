@@ -14,8 +14,12 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set ts=2 sts=2 sw=2 expandtab
 
+" Insert mode mappings {{{
 inoremap <C-l> <space>=><space>
 inoremap <C-s> <Esc>:w<CR>a
+" }}}
+
+" Normal mode mappings {{{
 nnoremap <C-s> :w<CR>
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>gs :Gstatus<CR><C-W>15+
@@ -26,10 +30,14 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader><cr> :noh<CR>
 nnoremap <leader>l :ls<CR>:b
-vnoremap < <gv
-vnoremap > >gv
 nnoremap n nzz
 nnoremap N Nzz
+" }}}
+
+" Visual mode mappings {{{
+vnoremap < <gv
+vnoremap > >gv
+" }}}
 
 set smartcase
 set gdefault
@@ -78,7 +86,6 @@ au! Syntax gherkin source ~/.vim/syntax/cucumber.vim
 set previewheight=20
 
 " Statusline {{{
-" ----------------------------------------------------------------------------------------------------
 hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
 hi User2 ctermbg=red      ctermfg=white   guibg=#aa0000 guifg=#89a1a1
 
@@ -114,3 +121,5 @@ set statusline+=/%L\
 set laststatus=2
 
 set shell=/bin/sh
+
+" vim: foldmethod=marker foldmarker={{{,}}}
