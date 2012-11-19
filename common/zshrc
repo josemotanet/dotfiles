@@ -77,13 +77,14 @@ if which tmux 2>&1 >/dev/null; then
   done
 fi
 
-alias ls='ls -G'
-alias v='/usr/local/Cellar/vim/7.3.333/bin/vim'
-alias r="bundle exec rails"
+alias be="bundle exec"
 alias g=git
+alias i="bundle exec iridium"
+alias ls='ls -G'
+alias r="bundle exec rails"
 alias rspec="clear; rspec"
 alias t=todo.sh
-alias i="bundle exec iridium"
+alias v='/usr/local/Cellar/vim/7.3.333/bin/vim'
 
 source ~/.zshenv
 
