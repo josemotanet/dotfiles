@@ -37,6 +37,9 @@ nnoremap N Nzz
 " Visual mode mappings {{{
 vnoremap < <gv
 vnoremap > >gv
+
+# Execute dot in the selection
+vnoremap . :norm.<CR>
 " }}}
 
 set smartcase
