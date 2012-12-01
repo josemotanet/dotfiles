@@ -38,7 +38,7 @@ nnoremap N Nzz
 vnoremap < <gv
 vnoremap > >gv
 
-# Execute dot in the selection
+" Execute dot in the selection
 vnoremap . :norm.<CR>
 " }}}
 
