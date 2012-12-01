@@ -83,13 +83,11 @@ colorscheme Tomorrow-Night
 ".ru files are Ruby.
 au BufRead,BufNewFile *.ru setfiletype ruby
 
-".feature files are Cucumber.
-au Bufread,BufNewFile *.feature set filetype=gherkin
-au! Syntax gherkin source ~/.vim/syntax/cucumber.vim
-
 " Markdown gets auto textwidth
 au Bufread,BufNewFile *.md set textwidth=79
 
+" .feature files are Cucumber.
+au Bufread,BufNewFile *.feature set filetype=cucumber
 " }}}
 
 " Previewheight for Fugitive's status window
