@@ -84,7 +84,7 @@ alias ls='ls -G'
 alias r="bundle exec rails"
 alias rspec="clear; rspec"
 alias t=todo.sh
-alias v='/usr/local/Cellar/vim/7.3.333/bin/vim'
+alias v=vim
 
 source ~/.zshenv
 
