@@ -78,12 +78,19 @@ endfunc
 set background=dark
 colorscheme Tomorrow-Night
 
+" Autocommands {{{
+
 ".ru files are Ruby.
 au BufRead,BufNewFile *.ru setfiletype ruby
 
 ".feature files are Cucumber.
 au Bufread,BufNewFile *.feature set filetype=gherkin
 au! Syntax gherkin source ~/.vim/syntax/cucumber.vim
+
+" Markdown gets auto textwidth
+au Bufread,BufNewFile *.md set textwidth=79
+
+" }}}
 
 " Previewheight for Fugitive's status window
 set previewheight=20
