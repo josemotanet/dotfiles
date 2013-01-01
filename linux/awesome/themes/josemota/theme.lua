@@ -6,7 +6,7 @@ local home = os.getenv("HOME")
 
 theme = {}
 
-theme.font          = "inconsolata 8"
+theme.font          = "inconsolata 9"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#222733aa"
@@ -77,7 +77,7 @@ theme.titlebar_maximized_button_normal_active = home .. "/.config/awesome/themes
 theme.titlebar_maximized_button_focus_active  = home .. "/.config/awesome/themes/josemota/titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "awsetbg " .. home .. "/.config/awesome/themes/josemota/background_white.png" }
+theme.wallpaper_cmd = { "awsetbg " .. home .. "/.config/awesome/themes/josemota/background.png" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = home .. "/.config/awesome/themes/josemota/layouts/fairhw.png"
