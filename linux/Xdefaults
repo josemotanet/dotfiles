@@ -25,6 +25,6 @@
 #URxvt*inheritPixmap: false
 #URxvt*tintColor: white
 URxvt*scrollBar: false
-URxvt.font: xft:PragmataPro:size=12
+URxvt.font: xft:Inconsolata:size=14
 URxvt*transparent: false
 URxvt*shading: 0
