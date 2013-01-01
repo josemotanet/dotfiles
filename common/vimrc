@@ -76,7 +76,7 @@ function! <SID>SynStack()
 endfunc
 
 set background=dark
-colorscheme Tomorrow-Night
+colorscheme solarized
 
 " Autocommands {{{
 
