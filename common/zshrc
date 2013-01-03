@@ -7,6 +7,9 @@ SAVEHIST=1000
 unsetopt beep
 bindkey -v
 
+export PATH=$PATH:/usr/local/sbin:$HOME/.rvm/bin:$HOME/bin
+export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules:$NODE_PATH
+
 zstyle :compinstall filename '/home/jose/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
@@ -89,6 +92,3 @@ alias v=vim
 source ~/.zshenv
 
 show_tasks
-
-export PATH=$PATH:/usr/local/sbin:$HOME/.rvm/bin
-export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules:$NODE_PATH
