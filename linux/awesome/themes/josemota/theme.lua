@@ -9,11 +9,11 @@ theme = {}
 theme.font          = "montecarlo 9"
 
 theme.bg_normal     = "#ffffff19"
-theme.bg_focus      = "#222733aa"
+theme.bg_focus      = "#ffffff29"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 
-theme.fg_normal     = "#888888"
+theme.fg_normal     = "#cccccc"
 theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
