@@ -281,7 +281,18 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+    -- Brightness
+    awful.key({}, "XF86MonBrightnessDown", function() awful.util.spawn("xbacklight -dec 10") end),
+    awful.key({}, "XF86MonBrightnessUp", function() awful.util.spawn("xbacklight -inc 10") end),
+    -- Volume
+    awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("vol_up")            end ),
+    awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("vol_down")          end),
+    awful.key({}, "XF86AudioMute"       , function() awful.util.spawn("mute_toggle")       end),
+    -- Music control
+    awful.key({}, "XF86AudioPlay"       , function() awful.util.spawn("mpc toggle")        end),
+    awful.key({}, "XF86AudioPrev"       , function() awful.util.spawn("mpc prev")          end),
+    awful.key({}, "XF86AudioNext"       , function() awful.util.spawn("mpc next")          end)
 )
 
 clientkeys = awful.util.table.join(
