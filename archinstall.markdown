@@ -5,17 +5,17 @@ Applications to install
 -----------------------
 
 * archey
-* chromium or firefox
+* google-chrome
 * cmus
 * dropbox
 * evince
 * feh
 * gtk
 * htop
-* imageshack-upload
 * lynx
 * ncdu
-* netbeans
+* ! netbeans
+* ompldr
 * packer
 * rxvt-unicode-patched
 * scrot
@@ -36,10 +36,6 @@ Applications to install
 
 Settings applied
 ----------------
-
-### Locale settings
-
-In `rc.conf`, change locale accordingly. Typically: `en_US.UTF-8`
 
 ### Keyboard rate
 
