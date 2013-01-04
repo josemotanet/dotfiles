@@ -102,7 +102,9 @@ appsmenu = {
   { "mutt", terminal .. " -e mutt" },
   { "ncmpcpp", terminal .. " -e ncmpcpp" },
   { "newsbeuter", terminal .. " -e newsbeuter" },
+  { "pcmanfm", "pcmanfm" },
   { "vim", terminal .. " -e vim" },
+  { "weechat", terminal .. " -e weechat-curses" },
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
