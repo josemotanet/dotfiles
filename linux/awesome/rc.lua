@@ -84,7 +84,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5 }, s, layouts[1])
+    tags[s] = awful.tag({ "yi", "er", "san", "si", "wu" }, s, layouts[2])
 end
 -- }}}
 
@@ -97,7 +97,16 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
+appsmenu = {
+  { "google chrome", "google-chrome" },
+  { "mutt", terminal .. " -e mutt" },
+  { "ncmpcpp", terminal .. " -e ncmpcpp" },
+  { "newsbeuter", terminal .. " -e newsbeuter" },
+  { "vim", terminal .. " -e vim" },
+}
+
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "apps", appsmenu },
                                     { "open terminal", terminal }
                                   }
                         })
