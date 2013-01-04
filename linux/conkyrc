@@ -1,46 +1,44 @@
-alignment bottom_middle
-background yes
-border_width 1
-cpu_avg_samples 2
-default_color cccccc
-default_outline_color 888888
-draw_borders no
-draw_graph_borders yes
-draw_outline no
-draw_shades no
 double_buffer yes
+background yes
+
 use_xft yes
-xftfont terminus:size=8
-gap_x 5
-gap_y 0
-minimum_size 1260 6
-maximum_width 1680
-net_avg_samples 2
-no_buffers yes
-out_to_console no
-out_to_stderr no
-extra_newline no
-own_window no
-own_window_class Conky
-own_window_type desktop
+xftfont Montecarlo:size=11
+
+update_interval 2.0
+ 
+total_run_times 0
+
+own_window yes
+own_window_type override
 own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
+
+minimum_size 240 165
+draw_shades no
+draw_outline no
+draw_borders no
 stippled_borders 0
-update_interval 1.0
+border_width 1
+default_color lightgrey
+default_shade_color lightgrey
+default_outline_color lightgrey
+alignment bottom_left
+gap_x 20
+gap_y 20
+no_buffers yes
 uppercase no
-use_spacer left
-show_graph_scale no
-show_graph_range no
-format_human_readable yes
-
-color1 336699
-color2 aaaaaa
-color3 dddddd
-
-mpd_host 127.0.0.1
 
 TEXT
-${if_mpd_playing} [${mpd_status} - ${mpd_elapsed}/${mpd_length}] ${scroll 35 5 ${mpd_smart}} ${else} \
-${color1}Activity on /dev/sda:${color} ${diskiograph 10,50 000000 ff0000 -t}${endif} \
-${alignr}${color1}eth0 [${color3}${addr eth0}${color}]: ${color1}Up:${color} ${upspeed eth0} ${color1} - Down:${color} ${downspeed eth0}     \
-${alignr}${color1}Battery: [${color3}${acpiacadapter}${color1}] ${color}${battery_percent BAT1}% ${battery_bar 5,50 BAT1} | \
-${color1}CPU: ${color} ${cpu}% ${cpubar cpu0 5,50} ${color1}RAM:${color} ${memperc}% ${membar 5,50}
+
+${color #74c2e1}${font Montecarlo:size=14}${uid_name 1000}@${nodename}
+${image ~/.icons/calendar.png -p 0,30 -s 24x24}    ${tab 20,0}${voffset 4}${font}${color}${time %A}, ${time %B %e}, ${time %G}
+${image ~/.icons/clock.png -p 0,51 -s 24x24}    ${tab 20,0}${voffset 7}${font}${color}${time %H:%M:%S}
+#${image ~/.icons/mail.png -p 0,72 -s 24x24}    ${tab 20,0}${voffset 8}${font}${color}${execpi 300 python ~/.scripts/gmail.py} message(s)
+#${image ~/.icons/settings.png -p 0,93 -s 24x24}  ${tab 20,0}${voffset 8}${font}${color}[vol:${ibm_volume}]  [lcd:${ibm_brightness}]  [pacman:${execpi 300 pacman -Qu | wc -l}]
+${image ~/.icons/wifi.png -p 0,114 -s 24x24}   ${tab 20,0$}${voffset 8}${font}${color}${wireless_link_bar 6,40 eth0}  ${wireless_essid} - ${addr eth0}
+# Battery
+${color #e4c231}${image ~/.icons/bat.png -p 0,135 -s 24x24} ${tab 20,0}${voffset 8}${font}${battery_bar 6,40 BAT0}  ${battery_short} - ${battery_time}
+#${image ~/.icons/cpu.png -p 0,156 -s 24x24}     ${tab 20,0}${voffset 8}${font}${color}${cpubar 6,40}  ${ibm_temps 0}c - ${freq 1}mHz
+${image ~/.icons/mem.png -p 0,177 -s 24x24}   ${tab 20,0}${voffset 8}${font}${color}${membar 6,40}  ${mem} / ${memmax}
+${image ~/.icons/disk.png -p 0,198 -s 24x24}  ${tab 20,0}${voffset 8}${font}${color}${fs_bar 6,40 /}  ${fs_used /} / ${fs_size /}
+${image ~/.icons/home.png -p 0,219 -s 24x24}   ${tab 20,0}${voffset 8}${font}${color}${fs_bar 6,40 /home}  ${fs_used /home} / ${fs_size /home}
