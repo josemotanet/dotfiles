@@ -8,9 +8,11 @@ local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
-local naughty = require("naughty")
-local menubar = require("menubar")
-local home = os.getenv("HOME")
+local naughty  = require("naughty")
+local menubar  = require("menubar")
+local home     = os.getenv("HOME")
+local browser  = "google-chrome"
+local explorer = "pcmanfm"
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -292,7 +294,11 @@ globalkeys = awful.util.table.join(
     -- Music control
     awful.key({}, "XF86AudioPlay"       , function() awful.util.spawn("mpc toggle")        end),
     awful.key({}, "XF86AudioPrev"       , function() awful.util.spawn("mpc prev")          end),
-    awful.key({}, "XF86AudioNext"       , function() awful.util.spawn("mpc next")          end)
+    awful.key({}, "XF86AudioNext"       , function() awful.util.spawn("mpc next")          end),
+    -- App shortcuts
+    awful.key({modkey}, "b"       , function() awful.util.spawn(browser)                   end),
+    awful.key({modkey}, "e"       , function() awful.util.spawn(explorer)                  end),
+    awful.key({modkey}, "XF86MonBrightnessDown", function() awful.util.spawn(home .. "/.screenlayout/default.sh") end)
 )
 
 clientkeys = awful.util.table.join(
