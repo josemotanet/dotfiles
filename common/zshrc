@@ -67,18 +67,7 @@ function show_tasks() {
 
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
 PROMPT="%{$fg[magenta]%}$(total_tasks) %{$fg[yellow]%}→ %{$reset_color%}"
-TERM="xterm-256color"
-
-# TMUX
-if which tmux 2>&1 >/dev/null; then
-  # if no session is started, start a new session
-  test -z ${TMUX} && tmux
-
-  # when quitting tmux, try to attach
-  while test -z ${TMUX}; do
-    tmux attach || break
-  done
-fi
+TERM="screen-256color"
 
 alias be="bundle exec"
 alias g=git
