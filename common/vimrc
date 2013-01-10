@@ -30,6 +30,7 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader><cr> :noh<CR>
 nnoremap <leader>l :ls<CR>:b
+nnoremap <leader>t :CtrlP<CR>
 nnoremap n nzz
 nnoremap N Nzz
 " }}}
