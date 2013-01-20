@@ -1,5 +1,5 @@
 [user]
-	name = José Mota
+	name = José Mota
   email = jose@josemota.net
 [color]
   status = auto
@@ -25,3 +25,5 @@
   autosetuprebase = always
 [github]
   user = josemota
+[core]
+  editor = vim
