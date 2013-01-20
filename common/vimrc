@@ -4,15 +4,8 @@ call pathogen#helptags()
 
 let mapleader = ","
 syntax enable
-"set foldmethod=syntax
-set ignorecase
-set hlsearch
-set autoindent
-set smartindent
-set fileencoding=utf-8
-set encoding=utf-8
-set backspace=indent,eol,start
-set ts=2 sts=2 sw=2 expandtab
+
+" Mappings {{{
 
 " Insert mode mappings {{{
 inoremap <C-l> <space>=><space>
@@ -43,29 +36,38 @@ vnoremap > >gv
 vnoremap . :norm.<CR>
 " }}}
 
-set smartcase
+" General settings {{{
+set autoindent
+set backspace=indent,eol,start
+set colorcolumn=80
+set cursorline
+set encoding=utf-8
+set fileencoding=utf-8
 set gdefault
+set guifont=PragmataPro
+set guioptions-=Be
+set guioptions=aAc
+set hlsearch
+set ignorecase
 set incsearch
-set showmatch
-
-set winwidth=84
-set winheight=5
-set winminheight=5
-set winheight=999
-
 set list
 set listchars=tab:▸\ ,eol:¬,nbsp:⋅
-set guifont=PragmataPro
-set guioptions=aAc
-set guioptions-=Be
-set number
 set noswapfile
-set visualbell
-set cursorline
+set number
+set shell=/bin/sh
+set showmatch
+set smartcase
+set smartindent
 set term=screen-256color
+set ts=2 sts=2 sw=2 expandtab
+set visualbell
+set winheight=5
+set winheight=999
+set winminheight=5
+set winwidth=84
+" }}}
 
-" match ErrorMsg '\%>80v.\+'
-set cc=80
+" }}}
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -90,9 +92,6 @@ au Bufread,BufNewFile *.md set textwidth=79
 " .feature files are Cucumber.
 au Bufread,BufNewFile *.feature set filetype=cucumber
 " }}}
-
-" Previewheight for Fugitive's status window
-set previewheight=20
 
 " Statusline {{{
 hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
@@ -125,10 +124,8 @@ set statusline+=c%c
 set statusline+=,l%l
 set statusline+=/%L\ 
 
-" }}}
-
 set laststatus=2
 
-set shell=/bin/sh
+" }}}
 
 " vim: foldmethod=marker foldmarker={{{,}}}
