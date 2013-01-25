@@ -14,7 +14,7 @@ set sort_aux = 'last-date-received'
 
 set query_command = "abook --mutt-query '%s'"
 
-set editor='vim + -c "set textwidth=79 wrap nocp filetype=markdown" -c "?^$"'
+set editor='vim + -c "set textwidth=79 wrap nocp filetype=markdown encoding=utf-8"'
 
 color   attachment  blue         default
 color   header      green        default  "^message-id:"
