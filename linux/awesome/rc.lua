@@ -3,16 +3,14 @@ local gears = require("gears")
 local awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
--- Widget and layout library
 local wibox = require("wibox")
--- Theme handling library
 local beautiful = require("beautiful")
--- Notification library
 local naughty  = require("naughty")
 local menubar  = require("menubar")
 local home     = os.getenv("HOME")
 local browser  = "google-chrome"
 local explorer = "pcmanfm"
+local vicious  = require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -126,6 +124,20 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
 
+-- Battery widget
+mybattery = wibox.widget.textbox()
+vicious.register(mybattery, vicious.widgets.bat, " Bat <span color=\"#6699cc\">$1$2%</span>", 10, "BAT0")
+
+-- {{{ Ram
+
+memwidget = wibox.widget.textbox()
+vicious.register(memwidget, vicious.widgets.mem, " RAM <span color=\"#6699cc\">$2 MB</span>", 2)
+memwidget:buttons(awful.util.table.join(
+  awful.button({ }, 1, function () awful.util.spawn(terminal .. " -e htop") end)
+))
+
+-- }}}
+
 -- Create a wibox for each screen and add it
 mywibox = {}
 mypromptbox = {}
@@ -202,9 +214,16 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
+    if s == 1 then
+      right_layout:add(memwidget)
+      right_layout:add(mybattery)
+    end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
+
+    if s == 1 then
+      right_layout:add(wibox.widget.systray())
+    end
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
@@ -284,6 +303,7 @@ globalkeys = awful.util.table.join(
               end),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
+
     -- Brightness
     awful.key({}, "XF86MonBrightnessDown", function() awful.util.spawn("xbacklight -dec 10") end),
     awful.key({}, "XF86MonBrightnessUp", function() awful.util.spawn("xbacklight -inc 10") end),
