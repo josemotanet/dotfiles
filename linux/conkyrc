@@ -13,7 +13,6 @@ own_window_type override
 own_window_transparent yes
 own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
 
-minimum_size 240 165
 draw_shades no
 draw_outline no
 draw_borders no
@@ -22,7 +21,7 @@ border_width 1
 default_color lightgrey
 default_shade_color lightgrey
 default_outline_color lightgrey
-alignment bottom_left
+alignment bottom_middle
 gap_x 20
 gap_y 20
 no_buffers yes
@@ -30,15 +29,11 @@ uppercase no
 
 TEXT
 
-${color #74c2e1}${font Montecarlo:size=14}${uid_name 1000}@${nodename}
-${image ~/.icons/calendar.png -p 0,30 -s 24x24}    ${tab 20,0}${voffset 4}${font}${color}${time %A}, ${time %B %e}, ${time %G}
-${image ~/.icons/clock.png -p 0,51 -s 24x24}    ${tab 20,0}${voffset 7}${font}${color}${time %H:%M:%S}
-#${image ~/.icons/mail.png -p 0,72 -s 24x24}    ${tab 20,0}${voffset 8}${font}${color}${execpi 300 python ~/.scripts/gmail.py} message(s)
-#${image ~/.icons/settings.png -p 0,93 -s 24x24}  ${tab 20,0}${voffset 8}${font}${color}[vol:${ibm_volume}]  [lcd:${ibm_brightness}]  [pacman:${execpi 300 pacman -Qu | wc -l}]
-${image ~/.icons/wifi.png -p 0,114 -s 24x24}   ${tab 20,0$}${voffset 8}${font}${color}${wireless_link_bar 6,40 eth0}  ${wireless_essid} - ${addr eth0}
-# Battery
-${color #e4c231}${image ~/.icons/bat.png -p 0,135 -s 24x24} ${tab 20,0}${voffset 8}${font}${battery_bar 6,40 BAT0}  ${battery_short} - ${battery_time}
-#${image ~/.icons/cpu.png -p 0,156 -s 24x24}     ${tab 20,0}${voffset 8}${font}${color}${cpubar 6,40}  ${ibm_temps 0}c - ${freq 1}mHz
-${image ~/.icons/mem.png -p 0,177 -s 24x24}   ${tab 20,0}${voffset 8}${font}${color}${membar 6,40}  ${mem} / ${memmax}
-${image ~/.icons/disk.png -p 0,198 -s 24x24}  ${tab 20,0}${voffset 8}${font}${color}${fs_bar 6,40 /}  ${fs_used /} / ${fs_size /}
-${image ~/.icons/home.png -p 0,219 -s 24x24}   ${tab 20,0}${voffset 8}${font}${color}${fs_bar 6,40 /home}  ${fs_used /home} / ${fs_size /home}
+${color #74c2e1}\
+${font Montecarlo:size=14}${uid_name 1000}@${nodename} | \
+${font}${color}${wireless_link_bar 6,40 wlan0}  ${wireless_essid wlan0} - ${addr wlan0} \
+${color #e4c231}\
+${font}${battery_bar 6,40 BAT0} ${battery_short} - ${battery_time} | \
+${font}${color}RAM ${membar 6,40} ${mem}/${memmax} | \
+${font}${color}/ ${fs_bar 6,40 /}  ${fs_used /}/${fs_size /} | \
+${font}${color}/home ${fs_bar 6,40 /home}  ${fs_used /home}/${fs_size /home}
