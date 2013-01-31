@@ -38,3 +38,5 @@ color   status      brightwhite  green
 color   tilde       cyan         default
 color   tree        blue         default
 color   body        black        default  "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
+
+source ~/.mutt/josemota.net.conf
