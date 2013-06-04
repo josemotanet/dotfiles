@@ -1,6 +1,7 @@
 set nocompatible
 call pathogen#infect()
 call pathogen#helptags()
+call togglebg#map("<F5>")
 
 let mapleader = ","
 syntax enable
@@ -46,7 +47,7 @@ set cursorline
 set encoding=utf-8
 set fileencoding=utf-8
 set gdefault
-set guifont=PragmataPro
+set guifont=Inconsolata\ 10.5
 set guioptions-=Be
 set guioptions=aAc
 set hlsearch
@@ -59,12 +60,12 @@ set number
 set shell=/bin/sh
 set showmatch
 set smartcase
-set smartindent
+"set smartindent
 set term=screen-256color
 set ts=2 sts=2 sw=2 expandtab
 set visualbell
-set winheight=5
 set winheight=999
+set winheight=5
 set winminheight=5
 set winwidth=84
 " }}}
@@ -84,7 +85,8 @@ colorscheme solarized
 " Autocommands {{{
 
 ".ru files are Ruby.
-au BufRead,BufNewFile *.ru setfiletype ruby
+au BufRead,BufNewFile *.ru set filetype=ruby
+au BufRead,BufNewFile [vV]agrantfile set filetype=ruby
 
 " Markdown gets auto textwidth
 au Bufread,BufNewFile *.md set textwidth=79
