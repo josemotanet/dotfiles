@@ -1,0 +1,13 @@
+xset r rate 190 30
+
+case $1 in
+kde)
+  exec startkde
+  ;;
+awesome)
+  pulseaudio --start
+  nitrogen --restore &
+  compton -b --config ~/.compton.conf
+  exec awesome
+  ;;
+esac
