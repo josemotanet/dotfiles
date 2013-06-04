@@ -9,6 +9,7 @@ bindkey -v
 
 export PATH=$PATH:/usr/local/sbin:$HOME/.rvm/bin:$HOME/bin
 export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules:$NODE_PATH
+export LANG=en_US.UTF-8
 
 zstyle :compinstall filename '/home/jose/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -81,3 +82,12 @@ alias v=vim
 source ~/.zshenv
 
 show_tasks
+
+# rbenv
+
+export RBENV_ROOT="${HOME}/.rbenv"
+
+if [ -d "${RBENV_ROOT}" ]; then
+  export PATH="${RBENV_ROOT}/bin:${PATH}"
+  eval "$(rbenv init -)"
+fi
