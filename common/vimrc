@@ -54,7 +54,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set list
-set listchars=tab:▸\ ,eol:¬,nbsp:⋅
+set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:⋅
 set noswapfile
 set number
 set shell=/bin/sh
