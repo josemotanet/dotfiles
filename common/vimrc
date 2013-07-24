@@ -40,6 +40,7 @@ vnoremap . :norm.<CR>
 " }}}
 
 " General settings {{{
+set t_Co=256
 set autoindent
 set backspace=indent,eol,start
 set colorcolumn=80
@@ -80,7 +81,9 @@ function! <SID>SynStack()
 endfunc
 
 set background=dark
-colorscheme solarized
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
+" colorscheme solarized
 
 " Autocommands {{{
 
@@ -90,6 +93,7 @@ au BufRead,BufNewFile [vV]agrantfile set filetype=ruby
 
 " Markdown gets auto textwidth
 au Bufread,BufNewFile *.md set textwidth=79
+au Bufread,BufNewFile *.markdown set textwidth=79
 
 " .feature files are Cucumber.
 au Bufread,BufNewFile *.feature set filetype=cucumber
