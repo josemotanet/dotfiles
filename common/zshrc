@@ -10,6 +10,7 @@ bindkey -v
 export PATH=$PATH:/usr/local/sbin:$HOME/.rvm/bin:$HOME/bin
 export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules:$NODE_PATH
 export LANG=en_US.UTF-8
+export EDITOR=vim
 
 zstyle :compinstall filename '/home/jose/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -40,7 +41,7 @@ function git_status() {
   fi
 
   if [[ $st == *clean* ]] then
-    ret="${ret} √"
+    ret="${ret} \u2713"
     color="green"
   fi
 
@@ -56,7 +57,7 @@ function total_tasks() {
   let todos=num-2
   if [ $todos != 0 ]
   then
-    echo "✔ $todos"
+    echo "\u2713 $todos"
   else
     echo ""
   fi
@@ -67,7 +68,7 @@ function show_tasks() {
 }
 
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
-PROMPT="%{$fg[magenta]%}$(total_tasks) %{$fg[yellow]%}→ %{$reset_color%}"
+PROMPT="%{$fg[blue]%}$(total_tasks) %{$fg[yellow]%}→ %{$reset_color%}"
 TERM="screen-256color"
 
 alias be="bundle exec"
