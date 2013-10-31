@@ -41,7 +41,7 @@ nnoremap <C-s> :w<CR>
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>gs :Gstatus<CR><C-W>15+
 nnoremap <leader>m :NERDTreeToggle<CR>
-nnoremap <leader>rs :!clear;rspec --color spec<CR>
+nnoremap <leader>rs :!clear;rake<CR>
 nnoremap <leader>a :Ack 
 nnoremap <leader>d :bd<CR> 
 nnoremap <leader>w :w<CR>
@@ -115,7 +115,7 @@ au BufRead,BufNewFile *.ru set filetype=ruby
 au BufRead,BufNewFile [vV]agrantfile set filetype=ruby
 
 " Markdown gets auto textwidth
-au Bufread,BufNewFile *.md set textwidth=79
+au Bufread,BufNewFile *.md set filetype=markdown textwidth=79
 au Bufread,BufNewFile *.markdown set textwidth=79
 
 " .feature files are Cucumber.
