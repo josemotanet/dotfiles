@@ -1,7 +1,30 @@
 set nocompatible
-call pathogen#infect()
-call pathogen#helptags()
-call togglebg#map("<F5>")
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'bling/vim-airline'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-fugitive'
+Bundle 'nono/vim-handlebars'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-ragtag'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-surround'
+Bundle 'mattn/zencoding-vim'
+Bundle 'SirVer/ultisnips'
+"Bundle 'tabular'
+"Bundle 'tomorrow-theme'
+"Bundle 'vim-yardoc'
+"Bundle 'altercation/vim-colors-solarized'
+"Bundle 'vim-emblem'
+
+"call togglebg#map("<F5>") " For Solarized
 
 let mapleader = ","
 syntax enable
