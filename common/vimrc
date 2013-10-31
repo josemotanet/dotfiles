@@ -18,6 +18,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-surround'
 Bundle 'mattn/zencoding-vim'
 Bundle 'SirVer/ultisnips'
+Bundle 'airblade/vim-gitgutter'
 "Bundle 'tabular'
 "Bundle 'tomorrow-theme'
 "Bundle 'vim-yardoc'
@@ -155,6 +156,10 @@ set statusline+=/%L\
 
 set laststatus=2
 
+" }}}
+
+" Specific configurations {{{
+let g:molokai_original = 1
 " }}}
 
 " vim: foldmethod=marker foldmarker={{{,}}}
