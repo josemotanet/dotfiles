@@ -53,7 +53,7 @@ function git_branch() {
 }
 
 function total_tasks() {
-  num=`todo.sh ls | wc -l`
+  num=`todo.sh ls 2>/dev/null | wc -l `
   let todos=num-2
   if [ $todos != 0 ]
   then

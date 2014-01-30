@@ -16,7 +16,7 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-ragtag'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-surround'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'airblade/vim-gitgutter'
 "Bundle 'tabular'
@@ -35,6 +35,7 @@ syntax enable
 " Insert mode mappings {{{
 inoremap <C-l> <space>=><space>
 inoremap <C-s> <Esc>:w<CR>a
+inoremap <C-p> require "pry"; binding.pry
 " }}}
 
 " Normal mode mappings {{{
@@ -79,7 +80,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set list
-set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:⋅
+set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:•
 set noswapfile
 set number
 set shell=/bin/bash
