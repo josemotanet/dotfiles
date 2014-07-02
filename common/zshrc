@@ -84,11 +84,5 @@ source ~/.zshenv
 
 show_tasks
 
-# rbenv
-
-export RBENV_ROOT="${HOME}/.rbenv"
-
-if [ -d "${RBENV_ROOT}" ]; then
-  export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
