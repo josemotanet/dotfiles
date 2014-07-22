@@ -8,7 +8,6 @@ unsetopt beep
 bindkey -v
 
 export PATH=$PATH:/usr/local/sbin:$HOME/.rvm/bin:$HOME/bin
-export NODE_PATH=/usr/local/bin/node:/usr/local/lib/node_modules:$NODE_PATH
 export LANG=en_US.UTF-8
 export EDITOR=vim
 
@@ -86,3 +85,5 @@ show_tasks
 
 source /usr/share/chruby/chruby.sh
 source /usr/share/chruby/auto.sh
+
+PATH="/usr/local/heroku/bin:$PATH"
