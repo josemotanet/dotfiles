@@ -19,7 +19,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'mattn/emmet-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'airblade/vim-gitgutter'
-"Bundle 'tabular'
+Bundle 'godlygeek/tabular'
 "Bundle 'tomorrow-theme'
 "Bundle 'vim-yardoc'
 "Bundle 'altercation/vim-colors-solarized'
@@ -35,7 +35,7 @@ syntax enable
 " Insert mode mappings {{{
 inoremap <C-l> <space>=><space>
 inoremap <C-s> <Esc>:w<CR>a
-inoremap <C-p> require "pry"; binding.pry
+inoremap <C-p> binding.pry
 " }}}
 
 " Normal mode mappings {{{
