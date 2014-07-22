@@ -1,20 +1,27 @@
-*background: #002b36
-*foreground: #b5cbd3
+*background: #262F35
+*foreground: #e9e9e9
 
-*color0:    #2d3c46
+*color0:    #2d3c36
 *color1:    #ac4142
+
 *color2:    #90a959
 *color3:    #de935f
+
 *color4:    #6a9fb5
 *color5:    #aa759f
+
 *color6:    #75b5aa
 *color7:    #6c7a80
+
 *color8:    #425059
 *color9:    #cc6666
+
 *color10:   #b5bd68
 *color11:   #f0c674
+
 *color12:   #81a2be
 *color13:   #b294bb
+
 *color14:   #8abeb7
 *color15:   #c5c8c6
 
