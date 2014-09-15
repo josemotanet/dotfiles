@@ -1,29 +1,31 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-fugitive'
-Bundle 'nono/vim-handlebars'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'tpope/vim-ragtag'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-surround'
-Bundle 'mattn/emmet-vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'godlygeek/tabular'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-fugitive'
+Plugin 'nono/vim-handlebars'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-ragtag'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'godlygeek/tabular'
 "Bundle 'tomorrow-theme'
 "Bundle 'vim-yardoc'
 "Bundle 'altercation/vim-colors-solarized'
 "Bundle 'vim-emblem'
+
+call vundle#end()
 
 "call togglebg#map("<F5>") " For Solarized
 
