@@ -31,25 +31,17 @@
 
 #Xft.autohint: 0
 #Xft.lcdfilter:  lcddefault
-#Xft.hintstyle:  hintslight
+Xft.hintstyle:  hintnone
 #Xft.hinting: 1
 #Xft.antialias: 1
 #Xft.rgba: rgb
 
 URxvt*scrollBar: false
-#URxvt*transparent: false
-#URxvt*shading: 0
-URxvt*termName: rxvt-unicode
-#URxvt.font: xft:Terminus:size=9
-#URxvt.font: xft:Montecarlo:size=9
-#URxvt.font: xft:PragmataPro:size=9
-#URxvt.font: xft:Inconsolata:size=10.5
-URxvt.font: xft:Source Code Pro:size=10.5
+URxvt*transparent: false
+URxvt*shading: 0
+URxvt*font: xft:Source Code Pro:weight=Medium:size=11.5
 
-#URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
-#URxvt.url-select.launcher:  google-chrome
-#URxvt.url-select.underline: true
-#URxvt.keysym.M-u:           perl:url-select:select_next
-#URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-#URxvt.keysym.M-s:           perl:keyboard-select:search
+#URxvt.font: xft:Inconsolata:size=11.5
+#URxvt.lineSpace: 2
 
+xterm*faceName: Source Code Pro:weight=Medium:size=10.5
