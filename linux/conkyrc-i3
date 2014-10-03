@@ -1,0 +1,10 @@
+out_to_x no
+own_window no
+out_to_console yes
+
+TEXT
+[
+  { "full_text" : " ${mem} / ${memmax} (${memperc}%) ", "color" : "\#999999" },
+  { "full_text" : " \u25b2 ${upspeedf enp0s3} ", "color" : "\#0099ff" },
+  { "full_text" : " \u25bc ${downspeedf enp0s3} ", "color" : "\#00ffff"  }
+],
