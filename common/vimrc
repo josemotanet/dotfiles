@@ -20,6 +20,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'
+Plugin 'whatyouhide/vim-gotham'
 "Bundle 'tomorrow-theme'
 "Bundle 'vim-yardoc'
 "Bundle 'altercation/vim-colors-solarized'
@@ -109,7 +110,7 @@ endfunc
 
 set background=dark
 let g:hybrid_use_Xresources = 0
-colorscheme hybrid
+colorscheme gotham
 " colorscheme solarized
 
 " Autocommands {{{
