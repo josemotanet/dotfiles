@@ -4,19 +4,18 @@ Arch Linux installation notes
 Applications to install
 -----------------------
 
+* ! netbeans
 * archey
-* google-chrome
-* cmus
 * dropbox
 * evince
 * feh
-* gtk
+* firefox
+* git
 * htop
 * lynx
 * ncdu
-* ! netbeans
-* ompldr
 * packer
+* playerctl
 * rxvt-unicode-patched
 * scrot
 * skype
