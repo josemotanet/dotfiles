@@ -6,5 +6,7 @@ TEXT
 [
   { "full_text" : " ${mem} / ${memmax} (${memperc}%) ", "color" : "\#999999" },
   { "full_text" : " \u25b2 ${upspeedf enp0s3} ", "color" : "\#0099ff" },
-  { "full_text" : " \u25bc ${downspeedf enp0s3} ", "color" : "\#00ffff"  }
+  { "full_text" : " \u25bc ${downspeedf enp0s3} ", "color" : "\#00ffff"  },
+  { "full_text" : " ${addr enp0s3} ", "color" : "\#ffcc00"  },
+  { "full_text" : " ${time %H:%M} " }
 ],
