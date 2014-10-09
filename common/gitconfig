@@ -27,3 +27,5 @@
   user = josemota
 [core]
   editor = vim
+[push]
+  default = simple
