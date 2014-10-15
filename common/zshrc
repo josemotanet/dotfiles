@@ -16,7 +16,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
-
 setopt PROMPT_SUBST
 
 function git_status() {
@@ -67,7 +66,7 @@ function show_tasks() {
 }
 
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
-PROMPT="%{$fg[blue]%}$(total_tasks) %{$fg[yellow]%}→ %{$reset_color%}"
+PROMPT="%{$fg[yellow]%}→ %{$reset_color%}"
 TERM="screen-256color"
 
 alias be="bundle exec"
@@ -78,6 +77,7 @@ alias r="bundle exec rails"
 alias rspec="clear; rspec"
 alias t=todo.sh
 alias v=vim
+alias e="emacs -nw"
 
 source ~/.zshenv
 
