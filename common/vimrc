@@ -1,9 +1,12 @@
 set nocompatible
 filetype off
 
+" Vundle {{{
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'gmarik/Vundle.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -21,6 +24,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'jceb/vim-orgmode'
+Plugin 'mustache/vim-mustache-handlebars'
 "Bundle 'tomorrow-theme'
 "Bundle 'vim-yardoc'
 "Bundle 'altercation/vim-colors-solarized'
@@ -28,10 +33,12 @@ Plugin 'whatyouhide/vim-gotham'
 
 call vundle#end()
 
-"call togglebg#map("<F5>") " For Solarized
+" }}}
 
 let mapleader = ","
 syntax enable
+colorscheme gotham
+set background=dark
 
 " Mappings {{{
 
@@ -46,7 +53,7 @@ nnoremap <C-s> :w<CR>
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>gs :Gstatus<CR><C-W>15+
 nnoremap <leader>m :NERDTreeToggle<CR>
-nnoremap <leader>rs :!clear;rake<CR>
+nnoremap <leader>rs :!clear;bundle exec rake<CR>
 nnoremap <leader>a :Ack 
 nnoremap <leader>d :bd<CR> 
 nnoremap <leader>w :w<CR>
@@ -98,20 +105,6 @@ set winheight=5
 set winminheight=5
 set winwidth=84
 " }}}
-
-" Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-set background=dark
-let g:hybrid_use_Xresources = 0
-colorscheme gotham
-" colorscheme solarized
 
 " Autocommands {{{
 
