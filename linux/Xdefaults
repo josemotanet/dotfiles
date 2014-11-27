@@ -32,9 +32,10 @@ Xft.hintstyle:  hintnone
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: 0
-URxvt*font: xft:Source Code Pro:weight=Medium:size=11.5
+URxvt*font: xft:Fira Mono:weight=Medium:size=10.5,xft:Source Code Pro:weight=Medium:size=10.5
+#URxvt*font: x:-*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 
 #URxvt.font: xft:Inconsolata:size=11.5
 #URxvt.lineSpace: 2
 
-xterm*faceName: Source Code Pro:weight=Medium:size=10.5
+xterm*faceName: Fira Mono:weight=Medium:size=10.5

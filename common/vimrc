@@ -15,7 +15,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nono/vim-handlebars'
 Plugin 'w0ng/vim-hybrid'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-ragtag'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
@@ -45,7 +45,6 @@ set background=dark
 " Insert mode mappings {{{
 inoremap <C-l> <space>=><space>
 inoremap <C-s> <Esc>:w<CR>a
-inoremap <C-p> binding.pry
 " }}}
 
 " Normal mode mappings {{{
@@ -156,7 +155,7 @@ set laststatus=2
 " }}}
 
 " Specific configurations {{{
-let g:molokai_original = 1
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 " }}}
 
 " vim: foldmethod=marker foldmarker={{{,}}}
