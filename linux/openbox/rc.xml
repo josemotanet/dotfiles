@@ -244,7 +244,9 @@
       </action>
     </keybind>
     <keybind key="W-Tab">
-      <action name="NextWindow"/>
+      <action name="NextWindow">
+        <dialog>icons</dialog>
+      </action>
     </keybind>
     <keybind key="W-f">
       <action name="ToggleFullscreen"/>
@@ -253,7 +255,9 @@
       <action name="ToggleMaximizeFull"/>
     </keybind>
     <keybind key="W-S-Tab">
-      <action name="PreviousWindow"/>
+      <action name="PreviousWindow">
+        <dialog>icons</dialog>
+      </action>
     </keybind>
     <keybind key="C-A-Tab">
       <action name="NextWindow">
