@@ -1,41 +1,13 @@
-*.foreground: #98d1ce
-*.background: #0a0f14
-*.cursorColor: #98d1ce
-*.color0: #0a0f14
-*.color8: #10151b
-*.color1: #c33027
-*.color9: #d26939
-*.color2: #26a98b
-*.color10: #081f2d
-*.color3: #edb54b
-*.color11: #245361
-*.color4: #195465
-*.color12: #093748
-*.color5: #4e5165
-*.color13: #888ba5
-*.color6: #33859d
-*.color14: #599caa
-*.color7: #98d1ce
-*.color15: #d3ebe9
-
+#include ".Xresources"
 *cursorColor: #93a1a1
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
 
-#Xft.autohint: 0
-#Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintnone
-#Xft.hinting: 1
-#Xft.antialias: 1
-#Xft.rgba: rgb
-
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: 0
-URxvt*font: xft:Fira Mono:weight=Medium:size=10.5,xft:Source Code Pro:weight=Medium:size=10.5
-#URxvt*font: x:-*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
-
-#URxvt.font: xft:Inconsolata:size=11.5
-#URxvt.lineSpace: 2
+URxvt.internalBorder: 6
+URxvt*font: xft:Input Mono Condensed:weight=Medium:size=9.5
+#URxvt*font: x:-*-bleed2-*-*-*-*-*-*-*-*-*-*-*-*
 
 xterm*faceName: Fira Mono:weight=Medium:size=10.5
