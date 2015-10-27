@@ -71,7 +71,6 @@ TERM="screen-256color"
 
 alias be="bundle exec"
 alias g=git
-alias i="bundle exec iridium"
 alias ls='ls --color=auto'
 alias r="bundle exec rails"
 alias rspec="clear; rspec"
@@ -89,3 +88,5 @@ source /usr/share/chruby/auto.sh
 PATH="/usr/local/heroku/bin:$PATH"
 
 source ~/.nvm/nvm.sh
+
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
