@@ -3,10 +3,11 @@
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
 
+URxvt.internalBorder: 6
+URxvt*geometry: 100x40
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: 0
-URxvt.internalBorder: 6
 URxvt*font: xft:Input Mono Condensed:weight=Medium:size=9.5
 #URxvt*font: x:-*-bleed2-*-*-*-*-*-*-*-*-*-*-*-*
 
