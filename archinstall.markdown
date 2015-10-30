@@ -4,33 +4,74 @@ Arch Linux installation notes
 Applications to install
 -----------------------
 
-* ! netbeans
+* ack
+* adobe-source-code-pro-fonts
+* adobe-source-sans-pro-fonts
+* arandr
 * archey
+* artwiz-fonts
+* chruby-git
+* compton-git
+* conky
+* dmenu-xft
 * dropbox
+* dunst
+* elementary-icon-theme
+* elinks
+* emacs
 * evince
 * feh
+* filezilla
 * firefox
+* gawk
 * git
+* gpick
+* gtk-theme-arc-git
+* gtk
+* gucharmap
 * htop
-* lynx
+* i
+* imagemagick
+* lemonbar-git
+* lightdm
+* lightdm-gtk-greeter
+* livestreamer
+* lxappearance-gtk
+* menumaker
 * ncdu
+* nitrogen
+* nopaste
+* notify-osd
+* ntop
+* obconf
+* obkey-git
+* openbox
+* openssh
 * packer
+* pgadmin
 * playerctl
+* postgresql
+* pulseaudio
+* ranger
+* ruby-install-git
 * rxvt-unicode-patched
 * scrot
-* skype
-* sudo
-* terminus-font
+* spotify
+* sqlitebrowser
+* thunar
+* thunar-archive-plugin
+* thunar-volman
 * tmux
-* ttf-bistream-vera
-* ttf-dejavu
+* transmission-gtk
 * ttf-freefont
+* ttf-input
+* ttf-lato
 * unrar
-* vim
+* update-pacman-mirrorlist
+* vlc
 * weechat
-* xclip
 * xsel
-* zlib
+* zip
 * zsh
 
 Settings applied
@@ -38,23 +79,9 @@ Settings applied
 
 ### Keyboard rate
 
-    -> .xinitrc
+    -> .xprofile
 
     xset r rate 200 30
-
-### Keyboard locale settings
-
-    $ touch /etc/X11/xorg.conf.d/keyboard.conf
-
-Append:
-
-    Section "InputClass"
-      Identifier		"Keyboard Defaults"
-      MatchIsKeyboard		"yes"
-      Option			"XkbLayout" 	"pt"
-      Option			"XkbModel"	"apple_laptop"
-      Option			"XkbVariant"	"mac"
-    EndSection
 
 ### Weechat settings
 
