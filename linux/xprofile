@@ -1,0 +1,20 @@
+xset r rate 190 30
+xset +fp $HOME/.fonts
+xset +fp /usr/share/fonts/artwiz-fonts
+
+VBoxClient-all &
+xrdb -load ~/.Xresources &
+
+case $1 in
+  *openbox*)
+    sleep 0.1
+    nitrogen --restore &
+    compton -b --config ~/.compton.conf &
+    ;;
+  *i3*)
+    sleep 0.1
+    nitrogen --restore &
+    ;;
+  *gnome*)
+    ;;
+esac
