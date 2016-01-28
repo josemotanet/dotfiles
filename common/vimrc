@@ -1,5 +1,8 @@
 set nocompatible
 filetype off
+if has("autocmd")
+  filetype indent on
+endif
 
 " Vundle {{{
 
@@ -27,6 +30,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'nono/vim-handlebars'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
+Plugin 'jelera/vim-javascript-syntax'
 
 call vundle#end()
 
