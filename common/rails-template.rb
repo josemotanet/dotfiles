@@ -4,6 +4,8 @@ gem "pry-rails"
 gem "pry-byebug"
 gem "puma"
 gem "redcarpet"
+gem "quiet_assets"
+gem "better_errors"
 
 gem_group :test do
   gem "minitest-rails"
