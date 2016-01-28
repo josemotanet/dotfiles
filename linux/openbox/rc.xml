@@ -37,7 +37,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>iisha</name>
+    <name>Arc-Dark</name>
     <titleLayout>CMIL</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -279,7 +279,7 @@
     </keybind>
     <keybind key="W-d">
       <action name="Execute">
-        <command>dmenu_run -i -fn "-*-bleed2-*-*-*-*-*-*-*-*-*-*-*-*"</command>
+        <command>dmenu_run -i -fn "-*-cure-*-*-*-*-*-*-*-*-*-*-*-*"</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Dmenu</name>
