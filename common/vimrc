@@ -55,11 +55,12 @@ nnoremap <leader>gs :Gstatus<CR><C-W>15+
 nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>rs :!clear;time bundle exec rake<CR>
 nnoremap <leader>a :Ack 
-nnoremap <leader>d :bd<CR> 
+nnoremap <leader>d :bd<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader><cr> :noh<CR>
 nnoremap <leader>l :ls<CR>:b
 nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>x :%s:^\s\+$::<CR>:%s:	:  :<CR>
 nnoremap n nzz
 nnoremap N Nzz
 " }}}
