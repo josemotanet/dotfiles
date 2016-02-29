@@ -4,6 +4,10 @@ if has("autocmd")
   filetype indent on
 endif
 
+if has ("autocmd")
+  filetype indent on
+endif
+
 " Vundle {{{
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -21,7 +25,9 @@ Plugin 'tpope/vim-ragtag'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
-Plugin 'SirVer/ultisnips'
+Plugin 'marcweber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'elixir-lang/vim-elixir'
@@ -31,6 +37,9 @@ Plugin 'nono/vim-handlebars'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'vim-scripts/tComment'
+Plugin 'tpope/vim-endwise'
 
 call vundle#end()
 
@@ -79,7 +88,7 @@ vnoremap . :norm.<CR>
 set t_Co=256
 set autoindent
 set backspace=indent,eol,start
-set colorcolumn=80
+set colorcolumn=81
 set cursorline
 set encoding=utf-8
 set fileencoding=utf-8
@@ -114,8 +123,8 @@ au BufRead,BufNewFile *.ru set filetype=ruby
 au BufRead,BufNewFile [vV]agrantfile set filetype=ruby
 
 " Markdown gets auto textwidth
-au Bufread,BufNewFile *.md set filetype=markdown textwidth=79
-au Bufread,BufNewFile *.markdown set textwidth=79
+au Bufread,BufNewFile *.md set filetype=markdown textwidth=80
+au Bufread,BufNewFile *.markdown set textwidth=80
 
 " .feature files are Cucumber.
 au Bufread,BufNewFile *.feature set filetype=cucumber
