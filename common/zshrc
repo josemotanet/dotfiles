@@ -71,6 +71,7 @@ TERM="screen-256color"
 
 alias be="bundle exec"
 alias g=git
+alias hub=git-hub
 alias ls='ls --color=auto'
 alias r="bundle exec rails"
 alias rspec="clear; rspec"
