@@ -29,7 +29,18 @@ environment 'config.sass.preferred_syntax = :sass'
 run 'rm README.md'
 
 after_bundle do
+  run 'rake haml:replace_erbs'
+  file 'app/assets/stylesheets/scaffolds.sass', bootstrap
   git :init
   git add: '.'
   git commit: %Q{ -m 'Init.' }
+end
+
+def bootstrap
+  <<-EOF
+@import 'bootstrap-sprockets'
+@import 'bootstrap'
+@import 'font-awesome-sprockets'
+@import 'font-awesome'
+EOF
 end
