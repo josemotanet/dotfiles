@@ -1,13 +1,11 @@
-# Lines configured by zsh-newuser-install
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
 HISTFILE=~/.zsh-histfile
 HISTSIZE=1000
 SAVEHIST=1000
 unsetopt beep
 bindkey -v
 
-export PATH=$PATH:/usr/local/sbin:$HOME/.rvm/bin:$HOME/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/bin:/usr/local/heroku/bin
+
 export LANG=en_US.UTF-8
 export EDITOR=vim
 
@@ -50,21 +48,6 @@ function git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-function total_tasks() {
-  num=`todo.sh ls 2>/dev/null | wc -l `
-  let todos=num-2
-  if [ $todos != 0 ]
-  then
-    echo "\u2713 $todos"
-  else
-    echo ""
-  fi
-}
-
-function show_tasks() {
-  todo.sh list 2>/dev/null
-}
-
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
 PROMPT="%{$fg[yellow]%}→ %{$reset_color%}"
 TERM="screen-256color"
@@ -74,21 +57,16 @@ alias g=git
 alias hub=git-hub
 alias ls='ls --color=auto'
 alias r="bundle exec rails"
-alias rspec="clear; rspec"
 alias t=todo.sh
 alias v=vim
 alias e="emacs -nw"
+alias dc=docker-compose
+alias d=docker
 
 source ~/.zshenv
-
-show_tasks
-
-source /usr/share/chruby/chruby.sh
-source /usr/share/chruby/auto.sh
-source /usr/local/share/gem_home/gem_home.sh
-
-PATH="/usr/local/heroku/bin:$PATH"
-
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 source ~/.nvm/nvm.sh
 
+eval "$(direnv hook zsh)"
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
