@@ -3,12 +3,13 @@
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
 
-URxvt.internalBorder: 6
+URxvt.internalBorder: 12
 URxvt*geometry: 100x40
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: 0
-URxvt*font: xft:Input Mono Condensed:weight=Medium:size=9.5
+URxvt*font: xft:Input Mono Narrow:weight=Regular:size=11
+URxvt.letterSpace: -2
 #URxvt*font: x:-*-bleed2-*-*-*-*-*-*-*-*-*-*-*-*
 
 xterm*faceName: Fira Mono:weight=Medium:size=10.5
