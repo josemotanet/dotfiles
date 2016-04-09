@@ -1,9 +1,7 @@
 xset r rate 190 30
-xset +fp $HOME/.fonts
-xset +fp /usr/share/fonts/artwiz-fonts
 
-VBoxClient-all &
 xrdb -load ~/.Xresources &
+#xrandr --output DP-4 --scale 1.2x1.2 &
 
 case $1 in
   *openbox*)
