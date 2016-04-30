@@ -1,8 +1,11 @@
+# General options {{{
+
 HISTFILE=~/.zsh-histfile
 HISTSIZE=1000
 SAVEHIST=1000
 unsetopt beep
 bindkey -v
+bindkey "^R" history-incremental-search-backward
 
 export PATH=$PATH:/usr/local/sbin:$HOME/bin:/usr/local/heroku/bin
 
@@ -11,12 +14,19 @@ export EDITOR=vim
 
 zstyle :compinstall filename '/home/jose/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
 setopt PROMPT_SUBST
 
-function git_status() {
+RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
+PROMPT="%{$fg[yellow]%}→ %{$reset_color%}"
+TERM="screen-256color"
+
+# }}}
+
+### Functions {{{
+
+function git_status() { # {{{
   local st="$(git status 2> /dev/null)"
   local ret=""
   local color="green"
@@ -42,15 +52,15 @@ function git_status() {
   fi
 
   echo "%{$fg[$color]%}$ret%{$reset_color%}"
-}
+} # }}}
 
-function git_branch() {
+function git_branch() { # {{{
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
+} # }}}
 
-RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
-PROMPT="%{$fg[yellow]%}→ %{$reset_color%}"
-TERM="screen-256color"
+# }}}
+
+### Alias {{{
 
 alias be="bundle exec"
 alias g=git
@@ -63,10 +73,18 @@ alias e="emacs -nw"
 alias dc=docker-compose
 alias d=docker
 
+# }}}
+
+# Source external applications {{{
+
 source ~/.zshenv
+source ~/.nvm/nvm.sh
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-source ~/.nvm/nvm.sh
+source ~/.kiex/scripts/kiex
 
 eval "$(direnv hook zsh)"
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
+# }}}
+
+# vim: foldmethod=marker foldmarker={{{,}}}
