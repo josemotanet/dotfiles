@@ -81,9 +81,8 @@ source ~/.zshenv
 source ~/.nvm/nvm.sh
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-source ~/.kiex/scripts/kiex
-
-eval "$(direnv hook zsh)"
+test -s ~/.kiex/scripts/kiex && source ~/.kiex/scripts/kiex
+test -s direnv && eval "$(direnv hook zsh)"
 
 # }}}
 
