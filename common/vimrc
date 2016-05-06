@@ -177,6 +177,9 @@ let base16colorspace=256
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" CtrlP ignore mechanism
+set wildignore+=*tmp*
 " }}}
 
 " vim: foldmethod=marker foldmarker={{{,}}}
