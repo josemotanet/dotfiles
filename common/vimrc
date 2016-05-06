@@ -15,7 +15,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
@@ -40,6 +40,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/tComment'
 Plugin 'tpope/vim-endwise'
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'tpope/vim-haml'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'digitaltoad/vim-pug'
 
 call vundle#end()
 
@@ -63,6 +66,7 @@ nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>gs :Gstatus<CR><C-W>15+
 nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>rs :!clear;time bundle exec rake<CR>
+nnoremap <leader>v :RuboCop<CR>
 nnoremap <leader>a :Ack 
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>w :w<CR>
