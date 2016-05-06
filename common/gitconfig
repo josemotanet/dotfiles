@@ -19,12 +19,13 @@
   lp = log -p
   p = add -p
   c = commit
+  rbc = rebase --continue
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an %ae>%Creset
 [branch]
   autosetuprebase = always
 [github]
-  user = josemota
+  user = josemotanet
 [core]
   editor = vim
 [push]
