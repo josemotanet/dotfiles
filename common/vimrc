@@ -137,6 +137,7 @@ au Bufread,BufNewFile *.markdown set textwidth=80
 
 " .feature files are Cucumber.
 au Bufread,BufNewFile *.feature set filetype=cucumber
+au BufRead,BufNewFile *.pug set filetype=pug
 " }}}
 
 " Specific configurations {{{
@@ -148,7 +149,7 @@ if executable('ag')
 endif
 
 " CtrlP ignore mechanism
-set wildignore+=*tmp*
+set wildignore+=*tmp*,*/node_modules/*
 " }}}
 
 " Airline configs {{{
