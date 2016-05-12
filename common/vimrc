@@ -17,7 +17,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-markdown'
@@ -52,6 +53,7 @@ let mapleader = ","
 syntax enable
 colorscheme gotham
 set background=dark
+set laststatus=2
 
 " Mappings {{{
 
@@ -180,6 +182,12 @@ endif
 
 " CtrlP ignore mechanism
 set wildignore+=*tmp*
+" }}}
+
+" Airline configs {{{
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#tabline#show_buffers = 0
 " }}}
 
 " vim: foldmethod=marker foldmarker={{{,}}}
