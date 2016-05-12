@@ -40,7 +40,8 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/tComment'
 Plugin 'tpope/vim-endwise'
-Plugin 'whatyouhide/vim-gotham'
+"Plugin 'whatyouhide/vim-gotham'
+Plugin 'w0ng/vim-hybrid'
 Plugin 'tpope/vim-haml'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'digitaltoad/vim-pug'
@@ -51,7 +52,8 @@ call vundle#end()
 
 let mapleader = ","
 syntax enable
-colorscheme gotham
+let g:hybrid_custom_term_colors = 1
+colorscheme hybrid
 set background=dark
 set laststatus=2
 
