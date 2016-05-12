@@ -8,8 +8,12 @@ URxvt*geometry: 100x40
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: 0
-URxvt*font: xft:Input Mono Narrow:weight=Regular:size=11
-URxvt.letterSpace: -2
+#URxvt*font: xft:Input Mono Narrow:weight=Regular:size=11
+URxvt*font: xft:Source Code Pro:weight=Regular:size=13.5
+URxvt.letterSpace: -1
 #URxvt*font: x:-*-bleed2-*-*-*-*-*-*-*-*-*-*-*-*
+
+Xft.hinting: false
+Xft.rgba: grayscale
 
 xterm*faceName: Fira Mono:weight=Medium:size=10.5
