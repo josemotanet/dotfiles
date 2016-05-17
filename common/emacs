@@ -29,8 +29,10 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Assuming you wish to install "iedit" and "magit"
 (ensure-package-installed 'evil
+                          'evil-leader
                           'magit
-			  'sublime-themes)
+                          'sublime-themes
+                          'helm)
 ;; }}}
 
 ;; Colorscheme and font {{{
@@ -44,23 +46,39 @@ Return a list of installed packages or nil for every skipped package."
 (scroll-bar-mode -1)
 ;; }}}
 
+;; Helm {{{
+(require 'helm)
+(helm-mode t)
+;; }}}
+
 ;; Evil-mode {{{
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader ",")
+
+(evil-leader/set-key
+  "w" 'save-buffer
+  "d" 'kill-buffer
+  "gs" 'magit-status
+  ;; "ev" [open .emacs]
+  ;; "rs" [run tests]
+  "t" 'helm-find-files
+)
+
 (require 'evil)
 (evil-mode t)
 ;; }}}
 
+;; still need:
+;; - line numbers
+;; - git gutter
+;; - softtab
+;; - hard wrap for specific filetypes
+;; - colorcolumn would be nice
+;; - surround
+;; - ctags
+;; - orgmode
+;; - fuzzy finder with helm
+;; - project drawer
+
 ;; vim: foldmethod=marker foldmarker={{{,}}}
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("e9776d12e4ccb722a2a732c6e80423331bcb93f02e089ba2a4b02e85de1cf00e" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
