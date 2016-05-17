@@ -40,10 +40,12 @@ Return a list of installed packages or nil for every skipped package."
 (set-frame-font "Source Code Pro 13")
 ;; }}}
 
-;; Hide GUI elements {{{
+;; GUI elements {{{
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(global-linum-mode t)
+(setq linum-format "%d ")
 ;; }}}
 
 ;; Helm {{{
@@ -70,9 +72,8 @@ Return a list of installed packages or nil for every skipped package."
 ;; }}}
 
 ;; still need:
-;; - line numbers
 ;; - git gutter
-;; - softtab
+;; - softtab, hidden characters
 ;; - hard wrap for specific filetypes
 ;; - colorcolumn would be nice
 ;; - surround
