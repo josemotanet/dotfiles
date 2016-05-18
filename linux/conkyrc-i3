@@ -4,9 +4,11 @@ out_to_console yes
 
 TEXT
 [
-  { "full_text" : " ${mem} / ${memmax} (${memperc}%) ", "color" : "\#999999" },
-  { "full_text" : " \u25b2 ${upspeedf enp0s3} ", "color" : "\#0099ff" },
-  { "full_text" : " \u25bc ${downspeedf enp0s3} ", "color" : "\#00ffff"  },
-  { "full_text" : " ${addr enp0s3} ", "color" : "\#ffcc00"  },
+  { "full_text" : " ${mem} / ${memmax} (${memperc}%) ", "color" : "\#cccccc" },
+  { "full_text" : " \u25b2 ${upspeedf enp3s0} ", "color" : "\#00ccff" },
+  { "full_text" : " \u25bc ${downspeedf enp3s0} ", "color" : "\#00ffff"  },
+  { "full_text" : " ${addr enp3s0} ", "color" : "\#ffcc00"  },
+  { "full_text" : " ${mpd_title} ", "color": "\#ff88ee" },
+  { "full_text" : " ${time %Y-%b-%d} " },
   { "full_text" : " ${time %H:%M} " }
 ],
