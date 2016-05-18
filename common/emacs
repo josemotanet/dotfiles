@@ -31,12 +31,12 @@ Return a list of installed packages or nil for every skipped package."
 (ensure-package-installed 'evil
                           'evil-leader
                           'magit
-                          'sublime-themes
-                          'helm)
+                          'helm
+			  'monokai-theme)
 ;; }}}
 
 ;; Colorscheme and font {{{
-(load-theme 'hickey t)
+(load-theme 'monokai t)
 (set-frame-font "Source Code Pro 13")
 ;; }}}
 
