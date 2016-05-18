@@ -64,6 +64,7 @@ Return a list of installed packages or nil for every skipped package."
   "gs" 'magit-status
   ;; "ev" [open .emacs]
   ;; "rs" [run tests]
+  ;; "a" [run ack/g]
   "t" 'helm-find-files
 )
 
@@ -81,5 +82,7 @@ Return a list of installed packages or nil for every skipped package."
 ;; - orgmode
 ;; - fuzzy finder with helm
 ;; - project drawer
+;; - ack/silver_searcher
+;; - folds
 
 ;; vim: foldmethod=marker foldmarker={{{,}}}
