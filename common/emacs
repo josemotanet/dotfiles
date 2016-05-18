@@ -32,11 +32,14 @@ Return a list of installed packages or nil for every skipped package."
                           'evil-leader
                           'magit
                           'helm
-			  'monokai-theme)
+			  'projectile
+			  'helm-projectile
+			  'helm-ag
+                          'neotree)
 ;; }}}
 
 ;; Colorscheme and font {{{
-(load-theme 'monokai t)
+;(load-theme 'base16-tomorrow-dark t)
 (set-frame-font "Source Code Pro 13")
 ;; }}}
 
@@ -44,8 +47,21 @@ Return a list of installed packages or nil for every skipped package."
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+
+;; Line numbers
 (global-linum-mode t)
-(setq linum-format "%d ")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
+ '(linum-format (quote "%4d ")))
+
+;; Neotree
+(require 'neotree)
 ;; }}}
 
 ;; Helm {{{
@@ -62,19 +78,29 @@ Return a list of installed packages or nil for every skipped package."
   "w" 'save-buffer
   "d" 'kill-buffer
   "gs" 'magit-status
+  "t" 'helm-projectile
+  "m" 'neotree-toggle
   ;; "ev" [open .emacs]
   ;; "rs" [run tests]
   ;; "a" [run ack/g]
-  "t" 'helm-find-files
 )
 
 (require 'evil)
 (evil-mode t)
 ;; }}}
 
+;; Overall settings {{{
+(setq make-backup-files nil)
+;; }}}
+
+;; Keybindings {{{
+(global-set-key (kbd "M-x") 'helm-M-x)
+;; }}}
+
 ;; still need:
 ;; - git gutter
 ;; - softtab, hidden characters
+;; - highlight current line
 ;; - hard wrap for specific filetypes
 ;; - colorcolumn would be nice
 ;; - surround
@@ -86,3 +112,9 @@ Return a list of installed packages or nil for every skipped package."
 ;; - folds
 
 ;; vim: foldmethod=marker foldmarker={{{,}}}
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil)))))
