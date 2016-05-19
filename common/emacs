@@ -43,7 +43,7 @@ Return a list of installed packages or nil for every skipped package."
 ;; }}}
 
 ;; Colorscheme and font {{{
-;(load-theme 'base16-tomorrow-dark t)
+(load-theme 'base16-tomorrow-dark t)
 (set-frame-font "Source Code Pro 13")
 ;; }}}
 
