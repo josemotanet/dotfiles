@@ -89,6 +89,8 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Overall settings {{{
 (setq make-backup-files nil)
+(setq-default indent-tabs-mode nil)
+(setq tab-width 2)
 ;; }}}
 
 ;; Keybindings {{{
