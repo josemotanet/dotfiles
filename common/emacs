@@ -32,13 +32,13 @@ Return a list of installed packages or nil for every skipped package."
                           'evil-leader
                           'magit
                           'helm
-			  'projectile
-			  'helm-projectile
-			  'helm-ag
-			  'haml-mode
-			  'scss-mode
-			  'rspec-mode
-			  'yaml-mode
+                          'projectile
+                          'helm-projectile
+                          'helm-ag
+                          'haml-mode
+                          'scss-mode
+                          'rspec-mode
+                          'yaml-mode
                           'neotree)
 ;; }}}
 
