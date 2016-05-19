@@ -35,6 +35,10 @@ Return a list of installed packages or nil for every skipped package."
 			  'projectile
 			  'helm-projectile
 			  'helm-ag
+			  'haml-mode
+			  'scss-mode
+			  'rspec-mode
+			  'yaml-mode
                           'neotree)
 ;; }}}
 
@@ -50,16 +54,6 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Line numbers
 (global-linum-mode t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
- '(linum-format (quote "%4d ")))
-
 ;; Neotree
 (require 'neotree)
 ;; }}}
@@ -111,10 +105,25 @@ Return a list of installed packages or nil for every skipped package."
 ;; - ack/silver_searcher
 ;; - folds
 
-;; vim: foldmethod=marker foldmarker={{{,}}}
+;; Emacs auto-generated stuff {{{
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil)))))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
+ '(linum-format (quote "%4d ")))
+
+;; }}}
+
+;; vim: foldmethod=marker foldmarker={{{,}}}
