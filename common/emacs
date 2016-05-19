@@ -76,8 +76,12 @@ Return a list of installed packages or nil for every skipped package."
   "m" 'neotree-toggle
   ;; "ev" [open .emacs]
   ;; "rs" [run tests]
-  ;; "a" [run ack/g]
+  "b" 'switch-to-buffer
+  "a" 'helm-ag
 )
+
+(setq evil-want-C-u-scroll t) ;; Force Ctrl+U to scroll half screen up.
+(setq evil-want-C-d-scroll t) ;; Force Ctrl+D to scroll half screen bottom.
 
 (require 'evil)
 (evil-mode t)
