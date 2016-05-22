@@ -44,7 +44,7 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Colorscheme and font {{{
 (load-theme 'base16-tomorrow-dark t)
-(set-frame-font "Source Code Pro 13")
+(set-frame-font "Source Code Pro 10")
 ;; }}}
 
 ;; GUI elements {{{
@@ -56,6 +56,12 @@ Return a list of installed packages or nil for every skipped package."
 (global-linum-mode t)
 ;; Neotree
 (require 'neotree)
+(add-hook 'neotree-mode-hook
+  (lambda ()
+    (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+    (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+    (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+    (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 ;; }}}
 
 ;; Helm {{{
