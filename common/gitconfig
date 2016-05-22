@@ -20,6 +20,7 @@
   p = add -p
   c = commit
   rbc = rebase --continue
+  ri = rebase -i
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an %ae>%Creset
 [branch]
