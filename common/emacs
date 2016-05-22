@@ -116,6 +116,7 @@ Return a list of installed packages or nil for every skipped package."
 ;; - ctags
 ;; - orgmode
 ;; - folds
+;; - tabs
 
 ;; Emacs auto-generated stuff {{{
 
