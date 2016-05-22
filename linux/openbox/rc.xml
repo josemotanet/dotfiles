@@ -179,6 +179,9 @@
         <wrap>no</wrap>
       </action>
     </keybind>
+    <keybind key="W-h">
+      <action name="Iconify"/>
+    </keybind>
     <keybind key="C-A-Right">
       <action name="GoToDesktop">
         <to>right</to>
