@@ -83,6 +83,7 @@ Return a list of installed packages or nil for every skipped package."
   ;; "ev" [open .emacs]
   ;; "rs" [run tests]
   "b" 'switch-to-buffer
+  "x" 'helm-M-x
   "a" 'helm-ag
 )
 
@@ -97,6 +98,8 @@ Return a list of installed packages or nil for every skipped package."
 (setq make-backup-files nil)
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)
+(setq inhibit-startup-message t)
+(setq auto-save-default nil)
 ;; }}}
 
 ;; Keybindings {{{
@@ -112,9 +115,6 @@ Return a list of installed packages or nil for every skipped package."
 ;; - surround
 ;; - ctags
 ;; - orgmode
-;; - fuzzy finder with helm
-;; - project drawer
-;; - ack/silver_searcher
 ;; - folds
 
 ;; Emacs auto-generated stuff {{{
