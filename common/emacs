@@ -30,16 +30,19 @@ Return a list of installed packages or nil for every skipped package."
 ;; Assuming you wish to install "iedit" and "magit"
 (ensure-package-installed 'evil
                           'evil-leader
-                          'magit
-                          'helm
-                          'projectile
-                          'helm-projectile
-                          'helm-ag
+                          'evil-surround
+                          'fill-column-indicator
                           'haml-mode
-                          'scss-mode
+                          'helm
+                          'helm-ag
+                          'helm-projectile
+                          'magit
+                          'neotree
+                          'projectile
                           'rspec-mode
-                          'yaml-mode
-                          'neotree)
+                          'rubocop
+                          'scss-mode
+                          'yaml-mode)
 ;; }}}
 
 ;; Colorscheme and font {{{
@@ -52,8 +55,16 @@ Return a list of installed packages or nil for every skipped package."
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Column rule
+(setq fci-rule-column 81)
+(fci-mode t)
+
+;; Show column number in status bar
+(column-number-mode t)
+
 ;; Line numbers
 (global-linum-mode t)
+
 ;; Neotree
 (require 'neotree)
 (add-hook 'neotree-mode-hook
@@ -71,17 +82,19 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Evil-mode {{{
 (require 'evil-leader)
-(global-evil-leader-mode)
+(global-evil-leader-mode 1)
+(global-evil-surround-mode 1)
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
   "w" 'save-buffer
-  "d" 'kill-buffer
+  "d" 'kill-this-buffer
   "gs" 'magit-status
   "t" 'helm-projectile
   "m" 'neotree-toggle
   ;; "ev" [open .emacs]
   ;; "rs" [run tests]
+  "v" 'rubocop-check-current-file
   "b" 'switch-to-buffer
   "x" 'helm-M-x
   "a" 'helm-ag
@@ -111,12 +124,18 @@ Return a list of installed packages or nil for every skipped package."
 ;; - softtab, hidden characters
 ;; - highlight current line
 ;; - hard wrap for specific filetypes
-;; - colorcolumn would be nice
+;; - colorcolumn
 ;; - surround
 ;; - ctags
 ;; - orgmode
 ;; - folds
 ;; - tabs
+;; - autoclose
+;; - snippets
+;; - rubocop
+;; - email (?)
+;; - open split from helm-projectile
+;; - powerline
 
 ;; Emacs auto-generated stuff {{{
 
