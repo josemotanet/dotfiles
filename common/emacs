@@ -38,6 +38,8 @@ Return a list of installed packages or nil for every skipped package."
                           'helm-projectile
                           'magit
                           'neotree
+                          'powerline
+                          'powerline-evil
                           'projectile
                           'rspec-mode
                           'rubocop
@@ -54,6 +56,7 @@ Return a list of installed packages or nil for every skipped package."
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(powerline-evil-vim-theme)
 
 ;; Column rule
 (setq fci-rule-column 81)
