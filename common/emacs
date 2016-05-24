@@ -28,7 +28,8 @@ Return a list of installed packages or nil for every skipped package."
 (package-initialize)
 
 ;; Assuming you wish to install "iedit" and "magit"
-(ensure-package-installed 'evil
+(ensure-package-installed 'color-theme-sanityinc-tomorrow
+                          'evil
                           'evil-leader
                           'evil-surround
                           'fill-column-indicator
