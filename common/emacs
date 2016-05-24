@@ -140,14 +140,13 @@ Return a list of installed packages or nil for every skipped package."
 ;; - highlight current line
 ;; - hard wrap for specific filetypes
 ;; - colorcolumn
-;; - surround
+;; - surround (evil-surround not good)
 ;; - ctags
 ;; - orgmode
 ;; - folds
 ;; - tabs
 ;; - autoclose
 ;; - snippets
-;; - rubocop
 ;; - email (?)
 ;; - open split from helm-projectile
 ;; - powerline
@@ -166,10 +165,14 @@ Return a list of installed packages or nil for every skipped package."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-term-color-vector
+   [unspecified "#1d1f21" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#81a2be" "#c5c8c6"])
  '(custom-safe-themes
    (quote
-    ("af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
+    ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "75c0b1d2528f1bce72f53344939da57e290aa34bea79f3a1ee19d6808cb55149" "af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(linum-format (quote "%4d ")))
+ ;; start maximized
 
 ;; }}}
 
