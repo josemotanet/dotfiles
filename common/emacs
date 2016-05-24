@@ -117,13 +117,21 @@ Return a list of installed packages or nil for every skipped package."
 ;; Overall settings {{{
 (setq make-backup-files nil)
 (setq-default indent-tabs-mode nil)
-(setq tab-width 2)
+(setq-default tab-width 2)
 (setq inhibit-startup-message t)
 (setq auto-save-default nil)
+(setq-default fill-column 80)
 ;; }}}
 
 ;; Keybindings {{{
 (global-set-key (kbd "M-x") 'helm-M-x)
+;; }}}
+
+;; Hooks {{{
+(add-hook 'text-mode-hook (lambda ()
+                            (turn-on-auto-fill)
+                            (fci-mode)
+                            (set-fill-column 81)))
 ;; }}}
 
 ;; still need:
