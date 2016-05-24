@@ -49,7 +49,7 @@ Return a list of installed packages or nil for every skipped package."
 ;; }}}
 
 ;; Colorscheme and font {{{
-(load-theme 'base16-tomorrow-dark t)
+(load-theme 'sanityinc-tomorrow-night t)
 (set-frame-font "Source Code Pro 10")
 ;; }}}
 
@@ -57,7 +57,10 @@ Return a list of installed packages or nil for every skipped package."
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(powerline-evil-vim-theme)
+
+;; Powerline
+(powerline-evil-vim-color-theme)
+(display-time-mode t)
 
 ;; Column rule
 (setq fci-rule-column 81)
