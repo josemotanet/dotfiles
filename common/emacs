@@ -37,6 +37,7 @@ Return a list of installed packages or nil for every skipped package."
                           'helm
                           'helm-ag
                           'helm-projectile
+                          'hlinum
                           'magit
                           'neotree
                           'powerline
@@ -44,6 +45,7 @@ Return a list of installed packages or nil for every skipped package."
                           'projectile
                           'rspec-mode
                           'rubocop
+                          'ruby-end
                           'scss-mode
                           'yaml-mode)
 ;; }}}
@@ -71,6 +73,7 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Line numbers
 (global-linum-mode t)
+(hlinum-activate)
 
 ;; Neotree
 (require 'neotree)
@@ -128,6 +131,10 @@ Return a list of installed packages or nil for every skipped package."
 ;; }}}
 
 ;; Hooks {{{
+(add-hook 'prog-mode-hook (lambda ()
+                            (turn-on-auto-fill)
+                            (fci-mode)
+                            (set-fill-column 81)))
 (add-hook 'text-mode-hook (lambda ()
                             (turn-on-auto-fill)
                             (fci-mode)
@@ -137,19 +144,15 @@ Return a list of installed packages or nil for every skipped package."
 ;; still need:
 ;; - git gutter
 ;; - softtab, hidden characters
-;; - highlight current line
 ;; - hard wrap for specific filetypes
-;; - colorcolumn
 ;; - surround (evil-surround not good)
 ;; - ctags
 ;; - orgmode
 ;; - folds
 ;; - tabs
-;; - autoclose
 ;; - snippets
 ;; - email (?)
-;; - open split from helm-projectile
-;; - powerline
+;; - open split from helm-projectile ;; C-c o
 
 ;; Emacs auto-generated stuff {{{
 
