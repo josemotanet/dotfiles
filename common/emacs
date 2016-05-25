@@ -107,7 +107,7 @@ Return a list of installed packages or nil for every skipped package."
   "v" 'rubocop-check-current-file
   "b" 'switch-to-buffer
   "x" 'helm-M-x
-  "a" 'helm-ag
+  "a" 'helm-do-ag-project-root
 )
 
 (setq evil-want-C-u-scroll t) ;; Force Ctrl+U to scroll half screen up.
