@@ -40,6 +40,7 @@ Return a list of installed packages or nil for every skipped package."
                           'hlinum
                           'magit
                           'neotree
+                          'org-bullets
                           'powerline
                           'powerline-evil
                           'projectile
@@ -89,6 +90,10 @@ Return a list of installed packages or nil for every skipped package."
 ;; Helm {{{
 (require 'helm)
 (helm-mode t)
+;; }}}
+
+;; Org settings {{{
+(org-bullets-mode t) ;; maybe as a hook to Org major mode?
 ;; }}}
 
 ;; Evil-mode {{{
