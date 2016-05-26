@@ -59,6 +59,7 @@ Return a list of installed packages or nil for every skipped package."
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(global-hl-line-mode t)
 
 ;; Powerline
 (powerline-evil-vim-color-theme)
