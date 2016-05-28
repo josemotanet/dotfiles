@@ -64,7 +64,7 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Colorscheme and font {{{
 (load-theme 'sanityinc-tomorrow-night t)
-(set-frame-font "Source Code Pro 18")
+(set-frame-font "Source Code Pro 10")
 ;; }}}
 
 ;; GUI elements {{{
