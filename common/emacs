@@ -29,6 +29,7 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Assuming you wish to install "iedit" and "magit"
 (ensure-package-installed 'color-theme-sanityinc-tomorrow
+                          'diff-hl
                           'evil
                           'evil-leader
                           'evil-surround
@@ -48,12 +49,22 @@ Return a list of installed packages or nil for every skipped package."
                           'rubocop
                           'ruby-end
                           'scss-mode
-                          'yaml-mode)
+                          'yaml-mode
+                          'yasnippet)
+;; }}}
+
+;; Overall settings {{{
+(setq make-backup-files nil)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq inhibit-startup-message t)
+(setq auto-save-default nil)
+(setq-default fill-column 80)
 ;; }}}
 
 ;; Colorscheme and font {{{
 (load-theme 'sanityinc-tomorrow-night t)
-(set-frame-font "Source Code Pro 10")
+(set-frame-font "Source Code Pro 18")
 ;; }}}
 
 ;; GUI elements {{{
@@ -61,6 +72,20 @@ Return a list of installed packages or nil for every skipped package."
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (global-hl-line-mode t)
+
+;; Whitespace
+(setq whitespace-style (quote (tabs trailing newline tab-mark newline-mark)))
+;;(set-face-attribute 'whitespace-newline nil
+;;                    :background nil)
+
+(setq whitespace-display-mappings
+  ;; all numbers are Unicode codepoint in decimal. ⁖ (insert-char 182 1)
+  '(
+    (space-mark 32 [183] [46]) ; 32 SPACE 「 」, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
+    (newline-mark 10 [172 10]) ; 10 LINE FEED
+    (tab-mark 9 [9655 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
+    ))
+(global-whitespace-mode t)
 
 ;; Powerline
 (powerline-evil-vim-color-theme)
@@ -87,14 +112,19 @@ Return a list of installed packages or nil for every skipped package."
     (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 ;; }}}
 
-;; Helm {{{
+;; Helm
 (require 'helm)
 (helm-mode t)
-;; }}}
 
 ;; Org settings {{{
 (org-bullets-mode t) ;; maybe as a hook to Org major mode?
 ;; }}}
+
+;; Snippets
+(yas-global-mode t)
+
+;; Git gutter
+(global-diff-hl-mode t)
 
 ;; Evil-mode {{{
 (require 'evil-leader)
@@ -108,7 +138,7 @@ Return a list of installed packages or nil for every skipped package."
   "gs" 'magit-status
   "t" 'helm-projectile
   "m" 'neotree-toggle
-  ;; "ev" [open .emacs]
+  ;"ev" 'load-file ~/.emacs
   ;; "rs" [run tests]
   "v" 'rubocop-check-current-file
   "b" 'switch-to-buffer
@@ -123,15 +153,6 @@ Return a list of installed packages or nil for every skipped package."
 (evil-mode t)
 ;; }}}
 
-;; Overall settings {{{
-(setq make-backup-files nil)
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
-(setq inhibit-startup-message t)
-(setq auto-save-default nil)
-(setq-default fill-column 80)
-;; }}}
-
 ;; Keybindings {{{
 (global-set-key (kbd "M-x") 'helm-M-x)
 ;; }}}
@@ -141,22 +162,23 @@ Return a list of installed packages or nil for every skipped package."
                             (turn-on-auto-fill)
                             (fci-mode)
                             (set-fill-column 81)))
+
 (add-hook 'text-mode-hook (lambda ()
                             (turn-on-auto-fill)
                             (fci-mode)
                             (set-fill-column 81)))
+
+(add-hook 'org-mode-hook (lambda()
+                           (org-bullets-mode)))
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; }}}
 
 ;; still need:
-;; - git gutter
-;; - softtab, hidden characters
 ;; - hard wrap for specific filetypes
 ;; - surround (evil-surround not good)
 ;; - ctags
-;; - orgmode
 ;; - folds
-;; - tabs
-;; - snippets
 ;; - email (?)
 ;; - open split from helm-projectile ;; C-c o
 
