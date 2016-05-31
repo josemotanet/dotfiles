@@ -34,6 +34,7 @@ Return a list of installed packages or nil for every skipped package."
                           'evil-leader
                           'evil-surround
                           'fill-column-indicator
+                          'gotham-theme
                           'haml-mode
                           'helm
                           'helm-ag
@@ -57,13 +58,14 @@ Return a list of installed packages or nil for every skipped package."
 (setq make-backup-files nil)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
+(setq js-indent-level 2)
 (setq inhibit-startup-message t)
 (setq auto-save-default nil)
 (setq-default fill-column 80)
 ;; }}}
 
 ;; Colorscheme and font {{{
-(load-theme 'sanityinc-tomorrow-night t)
+(load-theme 'gotham t)
 (set-frame-font "Source Code Pro 10")
 ;; }}}
 
@@ -102,6 +104,9 @@ Return a list of installed packages or nil for every skipped package."
 (global-linum-mode t)
 (hlinum-activate)
 
+;; Autoclose parenthesis, brackets, etc.
+(electric-pair-mode t)
+
 ;; Neotree
 (require 'neotree)
 (add-hook 'neotree-mode-hook
@@ -138,12 +143,13 @@ Return a list of installed packages or nil for every skipped package."
   "gs" 'magit-status
   "t" 'helm-projectile
   "m" 'neotree-toggle
-  ;"ev" 'load-file ~/.emacs
+  ;; "ev" 'load-file ~/.emacs
   ;; "rs" [run tests]
   "v" 'rubocop-check-current-file
   "b" 'switch-to-buffer
   "x" 'helm-M-x
   "a" 'helm-do-ag-project-root
+  "<SPC>" 'evil-switch-to-windows-last-buffer
 )
 
 (setq evil-want-C-u-scroll t) ;; Force Ctrl+U to scroll half screen up.
@@ -172,6 +178,8 @@ Return a list of installed packages or nil for every skipped package."
                            (org-bullets-mode)))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
 ;; }}}
 
 ;; still need:
@@ -200,7 +208,7 @@ Return a list of installed packages or nil for every skipped package."
    [unspecified "#1d1f21" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#81a2be" "#c5c8c6"])
  '(custom-safe-themes
    (quote
-    ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "75c0b1d2528f1bce72f53344939da57e290aa34bea79f3a1ee19d6808cb55149" "af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
+    ("590759adc4a5bf7a183df81654cce13b96089e026af67d92b5eec658fb3fe22f" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "75c0b1d2528f1bce72f53344939da57e290aa34bea79f3a1ee19d6808cb55149" "af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(linum-format (quote "%4d ")))
  ;; start maximized
