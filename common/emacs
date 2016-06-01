@@ -190,6 +190,8 @@ Return a list of installed packages or nil for every skipped package."
 ;; still need:
 ;; - hard wrap for specific filetypes
 ;; - surround (evil-surround not good)
+;; - ^ smartparens
+;; - rainbow-delimiters
 ;; - ctags
 ;; - folds
 ;; - email (?)
