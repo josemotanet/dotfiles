@@ -158,6 +158,7 @@ Return a list of installed packages or nil for every skipped package."
 
 (setq evil-want-C-u-scroll t) ;; Force Ctrl+U to scroll half screen up.
 (setq evil-want-C-d-scroll t) ;; Force Ctrl+D to scroll half screen bottom.
+(setq evil-ex-substitute-global t)
 
 (require 'evil)
 (evil-mode t)
@@ -212,7 +213,7 @@ Return a list of installed packages or nil for every skipped package."
    [unspecified "#1d1f21" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#81a2be" "#c5c8c6"])
  '(custom-safe-themes
    (quote
-    ("590759adc4a5bf7a183df81654cce13b96089e026af67d92b5eec658fb3fe22f" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "75c0b1d2528f1bce72f53344939da57e290aa34bea79f3a1ee19d6808cb55149" "af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
+    ("6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" "590759adc4a5bf7a183df81654cce13b96089e026af67d92b5eec658fb3fe22f" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "75c0b1d2528f1bce72f53344939da57e290aa34bea79f3a1ee19d6808cb55149" "af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(linum-format (quote "%4d ")))
  ;; start maximized
