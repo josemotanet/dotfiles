@@ -47,10 +47,12 @@ Return a list of installed packages or nil for every skipped package."
                           'powerline
                           'powerline-evil
                           'projectile
+                          'rainbow-delimiters
                           'rspec-mode
                           'rubocop
                           'ruby-end
                           'scss-mode
+                          'smartparens
                           'yaml-mode
                           'yasnippet)
 ;; }}}
@@ -105,9 +107,6 @@ Return a list of installed packages or nil for every skipped package."
 (global-linum-mode t)
 (hlinum-activate)
 
-;; Autoclose parenthesis, brackets, etc.
-(electric-pair-mode t)
-
 ;; Autocomplete
 (global-auto-complete-mode t)
 
@@ -160,6 +159,9 @@ Return a list of installed packages or nil for every skipped package."
 (setq evil-want-C-d-scroll t) ;; Force Ctrl+D to scroll half screen bottom.
 (setq evil-ex-substitute-global t)
 
+;; Default smartparens config
+(require 'smartparens-config)
+
 (require 'evil)
 (evil-mode t)
 ;; }}}
@@ -172,7 +174,9 @@ Return a list of installed packages or nil for every skipped package."
 (add-hook 'prog-mode-hook (lambda ()
                             (turn-on-auto-fill)
                             (fci-mode)
-                            (set-fill-column 81)))
+                            (set-fill-column 81)
+                            (smartparens-mode t)
+                            (rainbow-delimiters-mode t)))
 
 (add-hook 'text-mode-hook (lambda ()
                             (turn-on-auto-fill)
