@@ -28,7 +28,8 @@ Return a list of installed packages or nil for every skipped package."
 (package-initialize)
 
 ;; Assuming you wish to install "iedit" and "magit"
-(ensure-package-installed 'color-theme-sanityinc-tomorrow
+(ensure-package-installed 'auto-complete
+                          'color-theme-sanityinc-tomorrow
                           'diff-hl
                           'evil
                           'evil-leader
@@ -106,6 +107,9 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Autoclose parenthesis, brackets, etc.
 (electric-pair-mode t)
+
+;; Autocomplete
+(global-auto-complete-mode t)
 
 ;; Neotree
 (require 'neotree)
