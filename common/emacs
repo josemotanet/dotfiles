@@ -150,7 +150,7 @@ Return a list of installed packages or nil for every skipped package."
   "t" 'helm-projectile
   "m" 'neotree-toggle
   ;; "ev" 'load-file ~/.emacs
-  ;; "rs" [run tests]
+  "rs" 'rspec-verify-all
   "v" 'rubocop-check-current-file
   "b" 'switch-to-buffer
   "x" 'helm-M-x
