@@ -51,7 +51,6 @@ Return a list of installed packages or nil for every skipped package."
                           'rainbow-delimiters
                           'rspec-mode
                           'rubocop
-                          'ruby-end
                           'scss-mode
                           'smartparens
                           'yaml-mode
