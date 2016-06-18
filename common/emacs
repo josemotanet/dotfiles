@@ -192,6 +192,8 @@ Return a list of installed packages or nil for every skipped package."
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
+
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 ;; }}}
 
 ;; still need:
