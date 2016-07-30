@@ -96,7 +96,7 @@ Return a list of installed packages or nil for every skipped package."
                     :foreground "DimGrey")
 
 ;; Powerline
-(powerline-evil-vim-color-theme)
+;; (powerline-evil-vim-color-theme)
 (display-time-mode t)
 
 ;; Column rule
@@ -121,7 +121,9 @@ Return a list of installed packages or nil for every skipped package."
     (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
     (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
     (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-    (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+    (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
+    (define-key evil-normal-state-local-map (kbd "s") 'neotree-enter-vertical-split)
+    (define-key evil-normal-state-local-map (kbd "S") 'neotree-enter-horizontal-split)))
 ;; }}}
 
 ;; Helm
@@ -129,9 +131,8 @@ Return a list of installed packages or nil for every skipped package."
 (require 'helm)
 (helm-mode t)
 
-;; Org settings {{{
-(org-bullets-mode t) ;; maybe as a hook to Org major mode?
-;; }}}
+;; Org settings
+(org-bullets-mode t)
 
 ;; Snippets
 (yas-global-mode t)
@@ -221,14 +222,17 @@ Return a list of installed packages or nil for every skipped package."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#142229" "#e65b65" "#8ebe8c" "#f4bf75" "#6295ca" "#ab76a6" "#6295ca" "#929ba6"])
  '(ansi-term-color-vector
-   [unspecified "#1d1f21" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#81a2be" "#c5c8c6"])
+   [unspecified "#1d1f21" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#81a2be" "#c5c8c6"] t)
  '(custom-safe-themes
    (quote
-    ("6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" "590759adc4a5bf7a183df81654cce13b96089e026af67d92b5eec658fb3fe22f" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "75c0b1d2528f1bce72f53344939da57e290aa34bea79f3a1ee19d6808cb55149" "af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
+    ("b7ccbe01d825f1cc33d88e3b9f3385250f50465bfa930296d40086f37aadc6e9" "097efe7b08c8dbe5938023580385aaf14c2437a2334739b763250f7b59dd9d72" "19244d3da0cbaf41178bf90c9ca0b81943bb9529145427b74adeba229610c94f" "0c9721db5989cff39fd82f89cab4089df75e9bdbb13a43ba60f106845bb24945" "ffa9bd4df0ee5c638fc7b90de4563cf469d24fc1784df5c2bfcfb3ff46a2284d" "d22b218d4da0d945025553d3dbcc94cf42db5e81cb89cecb85b17a321fbf1112" "9a194526cbe7ff6c609bec13d57f256932a0773f0c2cf00f2157cdc65d4d6f9b" "722777ff8ad7c5d735cfd52065a5b1ff5bedf18a1a1e1cc7b0f674db95331b0a" "02ccf63004ba6cf8fde494835b709b8b18d8bddb77c130749d9f5045e89f38dc" "b511d19385a4b7e7ea411cbbc98b6a4a6eade41fa831be63baf73f85786b8766" "82042fee1eb76fcc510818aaa713f7953ec36c1b6e992ddcf551a6eec748cc91" "995d19f24170efbd23fe7a09421b7c06b2998d937451c518031b7d485cf43e55" "c952a3e4b43b3dafba53a83ad87dfb844689927ddbbc7483d4a179fa2db935d1" "2918844d122142dae1d9e4dba5ee5f20e8c9ecaa3fd9d63c947d47bcf6ffa086" "225db56dabd0546daea9778182cce95ac5aea12aadea122ab2059dfbfd915f03" "b1ec8a515103292ece9cc371cac6abef0a2259ed4fcc534f1b4c6e63e58baeb0" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" "590759adc4a5bf7a183df81654cce13b96089e026af67d92b5eec658fb3fe22f" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "75c0b1d2528f1bce72f53344939da57e290aa34bea79f3a1ee19d6808cb55149" "af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(linum-format (quote "%4d "))
- '(magit-log-arguments (quote ("--graph" "--decorate" "-n50"))))
+ '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n50")))
+ '(show-paren-mode t))
  ;; start maximized
 
 ;; }}}
