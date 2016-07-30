@@ -70,8 +70,8 @@ Return a list of installed packages or nil for every skipped package."
 ;; }}}
 
 ;; Colorscheme and font {{{
-(load-theme 'gotham t)
-(set-frame-font "Source Code Pro 10")
+(load-theme 'thomas t)
+(set-frame-font "Inconsolata 17")
 ;; }}}
 
 ;; GUI elements {{{
