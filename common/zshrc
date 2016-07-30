@@ -19,7 +19,7 @@ autoload -Uz colors && colors
 setopt PROMPT_SUBST
 
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
-PROMPT="%{$fg[yellow]%}→ %{$reset_color%}"
+PROMPT="%{$fg[yellow]%}► %{$reset_color%}"
 TERM="screen-256color"
 
 # }}}
