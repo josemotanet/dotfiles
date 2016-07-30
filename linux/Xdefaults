@@ -10,8 +10,10 @@ URxvt*geometry: 100x40
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: 0
-URxvt*font: xft:Source Code Pro:weight=Regular:size=15
-URxvt.letterSpace: -1
+URxvt*font: xft:Inconsolata:weight=Regular:size=12,\
+            xft:Source Code Pro:weight=Regular:size=12
+URxvt.letterSpace: 0
+URxvt.lineSpace: 3
 
 Xft.hinting: false
 Xft.rgba: grayscale
