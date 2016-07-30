@@ -1,26 +1,41 @@
-*background: #1D1F21
-*foreground: #C5C8C6
-! black
-*color0: #282A2E
-*color8: #373B41
-! red
-*color1: #A54242
-*color9: #CC6666
-! green
-*color2: #8C9440
-*color10: #B5BD68
-! yellow
-*color3: #DE935F
-*color11: #F0C674
-! blue
-*color4: #5F819D
-*color12: #81A2BE
-! magenta
-*color5: #85678F
-*color13: #B294BB
-! cyan
-*color6: #5E8D87
-*color14: #8ABEB7
-! white
-*color7: #707880
-*color15: #C5C8C6
+! Base16 Thomas
+! Scheme: José Mota (http://github.com/josemotanet)
+
+#define base00 #142229
+#define base01 #2d3a42
+#define base02 #47535b
+#define base03 #606b74
+#define base04 #79838d
+#define base05 #929ba6
+#define base06 #acb4bf
+#define base07 #c5ccd8
+#define base08 #e65b65
+#define base09 #f38c4f
+#define base0A #f4bf75
+#define base0B #8ebe8c
+#define base0C #54abad
+#define base0D #6295ca
+#define base0E #ab76a6
+#define base0F #8f5536
+
+*.foreground:   base07
+*.background:   base00
+*.cursorColor:  base05
+
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base03
+*.color9:       base09
+*.color10:      base01
+*.color11:      base02
+*.color12:      base04
+*.color13:      base06
+*.color14:      base0F
+*.color15:      base07
