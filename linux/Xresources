@@ -39,3 +39,8 @@
 *.color13:      base06
 *.color14:      base0F
 *.color15:      base07
+
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.antialias: RGB
+Xft.rgba: rgb
