@@ -4,11 +4,12 @@ out_to_console yes
 
 TEXT
 [
-  { "full_text" : " ${mem} / ${memmax} (${memperc}%) ", "color" : "\#cccccc" },
-  { "full_text" : " \u25b2 ${upspeedf enp3s0} ", "color" : "\#00ccff" },
-  { "full_text" : " \u25bc ${downspeedf enp3s0} ", "color" : "\#00ffff"  },
-  { "full_text" : " ${addr enp3s0} ", "color" : "\#ffcc00"  },
-  { "full_text" : " ${mpd_title} ", "color": "\#ff88ee" },
-  { "full_text" : " ${time %Y-%b-%d} " },
-  { "full_text" : " ${time %H:%M} " }
+  { "full_text" : "  \uf0e4  ${mem} / ${memmax} (${memperc}%) ", "color" : "\#606b74" },
+  { "full_text" : "  \uf077  ${upspeedf enp3s0} ", "color" : "\#6295ca" },
+  { "full_text" : "  \uf078  ${downspeedf enp3s0} ", "color" : "\#54abad" },
+  { "full_text" : "  \uf1eb  ${addr enp3s0} ", "color" : "\#f4bf75" },
+  { "full_text" : "  \uf001  ${mpd_title} ", "color": "\#ab76a6" },
+  { "full_text" : "  \uf133  ${time %b %d, %Y} " },
+  { "full_text" : "  \uf017  ${time %H:%M} " },
+  { "full_text" : "  \uf11c  ${exec setxkbmap -query | grep layout | cut -d ' ' -f6} ", "color": "\#79838d"}
 ],
