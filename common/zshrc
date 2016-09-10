@@ -69,7 +69,7 @@ alias ls='ls --color=auto'
 alias r="bundle exec rails"
 alias t=todo.sh
 alias v=vim
-alias e="emacs -nw"
+alias e="emacs &; disown"
 alias dc=docker-compose
 alias d=docker
 
