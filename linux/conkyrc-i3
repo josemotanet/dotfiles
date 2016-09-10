@@ -11,5 +11,6 @@ TEXT
   { "full_text" : "  \uf001  ${mpd_title} ", "color": "\#ab76a6" },
   { "full_text" : "  \uf133  ${time %b %d, %Y} " },
   { "full_text" : "  \uf017  ${time %H:%M} " },
-  { "full_text" : "  \uf11c  ${exec setxkbmap -query | grep layout | cut -d ' ' -f6} ", "color": "\#79838d"}
+  { "full_text" : "  \uf11c  ${exec setxkbmap -query | grep layout | cut -d ' ' -f6} ", "color": "\#79838d"},
+  { "full_text" : "  \uf021  ${execpi 3600 checkupdates | wc -l} ", "color": "\#79838d"}
 ],
