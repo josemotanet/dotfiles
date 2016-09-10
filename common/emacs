@@ -28,7 +28,6 @@ Return a list of installed packages or nil for every skipped package."
 ;; Activate installed packages
 (package-initialize)
 
-;; Assuming you wish to install "iedit" and "magit"
 (ensure-package-installed 'auto-complete
                           'color-theme-sanityinc-tomorrow
                           'diff-hl
@@ -43,6 +42,7 @@ Return a list of installed packages or nil for every skipped package."
                           'helm-projectile
                           'hlinum
                           'magit
+                          'magit-gh-pulls
                           'monokai-theme
                           'neotree
                           'org-bullets
@@ -198,7 +198,7 @@ Return a list of installed packages or nil for every skipped package."
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
-(add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
+(add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
 ;; }}}
 
 ;; still need:
