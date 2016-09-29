@@ -58,6 +58,10 @@ function git_branch() { # {{{
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 } # }}}
 
+function cdp() {
+  cd $(find ~ -maxdepth 6 -name .git 2>/dev/null | sed 's/.git//' | pick )
+}
+
 # }}}
 
 ### Alias {{{
