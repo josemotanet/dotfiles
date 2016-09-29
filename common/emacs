@@ -42,7 +42,6 @@ Return a list of installed packages or nil for every skipped package."
                           'helm-projectile
                           'hlinum
                           'magit
-                          'magit-gh-pulls
                           'monokai-theme
                           'neotree
                           'org-bullets
@@ -199,8 +198,6 @@ Return a list of installed packages or nil for every skipped package."
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
-
-(add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
 ;; }}}
 
 ;; still need:
