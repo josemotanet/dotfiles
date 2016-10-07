@@ -121,6 +121,7 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Neotree
 (require 'neotree)
+(setq-default neo-show-hidden-files t)
 (add-hook 'neotree-mode-hook
   (lambda ()
     (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
