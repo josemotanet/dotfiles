@@ -18,7 +18,7 @@
   la = log --graph --abbrev-commit --date=relative --all
   lp = log -p
   p = add -p
-  c = commit
+  c = commit -v
   r = rebase
   rbc = rebase --continue
   ri = rebase -i
