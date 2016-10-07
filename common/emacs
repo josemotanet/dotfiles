@@ -44,6 +44,7 @@ Return a list of installed packages or nil for every skipped package."
                           'magit
                           'monokai-theme
                           'neotree
+                          'olivetti
                           'org-bullets
                           'ox-reveal
                           'powerline
@@ -191,13 +192,26 @@ Return a list of installed packages or nil for every skipped package."
                             (set-fill-column 81)))
 
 (add-hook 'org-mode-hook (lambda()
-                           (org-bullets-mode)))
+                           (org-bullets-mode)
+                           (linum-mode 0)
+                           (fci-mode 0)
+                           (olivetti-mode t)
+                           (olivetti-set-width 84)
+                           ))
+
+(add-hook 'markdown-mode-hook (lambda()
+                                (linum-mode 0)
+                                (fci-mode 0)
+                                (olivetti-mode t)
+                                (olivetti-set-width 84)
+                                ))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+
 ;; }}}
 
 ;; still need:
