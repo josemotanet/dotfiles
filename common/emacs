@@ -101,6 +101,9 @@ Return a list of installed packages or nil for every skipped package."
 ;; (powerline-evil-vim-color-theme)
 (display-time-mode t)
 
+;; Projectile
+(projectile-global-mode t)
+
 ;; Column rule
 (setq fci-rule-column 81)
 (fci-mode t)
