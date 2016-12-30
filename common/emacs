@@ -103,6 +103,7 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Projectile
 (projectile-global-mode t)
+(add-to-list 'projectile-globally-ignored-directories "node_modules")
 
 ;; Column rule
 (setq fci-rule-column 81)
