@@ -120,6 +120,9 @@ Return a list of installed packages or nil for every skipped package."
 (global-auto-complete-mode t)
 (add-to-list 'ac-sources 'ac-source-yasnippet)
 
+;; Proper brackets behavior
+(electric-pair-mode t)
+
 ;; Neotree
 (require 'neotree)
 (setq-default neo-show-hidden-files t)
