@@ -59,7 +59,7 @@ function git_branch() { # {{{
 } # }}}
 
 function cdp() {
-  cd $(find ~ -maxdepth 6 -name .git 2>/dev/null | sed 's/.git//' | pick )
+  cd $(find ~ -type d -maxdepth 6 -name .git 2>/dev/null | sed 's/.git//' | pick )
 }
 
 # }}}
