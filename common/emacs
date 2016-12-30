@@ -79,7 +79,7 @@ Return a list of installed packages or nil for every skipped package."
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (global-hl-line-mode t)
-(setq-default line-spacing 5)
+(setq-default line-spacing 0)
 (setq-default cursor-type 'hbar)
 (setq-default evil-normal-state-cursor 'hbar)
 
