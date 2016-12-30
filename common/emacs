@@ -138,7 +138,9 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Helm
 (setq helm-ag-use-agignore t)
+(setq helm-display-header-line nil)
 (require 'helm)
+(set-face-attribute 'helm-source-header nil :height 0.1)
 (helm-mode t)
 
 ;; Org settings
