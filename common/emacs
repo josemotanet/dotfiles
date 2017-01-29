@@ -64,6 +64,7 @@ Return a list of installed packages or nil for every skipped package."
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq js-indent-level 2)
+(setq scss-indent-level 2)
 (setq inhibit-startup-message t)
 (setq auto-save-default nil)
 (setq-default fill-column 80)
