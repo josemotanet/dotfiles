@@ -270,7 +270,7 @@ Return a list of installed packages or nil for every skipped package."
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n50")))
  '(package-selected-packages
    (quote
-    (web-mode pug-mode elixir-mode olivetti writeroom-mode auto-org-md yasnippet yaml-mode sublime-themes smartparens scss-mode sass-mode rubocop rspec-mode rainbow-delimiters powerline-evil ox-twbs ox-reveal org-bullets neotree monokai-theme markdown-mode magit-gh-pulls inf-ruby hlinum helm-projectile helm-ag flx-ido fiplr fill-column-indicator evil-visual-mark-mode evil-surround evil-leader diff-hl color-theme-sanityinc-tomorrow coffee-mode auto-complete)))
+    (handlebars-mode js2-mode slim-mode web-mode pug-mode elixir-mode olivetti writeroom-mode auto-org-md yasnippet yaml-mode sublime-themes smartparens scss-mode sass-mode rubocop rspec-mode rainbow-delimiters powerline-evil ox-twbs ox-reveal org-bullets neotree monokai-theme markdown-mode magit-gh-pulls inf-ruby hlinum helm-projectile helm-ag flx-ido fiplr fill-column-indicator evil-visual-mark-mode evil-surround evil-leader diff-hl color-theme-sanityinc-tomorrow coffee-mode auto-complete)))
  '(show-paren-mode t))
  ;; start maximized
 
