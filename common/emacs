@@ -69,6 +69,7 @@ Return a list of installed packages or nil for every skipped package."
 (setq inhibit-startup-message t)
 (setq auto-save-default nil)
 (setq-default fill-column 80)
+(setq create-lockfiles nil)
 ;; }}}
 
 ;; Colorscheme and font {{{
