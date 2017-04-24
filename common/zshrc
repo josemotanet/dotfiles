@@ -59,7 +59,7 @@ function git_branch() { # {{{
 } # }}}
 
 function cdp() {
-  cd $(find ~ -type d -maxdepth 6 -name .git 2>/dev/null | sed 's/.git//' | pick )
+  cd $(find ~ -type d -maxdepth 6 -name .git 2>/dev/null | sed 's/.git//' | fzf )
 }
 
 # }}}
@@ -99,3 +99,5 @@ typeset -ag precmd_functions;
 if [[ -z ${precmd_functions[(r)_direnv_hook]} ]]; then
   precmd_functions+=_direnv_hook;
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
