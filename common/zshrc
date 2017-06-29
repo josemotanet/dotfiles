@@ -101,3 +101,5 @@ if [[ -z ${precmd_functions[(r)_direnv_hook]} ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias dnfi="sudo dnf install -y"
