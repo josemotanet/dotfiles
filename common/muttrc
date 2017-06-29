@@ -1,42 +1,19 @@
-set realname="José Mota"
+set realname = "José Mota"
 set spoolfile = "+INBOX"
 
 set header_cache =~/.mutt/cache/headers
 set message_cachedir =~/.mutt/cache/bodies
 set certificate_file =~/.mutt/certificates
 
-set move = no  #Stop asking to "move read messages to mbox"!
-set imap_keepalive = 400
-set mail_check=300
-
-set sort = 'threads'
-set sort_aux = 'last-date-received'
-
+set charset = utf-8
+set editor = 'vim + -c "set textwidth=79 wrap nocp filetype=markdown encoding=utf-8"'
+set include
+set move = no  # Stop asking to "move read messages to mbox"!
 set query_command = "abook --mutt-query '%s'"
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+set sort_re
+set timeout = 30
 
-set editor='vim + -c "set textwidth=79 wrap nocp filetype=markdown encoding=utf-8"'
-
-color   attachment  blue         default
-color   header      green        default  "^message-id:"
-color   header      green        default  "^x-mailer:"
-color   header      green        default  "^user-agent:"
-color   header      blue         default  "^date: "
-color   header      brightblue   default  "^from: "
-color   header      green        default  "^subject: "
-color   header      brightblue   default  "^to: "
-color   header      brightblue   default  "^cc: "
-color   header      brightblue   default  "^reply-to: "
-color   index       green        default  ~F
-color   index       red          default  ~D
-color   index       blue         default  ~T
-color   index       brightblue   default  ~N
-color   indicator   brightwhite  blue
-color   markers     red          default
-color   quoted      magenta      default
-color   signature   brightblue   default
-color   status      brightwhite  green
-color   tilde       cyan         default
-color   tree        blue         default
-color   body        black        default  "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
-
+source ~/.mutt/colors
 source ~/.mutt/josemota.net.conf
