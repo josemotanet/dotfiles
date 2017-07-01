@@ -1,5 +1,4 @@
 set realname = "José Mota"
-set spoolfile = "+INBOX"
 
 set header_cache =~/.mutt/cache/headers
 set message_cachedir =~/.mutt/cache/bodies
@@ -12,8 +11,18 @@ set move = no  # Stop asking to "move read messages to mbox"!
 set query_command = "abook --mutt-query '%s'"
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
-set sort_re
 set timeout = 30
+set mail_check = 60
+set wrap = 80
 
-source ~/.mutt/colors
-source ~/.mutt/josemota.net.conf
+unset imap_passive
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+source ~/.config/mutt/imap/boldint.conf
+
+color indicator black brightwhite
+color index_author red default '.*'
+color index_flags brightred default 'C'
+color status yellow default
