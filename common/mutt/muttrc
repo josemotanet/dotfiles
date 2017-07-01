@@ -1,5 +1,4 @@
 set realname = "José Mota"
-set spoolfile = "+INBOX"
 
 set header_cache =~/.mutt/cache/headers
 set message_cachedir =~/.mutt/cache/bodies
@@ -12,8 +11,14 @@ set move = no  # Stop asking to "move read messages to mbox"!
 set query_command = "abook --mutt-query '%s'"
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
-set sort_re
 set timeout = 30
+set wrap = 80
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
 
 source ~/.mutt/colors
-source ~/.mutt/josemota.net.conf
+source ~/.mutt/zoho.conf
+
+macro index,pager g1 '<enter-command>source ~/.mutt/imap/zoho.conf<enter><change-folder>!<enter>'
+macro index,pager g2 '<enter-command>source ~/.mutt/imap/boldint.conf<enter><change-folder>!<enter>'
