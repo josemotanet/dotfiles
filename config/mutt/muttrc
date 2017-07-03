@@ -14,6 +14,7 @@ set sort_aux = 'reverse-last-date-received'
 set timeout = 30
 set mail_check = 60
 set wrap = 80
+set date_format = "%m %d, %T"
 
 unset imap_passive
 
