@@ -10,7 +10,7 @@
 [alias]
   s = status -sb
   d = diff
-  dc = diff --cached
+  ds = diff --cached
   co = checkout
   cb = checkout -b
   a = add
@@ -24,7 +24,7 @@
   ri = rebase -i
   fa = fetch --all --prune
 [format]
-  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an %ae>%Creset
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(blue)<%an %ae>%Creset
 [branch]
   autosetuprebase = always
 [github]
