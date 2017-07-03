@@ -87,6 +87,7 @@ source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 test -s ~/.kiex/scripts/kiex && source ~/.kiex/scripts/kiex
 test -s direnv && eval "$(direnv hook zsh)"
+test -s ~/.config/shell/less_termcap.sh && source ~/.config/shell/less_termcap.sh
 
 # }}}
 
