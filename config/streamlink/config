@@ -1,0 +1,2 @@
+player = mpv --cache 2048
+default-stream = best
