@@ -59,6 +59,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 # }}}
 
 ## MPD commands {{{
+bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioPrev exec mpc next
 bindsym XF86AudioNext exec mpc prev
