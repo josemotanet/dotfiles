@@ -74,6 +74,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym $mod+b exec chromium
 bindsym $mod+c exec urxvt -e "ranger"
 bindsym $mod+Shift+m exec pavucontrol
+bindsym $mod+m exec urxvt -e "mutt"
 #bindsym $mod+space exec setxkbmap pt,en_US && notify-send "Keyboard layout:$(setxkbmap -query | grep layout | cut -d ' ' -f6)"
 # }}}
 
