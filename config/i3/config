@@ -172,7 +172,7 @@ bar {
     urgent_workspace   $bg-color $bg-color $urgent-color  $indicator-color
   }
   #status_command i3status
-  status_command ~/bin/conky-i3
+  status_command ~/.config/i3/conky
 }
 # }}}
 
