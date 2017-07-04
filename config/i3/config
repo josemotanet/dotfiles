@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:Source Code Pro, FontAwesome 10
+font pango:Iosevka, FontAwesome 10
 
 floating_modifier $mod
 
@@ -36,14 +36,14 @@ bindsym $mod+Shift+Right move right
 # Hotkeys {{{
 
 ## i3 {{{
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
-bindsym $mod+d exec dmenu_run -fn "Source Code Pro-10"
+bindsym $mod+d exec rofi -show run
 bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 bindsym $mod+q kill
@@ -70,7 +70,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 # }}}
 
 ## Application bindings {{{
-bindsym $mod+b exec firefox
+bindsym $mod+b exec chromium
 bindsym $mod+c exec urxvt -e "ranger"
 #bindsym $mod+space exec setxkbmap pt,en_US && notify-send "Keyboard layout:$(setxkbmap -query | grep layout | cut -d ' ' -f6)"
 # }}}
@@ -120,27 +120,27 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # }}}
 
 # Application specific behavior {{{
-for_window [class="Skype"]       floating enable, move to workspace $workspace3
-for_window [class="Firefox"]     move to workspace $workspace2; workspace $workspace2
-for_window [class="Slack"]       floating enable, move to workspace $workspace3, workspace $workspace3
-for_window [class="Thunderbird"] floating enable, move to workspace $workspace4, workspace $workspace4
-for_window [class="Nylas"]       floating enable, move to workspace $workspace4, workspace $workspace4
-for_window [class="Corebird"]    floating enable, move to workspace $workspace3, workspace $workspace3
-for_window [class="Discord"]     floating enable, move to workspace $workspace3, workspace $workspace3
-for_window [class="Pavucontrol"] floating enable
+for_window [class="Skype"]         floating enable, move to workspace $workspace3
+for_window [window_role="browser"] move to workspace $workspace2; workspace $workspace2
+for_window [class="Slack"]         floating enable, move to workspace $workspace3, workspace $workspace3
+for_window [class="Thunderbird"]   floating enable, move to workspace $workspace4, workspace $workspace4
+for_window [class="Nylas"]         floating enable, move to workspace $workspace4, workspace $workspace4
+for_window [class="Corebird"]      floating enable, move to workspace $workspace3, workspace $workspace3
+for_window [class="Discord"]       floating enable, move to workspace $workspace3, workspace $workspace3
+for_window [class="Pavucontrol"]   floating enable
 # }}}
 
 # resize window (you can also use the mouse for that) {{{
 mode "resize" {
-  bindsym j resize shrink width 10 px or 10 ppt
-  bindsym k resize grow height 10 px or 10 ppt
-  bindsym l resize shrink height 10 px or 10 ppt
-  bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym j resize shrink width 5 px or 5 ppt
+  bindsym k resize grow height 5 px or 5 ppt
+  bindsym l resize shrink height 5 px or 5 ppt
+  bindsym semicolon resize grow width 5 px or 5 ppt
 
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Left resize shrink width 5 px or 5 ppt
+  bindsym Down resize grow height 5 px or 5 ppt
+  bindsym Up resize shrink height 5 px or 5 ppt
+  bindsym Right resize grow width 5 px or 5 ppt
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -148,8 +148,8 @@ mode "resize" {
 # }}}
 
 # Colors {{{
-set $bg-color        #444a58
-set $in-bg-color     #444a58
+set $bg-color        #2d3a42
+set $in-bg-color     #142229
 set $border-color    #444a58
 set $text-color      #ffffff
 set $in-text-color   #999999
@@ -159,7 +159,7 @@ set $urgent-color    #e04f26
 # class                 border    backgr.       text           indicator
 client.focused          $bg-color $bg-color     $text-color    $indicator-color
 client.focused_inactive $bg-color $bg-color     $text-color    $indicator-color
-client.unfocused        #333333   #222222       $in-text-color $indicator-color
+client.unfocused        #333333   #222932       $in-text-color $indicator-color
 client.urgent           #2f343a   $urgent-color #ffffff        $indicator-color
 # }}}
 
