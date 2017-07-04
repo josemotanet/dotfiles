@@ -21,7 +21,11 @@ unset imap_passive
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 
-source ~/.config/mutt/imap/boldint.conf
+source ~/.config/mutt/imap/zoho.conf
+
+bind index g noop
+macro index g1 '<sync-mailbox><enter-command>source ~/.config/mutt/imap/zoho.conf<enter><change-folder>!<enter>'
+macro index g2 '<sync-mailbox><enter-command>source ~/.config/mutt/imap/boldint.conf<enter><change-folder>!<enter>'
 
 color indicator black brightwhite
 color index_author red default '.*'
