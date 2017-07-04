@@ -2,4 +2,4 @@
 echo '{"version":1}'
 echo '['
 echo '[],'
-exec conky -c $XDG_CONFIG_HOME/i3/conkyrc
+exec conky -c ~/.config/i3/conkyrc
