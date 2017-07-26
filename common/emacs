@@ -168,13 +168,13 @@ Return a list of installed packages or nil for every skipped package."
   "gs" 'magit-status
   "t" 'helm-projectile
   "m" 'neotree-toggle
-  ;; "ev" 'load-file ~/.emacs
   "rs" 'rspec-verify-all
   "v" 'rubocop-check-current-file
   "b" 'switch-to-buffer
   "x" 'helm-M-x
   "a" 'helm-do-ag-project-root
   "<SPC>" 'evil-switch-to-windows-last-buffer
+  "h" 'helm-resume
 )
 
 (setq evil-want-C-u-scroll t) ;; Force Ctrl+U to scroll half screen up.
