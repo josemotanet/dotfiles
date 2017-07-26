@@ -104,3 +104,7 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias dnfi="sudo dnf install -y"
+
+if [ -f ~/.config/exercism/exercism_completion.zsh  ]; then
+  . ~/.config/exercism/exercism_completion.zsh
+fi
