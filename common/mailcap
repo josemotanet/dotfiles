@@ -1,1 +1,3 @@
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput;
+image/*; feh %s
+application/pdf; evince %s
