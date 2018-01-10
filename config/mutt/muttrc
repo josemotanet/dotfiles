@@ -26,7 +26,7 @@ source ~/.config/mutt/imap/josemota.net.conf
 
 bind index g noop
 bind index,pager A group-reply
-macro index g1 '<sync-mailbox><enter-command>source ~/.config/mutt/imap/zoho.conf<enter><change-folder>!<enter>'
+macro index g1 '<sync-mailbox><enter-command>source ~/.config/mutt/imap/josemota.net.conf<enter><change-folder>!<enter>'
 macro index g2 '<sync-mailbox><enter-command>source ~/.config/mutt/imap/boldint.conf<enter><change-folder>!<enter>'
 
 color indicator black brightwhite
