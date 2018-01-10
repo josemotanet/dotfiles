@@ -11,6 +11,7 @@ export PATH=$PATH:/usr/local/sbin:$HOME/bin:/usr/local/heroku/bin
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
+export TERMINAL=urxvtc
 
 zstyle :compinstall filename '/home/jose/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -59,7 +60,7 @@ function git_branch() { # {{{
 } # }}}
 
 function cdp() {
-  cd $(find ~ -type d -maxdepth 6 -name .git 2>/dev/null | sed 's/.git//' | fzf )
+  cd $(find ~/projects -type d -maxdepth 6 -name .git 2>/dev/null | sed 's/.git//' | fzf )
 }
 
 # }}}
