@@ -4,16 +4,18 @@ export GDK_SCALE=2
 
 xrdb -load ~/.Xresources &
 xrandr --output DP-4 --scale 1.2x1.2 &
+urxvtd &
 
 case $1 in
   *openbox*)
     sleep 0.1
     nitrogen --restore &
-    compton -b --config ~/.compton.conf &
+    compton -b --config ~/.config/compton.conf &
     ;;
   *i3*)
     sleep 0.1
     nitrogen --restore &
+    compton -b --config ~/.config/compton.conf &
     ;;
   *gnome*)
     ;;
