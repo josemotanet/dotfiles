@@ -37,7 +37,7 @@ bindsym $mod+Shift+Right move right
 
 ## i3 {{{
 bindsym $mod+Shift+a focus child
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec TERMINAL=urxvtc i3-sensible-terminal
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+r restart
@@ -79,7 +79,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym $mod+b exec chromium
 bindsym $mod+c exec urxvt -e "ranger"
 bindsym $mod+Shift+m exec pavucontrol
-bindsym $mod+m exec urxvt -e "mutt"
+bindsym $mod+m exec urxvt -e "neomutt"
 # }}}
 
 ## Splits {{{
@@ -127,14 +127,16 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # }}}
 
 # Application specific behavior {{{
-for_window [class="Skype"]         floating enable, move to workspace $workspace3
-for_window [window_role="browser"] move to workspace $workspace2; workspace $workspace2
-for_window [class="Slack"]         floating enable, move to workspace $workspace3, workspace $workspace3
-for_window [class="Thunderbird"]   floating enable, move to workspace $workspace4, workspace $workspace4
-for_window [class="Nylas"]         floating enable, move to workspace $workspace4, workspace $workspace4
-for_window [class="Corebird"]      floating enable, move to workspace $workspace3, workspace $workspace3
-for_window [class="Discord"]       floating enable, move to workspace $workspace3, workspace $workspace3
-for_window [class="Pavucontrol"]   floating enable
+for_window [window_role="browser"]        move to workspace $workspace2; workspace $workspace2
+for_window [class="Skype"]                move to workspace $workspace3
+for_window [class="Slack"]                move to workspace $workspace3, workspace $workspace3
+for_window [class="Thunderbird"]          move to workspace $workspace4, workspace $workspace4
+for_window [class="Nylas"]                move to workspace $workspace4, workspace $workspace4
+for_window [class="Corebird"]             move to workspace $workspace3, workspace $workspace3
+for_window [class="Discord"]              move to workspace $workspace3, workspace $workspace3
+for_window [class="Pavucontrol"]          floating enable
+for_window [class="Shutter"]              floating enable
+for_window [class="Simplescreenrecorder"] floating enable
 # }}}
 
 # resize window (you can also use the mouse for that) {{{
@@ -171,16 +173,16 @@ client.urgent           #2f343a   $urgent-color #ffffff        $indicator-color
 # }}}
 
 # i3 bar {{{
-bar {
-  colors {
-    background         $bg-color $bg-color $text-color    $indicator-color
-    focused_workspace  $bg-color $bg-color $text-color    $indicator-color
-    inactive_workspace $bg-color $bg-color $in-text-color $indicator-color
-    urgent_workspace   $bg-color $bg-color $urgent-color  $indicator-color
-  }
-  #status_command i3status
-  status_command ~/.config/i3/conky
-}
+# bar {
+#   colors {
+#     background         $bg-color $bg-color $text-color    $indicator-color
+#     focused_workspace  $bg-color $bg-color $text-color    $indicator-color
+#     inactive_workspace $bg-color $bg-color $in-text-color $indicator-color
+#     urgent_workspace   $bg-color $bg-color $urgent-color  $indicator-color
+#   }
+#   #status_command i3status
+#   status_command ~/.config/i3/conky
+# }
 # }}}
 
 # Startup items {{{
@@ -189,6 +191,7 @@ exec_always xset m 6/1
 exec_always setxkbmap us,pt -option caps:ctrl_modifier option grp:ctrls_toggle
 
 exec mpd
+exec polybar example
 # }}}
 
 # vim: foldmethod=marker foldmarker={{{,}}}
