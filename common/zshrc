@@ -17,6 +17,7 @@ zstyle :compinstall filename '/home/jose/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
+autoload -U add-zsh-hook
 setopt PROMPT_SUBST
 
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
@@ -26,6 +27,25 @@ TERM="screen-256color"
 # }}}
 
 ### Functions {{{
+
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
 
 function git_status() { # {{{
   local st="$(git status 2> /dev/null)"
