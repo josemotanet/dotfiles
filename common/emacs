@@ -73,6 +73,7 @@ Return a list of installed packages or nil for every skipped package."
 (setq-default fill-column 80)
 (setq create-lockfiles nil)
 (setq ido-enable-flex-matching t)
+(setq mmm-submode-decoration-level 0)
 ;; }}}
 
 ;; Colorscheme and font {{{
