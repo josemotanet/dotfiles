@@ -7,7 +7,7 @@ unsetopt beep
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 
-export PATH=$PATH:/usr/local/sbin:$HOME/bin:/usr/local/heroku/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/bin:/usr/local/heroku/bin:$HOME/.yarn/bin
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
