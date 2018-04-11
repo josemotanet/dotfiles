@@ -188,7 +188,7 @@ client.urgent           #2f343a   $urgent-color #ffffff        $indicator-color
 # Startup items {{{
 exec_always xset r rate 190 30
 exec_always xset m 6/1
-exec_always setxkbmap us,pt -option caps:ctrl_modifier option grp:ctrls_toggle
+exec_always setxkbmap us,pt -option caps:ctrl_modifier -option grp:ctrls_toggle -option compose:rwin
 
 exec mpd
 exec polybar example
