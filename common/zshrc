@@ -1,3 +1,9 @@
+# Change default zim location
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+
+# Start zim
+[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
+
 # General options {{{
 
 HISTFILE=~/.zsh-histfile
@@ -92,7 +98,6 @@ alias g=git
 alias hub=git-hub
 alias ls='ls --color=auto'
 alias r="bundle exec rails"
-alias t=todo.sh
 alias v=vim
 alias e="emacs &; disown"
 alias dc=docker-compose
