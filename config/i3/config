@@ -76,7 +76,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 # }}}
 
 ## Application bindings {{{
-bindsym $mod+b exec chromium
+bindsym $mod+b exec firefox
 bindsym $mod+c exec urxvt -e "ranger"
 bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+m exec urxvt -e "neomutt"
@@ -137,6 +137,7 @@ for_window [class="Discord"]              move to workspace $workspace3, workspa
 for_window [class="Pavucontrol"]          floating enable
 for_window [class="Shutter"]              floating enable
 for_window [class="Simplescreenrecorder"] floating enable
+for_window [title="Authy"]                floating enable
 # }}}
 
 # resize window (you can also use the mouse for that) {{{
