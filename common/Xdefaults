@@ -12,7 +12,6 @@ URxvt*transparent: false
 URxvt*shading: 0
 URxvt*font: xft:Iosevka Term:weight=Medium:size=13,xft:Noto Emoji
 URxvt*font: xft:Roboto Mono:weight=Regular:size=12.5,xft:DejaVu Sans Mono:size=13,xft:FontAwesome:size=13
-URxvt*font: xft:SF Mono:weight=Medium:size=12.5,xft:DejaVu Sans Mono:size=13,xft:FontAwesome:size=13
 URxvt.letterSpace: -1
 URxvt.lineSpace: 8
 URxvt.cursorUnderline: true
