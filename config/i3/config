@@ -167,7 +167,7 @@ set $indicator-color #00ff00
 set $urgent-color    #e04f26
 
 # class                 border    backgr.       text           indicator
-client.focused          $bg-color $bg-color     $text-color    $indicator-color
+client.focused          $bg-color $bg-color     $text-color    $indicator-color #999999
 client.focused_inactive $bg-color $bg-color     $text-color    $indicator-color
 client.unfocused        #333333   #222932       $in-text-color $indicator-color
 client.urgent           #2f343a   $urgent-color #ffffff        $indicator-color
