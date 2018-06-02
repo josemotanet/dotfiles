@@ -10,10 +10,10 @@ URxvt*geometry: 100x40
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: 0
-URxvt*font: xft:Iosevka Term:weight=Medium:size=13,xft:Noto Emoji
-URxvt*font: xft:Roboto Mono:weight=Regular:size=12.5,xft:DejaVu Sans Mono:size=13,xft:FontAwesome:size=13
+URxvt*font: xft:Iosevka Term:size=13,xft:DejaVu Sans Mono:size=13
+#URxvt*font: xft:Roboto Mono:weight=Regular:size=12.5,xft:DejaVu Sans Mono:size=13,xft:FontAwesome:size=13
 URxvt.letterSpace: -1
-URxvt.lineSpace: 8
+URxvt.lineSpace: 7
 URxvt.cursorUnderline: true
 
 URxvt.perl-ext: default,url-select

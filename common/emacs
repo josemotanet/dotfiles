@@ -82,7 +82,7 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Colorscheme and font {{{
 (load-theme 'base16-default-dark t)
-(set-frame-font "Roboto Mono:weight=Regular:size=24")
+(set-frame-font "Iosevka Term:weight=Regular:size=25")
 ;; }}}
 
 ;; GUI elements {{{
@@ -246,7 +246,7 @@ Return a list of installed packages or nil for every skipped package."
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
-(add-hook 'ruby-mode-hook (lambda () (hs-minor-mode)))
+(add-hook 'prog-mode-hook (lambda () (hs-minor-mode)))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 ;; }}}
