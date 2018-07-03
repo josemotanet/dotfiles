@@ -102,6 +102,7 @@ alias v=vim
 alias e="emacs &; disown"
 alias dc=docker-compose
 alias d=docker
+alias y=yarn
 
 # }}}
 
