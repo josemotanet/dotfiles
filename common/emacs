@@ -73,6 +73,7 @@ Return a list of installed packages or nil for every skipped package."
 (setq typescript-indent-level 2)
 (setq scss-indent-level 2)
 (setq css-indent-offset 2)
+(setq sh-basic-offset 2)
 (setq inhibit-startup-message t)
 (setq auto-save-default nil)
 (setq-default fill-column 80)
