@@ -47,6 +47,7 @@ Return a list of installed packages or nil for every skipped package."
                           'magit
                           'monokai-theme
                           'neotree
+                          'nord-theme
                           'olivetti
                           'org-bullets
                           'ox-reveal
@@ -81,7 +82,7 @@ Return a list of installed packages or nil for every skipped package."
 ;; }}}
 
 ;; Colorscheme and font {{{
-(load-theme 'base16-default-dark t)
+(load-theme 'nord t)
 (set-frame-font "Iosevka Term:weight=Regular:size=25")
 ;; }}}
 
@@ -177,6 +178,7 @@ Return a list of installed packages or nil for every skipped package."
 (global-evil-leader-mode 1)
 (global-evil-surround-mode 1)
 (evil-leader/set-leader ",")
+(setq markdown-fontify-code-blocks-natively t)
 
 (evil-leader/set-key
   "w" 'save-buffer
