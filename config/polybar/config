@@ -8,8 +8,8 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:background:#222}
-background-alt = #333
+background = ${xrdb:background:#111}
+background-alt = #4C566A
 foreground = #fff
 foreground-alt = ${xrdb:color4:#999}
 primary = #ffb52a
@@ -45,7 +45,7 @@ font-0 = "Gotham:weight=regular;0"
 ;font-0 = "SF Pro Display:weight=bold;0"
 font-1 = "FontAwesome;0"
 
-modules-left = i3
+modules-left = i3 xwindow
 modules-center = mpd
 modules-right = filesystem volume xkeyboard memory eth date powermenu
 
@@ -67,7 +67,7 @@ scroll-down = i3wm-wsprev
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:60:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
