@@ -28,8 +28,8 @@ Return a list of installed packages or nil for every skipped package."
 ;; Activate installed packages
 (package-initialize)
 
-(ensure-package-installed 'auto-complete
-                          'base16-theme
+(ensure-package-installed 'all-the-icons
+                          'auto-complete
                           'color-theme-sanityinc-tomorrow
                           'diff-hl
                           'emmet-mode
@@ -45,7 +45,6 @@ Return a list of installed packages or nil for every skipped package."
                           'hlinum
                           'js2-mode
                           'magit
-                          'monokai-theme
                           'neotree
                           'nord-theme
                           'olivetti
