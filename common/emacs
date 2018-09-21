@@ -201,6 +201,7 @@ Return a list of installed packages or nil for every skipped package."
   "a" 'helm-do-ag-project-root
   "<SPC>" 'evil-switch-to-windows-last-buffer
   "h" 'helm-resume
+  "<RET>" 'projectile-run-eshell
 )
 
 (setq evil-want-C-u-scroll t) ;; Force Ctrl+U to scroll half screen up.
