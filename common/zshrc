@@ -10,14 +10,14 @@ HISTFILE=~/.zsh-histfile
 HISTSIZE=1000
 SAVEHIST=1000
 unsetopt beep
-bindkey -v
-bindkey "^R" history-incremental-search-backward
 
-export PATH=$PATH:/usr/local/sbin:$HOME/bin:/usr/local/heroku/bin:$HOME/.yarn/bin
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export TERMINAL=urxvtc
+export GOPATH=/home/jose/.go
+
+export PATH=$PATH:/usr/local/sbin:$HOME/bin:/usr/local/heroku/bin:$HOME/.yarn/bin:$GOPATH/bin
 
 zstyle :compinstall filename '/home/jose/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
