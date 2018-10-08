@@ -10,7 +10,7 @@ HISTFILE=~/.zsh-histfile
 HISTSIZE=1000
 SAVEHIST=1000
 unsetopt beep
-
+setopt clobber
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
