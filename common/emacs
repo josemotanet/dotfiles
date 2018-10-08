@@ -50,6 +50,7 @@ Return a list of installed packages or nil for every skipped package."
                           'olivetti
                           'org-bullets
                           'ox-reveal
+                          'polymode
                           'powerline
                           'powerline-evil
                           'projectile
@@ -273,6 +274,9 @@ Return a list of installed packages or nil for every skipped package."
 ;; - folds
 ;; - email (?)
 ;; - open split from helm-projectile ;; C-c o
+
+;; (require 'poly-markdown)
+;; (add-to-list 'auto-mode-alist '("\\.md\\'" . poly-markdown-mode))
 
 ;; Emacs auto-generated stuff {{{
 
