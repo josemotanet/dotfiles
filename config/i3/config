@@ -140,6 +140,7 @@ for_window [class="Pavucontrol"]          floating enable
 for_window [class="Shutter"]              floating enable
 for_window [class="Simplescreenrecorder"] floating enable
 for_window [title="Authy"]                floating enable
+for_window [title="Nitrogen"]             floating enable
 # }}}
 
 # resize window (you can also use the mouse for that) {{{
