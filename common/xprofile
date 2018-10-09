@@ -16,7 +16,7 @@ case $1 in
     xrandr --output DP-4 --scale 1.2x1.2 &
     sleep 0.1
     nitrogen --restore &
-    # compton -b --config ~/.config/compton.conf &
+    compton -b --config ~/.config/compton.conf &
     ;;
   *gnome*)
     ;;
