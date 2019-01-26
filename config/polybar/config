@@ -41,9 +41,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Gotham:weight=regular;0"
-;font-0 = "SF Pro Display:weight=bold;0"
-font-1 = "FontAwesome;0"
+font-0 = "SF Pro Display:weight=bold;0"
+font-1 = "Iosevka Term SS09:weight=regular;0"
+font-2 = "FontAwesome;0"
 
 modules-left = i3 xwindow
 modules-center = mpd
@@ -195,10 +195,20 @@ card = intel_backlight
 [module/memory]
 type = internal/memory
 interval = 2
+bar-used-indicator =
+bar-used-width = 10
+bar-used-foreground-0 = ${xrdb:color2:#55aa55}
+bar-used-foreground-1 = #557755
+bar-used-foreground-2 = ${xrdb:color3:#f5a70a}
+bar-used-foreground-3 = ${xrdb:color1:#ff5555}
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #444444
+format = <bar-used>  <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %gb_used% / %gb_total% (%percentage_used%%)
+label = %gb_used%
 
 [module/wlan]
 type = internal/network
