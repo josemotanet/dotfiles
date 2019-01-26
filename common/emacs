@@ -45,7 +45,7 @@ Return a list of installed packages or nil for every skipped package."
                           'hlinum
                           'js2-mode
                           'magit
-                          'neotree
+                          ;'neotree
                           'nord-theme
                           'olivetti
                           'org-bullets
@@ -61,6 +61,9 @@ Return a list of installed packages or nil for every skipped package."
                           'scss-mode
                           'smartparens
                           'tide
+                          'treemacs
+                          'treemacs-evil
+                          'treemacs-projectile
                           'yaml-mode
                           'yasnippet)
 ;; }}}
@@ -197,7 +200,7 @@ Return a list of installed packages or nil for every skipped package."
   "gbq" 'magit-blame-quit
   "f" 'ffap
   "t" 'helm-projectile
-  "m" 'neotree-toggle
+  "m" 'treemacs
   "rs" 'rspec-verify-all
   "v" 'rubocop-check-current-file
   "b" 'switch-to-buffer
@@ -313,7 +316,7 @@ Return a list of installed packages or nil for every skipped package."
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n50")))
  '(package-selected-packages
    (quote
-    (dockerfile-mode all-the-icons material-theme spacegray-theme nord-theme rainbow-mode tide json-reformat solarized-theme atom-one-dark-theme js-doc gotham-theme vue-mode zencoding-mode handlebars-mode js2-mode slim-mode web-mode pug-mode elixir-mode olivetti writeroom-mode auto-org-md yasnippet yaml-mode sublime-themes smartparens scss-mode sass-mode rubocop rspec-mode rainbow-delimiters powerline-evil ox-twbs ox-reveal org-bullets neotree monokai-theme markdown-mode magit-gh-pulls inf-ruby hlinum helm-projectile helm-ag flx-ido fiplr fill-column-indicator evil-visual-mark-mode evil-surround evil-leader diff-hl color-theme-sanityinc-tomorrow coffee-mode auto-complete)))
+    (vmd-mode treemacs gruvbox gruvbox-theme dockerfile-mode all-the-icons material-theme spacegray-theme nord-theme rainbow-mode tide json-reformat solarized-theme atom-one-dark-theme js-doc gotham-theme vue-mode zencoding-mode handlebars-mode js2-mode slim-mode web-mode pug-mode elixir-mode olivetti writeroom-mode auto-org-md yasnippet yaml-mode sublime-themes smartparens scss-mode sass-mode rubocop rspec-mode rainbow-delimiters powerline-evil ox-twbs ox-reveal org-bullets neotree monokai-theme markdown-mode magit-gh-pulls inf-ruby hlinum helm-projectile helm-ag flx-ido fiplr fill-column-indicator evil-visual-mark-mode evil-surround evil-leader diff-hl color-theme-sanityinc-tomorrow coffee-mode auto-complete)))
  '(show-paren-mode t))
  ;; start maximized
 
