@@ -4,6 +4,10 @@ font pango:Iosevka, FontAwesome 10
 
 floating_modifier $mod
 
+hide_edge_borders smart
+
+gaps inner 15
+
 # Decorate windows
 new_window 1pixel
 
@@ -44,7 +48,6 @@ bindsym $mod+Shift+z exec "setxkbmap us,pt -option caps:ctrl_modifier -option gr
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
-bindsym $mod+d exec rofi -show run
 bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 bindsym $mod+q kill
@@ -77,6 +80,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 # }}}
 
 ## Application bindings {{{
+bindsym $mod+d exec "rofi -show run -modi run,calc,drun,ssh,window"
 bindsym $mod+b exec chromium
 bindsym $mod+c exec urxvt -e "ranger"
 bindsym $mod+Shift+m exec pavucontrol
@@ -193,6 +197,7 @@ client.urgent           #2f343a   $urgent-color #ffffff        $indicator-color
 exec_always xset r rate 190 30
 exec_always xset m 6/1
 exec_always setxkbmap us,pt -option caps:ctrl_modifier -option grp:ctrls_toggle -option compose:rwin
+# -option altwin:swap_lalt_lwin <-- if using regular keyboard
 
 exec mpd
 exec polybar example
