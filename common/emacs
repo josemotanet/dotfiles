@@ -36,6 +36,7 @@ Return a list of installed packages or nil for every skipped package."
                           'evil
                           'evil-leader
                           'evil-surround
+                          'gruvbox-theme
                           'fill-column-indicator
                           'inf-ruby
                           'haml-mode
@@ -88,7 +89,7 @@ Return a list of installed packages or nil for every skipped package."
 ;; }}}
 
 ;; Colorscheme and font {{{
-(load-theme 'nord t)
+(load-theme 'gruvbox t)
 (set-frame-font "Iosevka Term SS09:weight=Regular:size=25")
 (setq nord-comment-brightness 15)
 ;; }}}
