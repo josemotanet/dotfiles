@@ -84,6 +84,7 @@ Return a list of installed packages or nil for every skipped package."
 (setq create-lockfiles nil)
 (setq ido-enable-flex-matching t)
 (setq mmm-submode-decoration-level 0)
+(setq markdown-open-command "/usr/bin/pandoc")
 (global-prettify-symbols-mode t)
 (require 'iso-transl)
 ;; }}}
@@ -155,6 +156,7 @@ Return a list of installed packages or nil for every skipped package."
 (require 'neotree)
 (setq-default neo-show-hidden-files t)
 (setq neo-theme (if (display-graphic-p) 'icons 'ascii))
+(setq neo-vc-integration nil)
 
 (add-hook 'neotree-mode-hook
   (lambda ()
@@ -296,6 +298,9 @@ Return a list of installed packages or nil for every skipped package."
  '(helm-selection ((t (:background "SteelBlue4"))))
  '(helm-source-header ((t (:background "#22083397778B" :foreground "white" :weight normal :height 1.0))))
  '(markdown-code-face ((t (:inherit iosevka :background "#11171d"))))
+ '(neo-dir-link-face ((t (:foreground "#999"))))
+ '(neo-file-link-face ((t (:foreground "#bbb"))))
+ '(neo-root-dir-face ((t (:foreground "#fff"))))
  '(org-document-title ((t (:foreground "#dc9656" :weight bold :height 1.0)))))
 
 (custom-set-variables
