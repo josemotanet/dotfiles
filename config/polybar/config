@@ -41,7 +41,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "SF Pro Display:weight=bold;0"
+font-0 = "Roboto:weight=bold;0"
 font-1 = "Iosevka Term SS09:weight=regular;0"
 font-2 = "FontAwesome;0"
 
