@@ -91,7 +91,8 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Colorscheme and font {{{
 (load-theme 'gruvbox t)
-(set-frame-font "Iosevka Term SS09:weight=Regular:size=25")
+; (set-frame-font "Iosevka Term SS09:weight=Regular:size=25")
+(add-to-list 'default-frame-alist '(font . "Roboto Mono-11:regular"))
 (setq nord-comment-brightness 15)
 ;; }}}
 
