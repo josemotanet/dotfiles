@@ -5,6 +5,7 @@ export GDK_SCALE=2
 xrdb -load ~/.Xresources &
 urxvtd &
 source ~/.zshenv
+emacs --daemon &
 
 case $1 in
   *openbox*)
