@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+CACHEFILE=$HOME/.projects
+
+# Check if there is a cached list of git projects. If not, create it.
+test -s $CACHEFILE || find ~/projects ~/Documents ~/code -type d -iname .git 2>/dev/null >$CACHEFILE
+
+# Dump project list and allow to choose.
+cd $(cat $CACHEFILE | sed 's/.git//' | fzf)

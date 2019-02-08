@@ -17,7 +17,7 @@ export EDITOR=vim
 export TERMINAL=urxvtc
 export GOPATH=/home/jose/.go
 
-export PATH=$PATH:/usr/local/sbin:$HOME/bin:/usr/local/heroku/bin:$HOME/.yarn/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/bin:$HOME/bin/scripts:/usr/local/heroku/bin:$HOME/.yarn/bin:$GOPATH/bin
 
 zstyle :compinstall filename '/home/jose/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -85,8 +85,8 @@ function git_branch() { # {{{
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 } # }}}
 
-function cdp() {
-  cd $(find ~/projects -type d -maxdepth 6 -name .git 2>/dev/null | sed 's/.git//' | fzf )
+function openemacs() {
+  emacsclient -c $@ &; disown
 }
 
 # }}}
@@ -99,10 +99,11 @@ alias hub=git-hub
 alias ls='ls --color=auto'
 alias r="bundle exec rails"
 alias v=vim
-alias e="emacs &; disown"
+alias e=openemacs
 alias dc=docker-compose
 alias d=docker
 alias y=yarn
+alias cdp="source cdproject"
 
 # }}}
 
