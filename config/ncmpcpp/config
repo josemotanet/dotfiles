@@ -1,0 +1,2 @@
+song_columns_list_format = "$R(20)[white]{t}"
+titles_visibility = "no"
