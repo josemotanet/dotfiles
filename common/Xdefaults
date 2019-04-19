@@ -15,7 +15,7 @@ URxvt.letterSpace: -1
 URxvt.lineSpace: 7
 URxvt.cursorUnderline: true
 
-URxvt.perl-ext: default,url-select
+URxvt.perl-ext: default,url-select,resize-font
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
