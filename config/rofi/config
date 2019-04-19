@@ -1,7 +1,6 @@
-rofi.font: Iosevka 14
+rofi.font: Roboto 14
+rofi.theme: .config/rofi/gruvbox-dark
 rofi.width: 20
-rofi.color-normal: #142229, #c5ccd8, #142229, #e65b65, #142229
-rofi.color-window: #142229
 rofi.padding: 30
 rofi.dpi: 144
 rofi.hide-scrollbar: true
