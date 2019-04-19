@@ -93,8 +93,8 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Colorscheme and font {{{
 (load-theme 'gruvbox t)
-(add-to-list 'default-frame-alist '(font . "Roboto Mono-11:regular"))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(font . "Iosevka Term SS09-13:regular"))
 ;; }}}
 
 ;; GUI elements {{{
@@ -103,7 +103,7 @@ Return a list of installed packages or nil for every skipped package."
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (global-hl-line-mode t)
-(setq-default line-spacing 0)
+(setq-default line-spacing 7)
 (setq-default cursor-type 'hbar)
 (setq-default evil-normal-state-cursor 'hbar)
 (setq-default evil-want-C-u-scroll t)
