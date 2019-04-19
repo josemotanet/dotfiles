@@ -3,6 +3,7 @@ xset m 8/1 2
 export GDK_SCALE=2
 
 xrdb -load ~/.Xresources &
+nitrogen --restore &
 urxvtd &
 source ~/.zshenv
 emacs --daemon &
