@@ -86,6 +86,7 @@ Return a list of installed packages or nil for every skipped package."
 (setq mmm-submode-decoration-level 0)
 (setq markdown-open-command "/usr/bin/pandoc")
 (setq mocha-snippets-use-fat-arrows t)
+(setq x-select-enable-clipboard t)
 (global-prettify-symbols-mode t)
 (require 'iso-transl)
 ;; }}}
