@@ -57,9 +57,9 @@ bindsym $mod+w layout tabbed
 # }}}
 
 ## Volume adjustment {{{
-bindsym XF86AudioRaiseVolume exec pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec mpc vol +5
+bindsym XF86AudioLowerVolume exec mpc vol -5
+# bindsym XF86AudioMute exec mpc 
 # }}}
 
 ## MPD commands {{{
