@@ -38,6 +38,7 @@ Return a list of installed packages or nil for every skipped package."
                           'evil-surround
                           'gruvbox-theme
                           'fill-column-indicator
+                          'gruvbox-theme
                           'inf-ruby
                           'haml-mode
                           'helm
@@ -66,7 +67,8 @@ Return a list of installed packages or nil for every skipped package."
                           'treemacs-evil
                           'treemacs-projectile
                           'yaml-mode
-                          'yasnippet)
+                          'yasnippet
+                          'yasnippet-snippets)
 ;; }}}
 
 ;; Overall settings {{{
@@ -104,7 +106,7 @@ Return a list of installed packages or nil for every skipped package."
 (scroll-bar-mode -1)
 (global-hl-line-mode t)
 (setq-default line-spacing 7)
-(setq-default cursor-type 'hbar)
+(setq-default cursor-type 'box)
 (setq-default evil-normal-state-cursor 'hbar)
 (setq-default evil-want-C-u-scroll t)
 (setq-default frame-title-format "%b (%f)")
