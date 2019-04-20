@@ -47,7 +47,7 @@ Return a list of installed packages or nil for every skipped package."
                           'hlinum
                           'js2-mode
                           'magit
-                          ;'neotree
+                          ; 'neotree
                           'nord-theme
                           'olivetti
                           'org-bullets
@@ -155,22 +155,6 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Rainbow mode for fancy CSS color preview
 (rainbow-mode t)
-
-;; Neotree
-(require 'neotree)
-(setq-default neo-show-hidden-files t)
-(setq neo-theme (if (display-graphic-p) 'icons 'ascii))
-(setq neo-vc-integration nil)
-
-(add-hook 'neotree-mode-hook
-  (lambda ()
-    (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
-    (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
-    (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-    (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
-    (define-key evil-normal-state-local-map (kbd "s") 'neotree-enter-vertical-split)
-    (define-key evil-normal-state-local-map (kbd "S") 'neotree-enter-horizontal-split)))
-;; }}}
 
 ;; Helm
 (setq helm-ag-use-agignore t)
