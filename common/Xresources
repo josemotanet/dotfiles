@@ -1,46 +1,6 @@
-! Base16 Thomas
-! Scheme: José Mota (http://github.com/josemotanet)
-
-#define base00 #142229
-#define base01 #2d3a42
-#define base02 #47535b
-#define base03 #606b74
-#define base04 #79838d
-#define base05 #929ba6
-#define base06 #acb4bf
-#define base07 #c5ccd8
-#define base08 #e65b65
-#define base09 #f38c4f
-#define base0A #f4bf75
-#define base0B #8ebe8c
-#define base0C #54abad
-#define base0D #6295ca
-#define base0E #ab76a6
-#define base0F #8f5536
-
-*.foreground:   base07
-*.background:   base00
-*.cursorColor:  base05
-
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
-
-*.color8:       base03
-*.color9:       base09
-*.color10:      base01
-*.color11:      base02
-*.color12:      base04
-*.color13:      base06
-*.color14:      base0F
-*.color15:      base07
-
 Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.antialias: RGB
 Xft.rgba: rgb
+
+#include ".config/Xresources/gruvbox.Xresources"
