@@ -32,4 +32,6 @@
 [core]
   editor = vim
 [push]
-	default = current
+  default = current
+[rebase]
+  autoStash = true
