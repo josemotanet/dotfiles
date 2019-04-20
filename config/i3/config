@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:Noto Sans, Iosevka Term SS09, FontAwesome 10
+font pango:Roboto, Iosevka Term SS09, FontAwesome 10
 
 floating_modifier $mod
 
