@@ -246,13 +246,16 @@ Return a list of installed packages or nil for every skipped package."
                                 (olivetti-set-width 84)
                                 ))
 
+(add-hook 'js-mode-hook 'hs-minor-mode)
+(add-hook 'js2-mode-hook 'hs-minor-mode)
+(add-hook 'ruby-mode-hook 'hs-minor-mode)
+(add-hook 'scss-mode-hook 'hs-minor-mode)
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
-
-(add-hook 'prog-mode-hook (lambda () (hs-minor-mode)))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 ;; }}}
