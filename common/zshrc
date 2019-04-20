@@ -26,6 +26,8 @@ autoload -Uz colors && colors
 autoload -U add-zsh-hook
 setopt PROMPT_SUBST
 
+set -o emacs
+
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
 PROMPT="%{$fg[yellow]%}▶ %{$reset_color%}"
 TERM="screen-256color"
