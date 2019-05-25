@@ -89,14 +89,14 @@ Return a list of installed packages or nil for every skipped package."
 (setq markdown-open-command "/usr/bin/pandoc")
 (setq mocha-snippets-use-fat-arrows t)
 (setq x-select-enable-clipboard t)
-(global-prettify-symbols-mode t)
+(global-prettify-symbols-mode 0)
 (require 'iso-transl)
 ;; }}}
 
 ;; Colorscheme and font {{{
 (load-theme 'gruvbox t)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(font . "Iosevka Term SS09-13:regular"))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-13:regular"))
 ;; }}}
 
 ;; GUI elements {{{
@@ -105,7 +105,7 @@ Return a list of installed packages or nil for every skipped package."
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (global-hl-line-mode t)
-(setq-default line-spacing 7)
+(setq-default line-spacing 11)
 (setq-default cursor-type 'box)
 (setq-default evil-normal-state-cursor 'hbar)
 (setq-default evil-want-C-u-scroll t)
@@ -137,6 +137,7 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Column rule
 (setq fci-rule-column 81)
+(setq fci-rule-color "#444")
 (fci-mode t)
 
 ;; Show column number in status bar
