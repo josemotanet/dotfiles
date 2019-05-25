@@ -1,0 +1,21 @@
+IMAPAccount josemotanet
+Host imap.fastmail.com
+User jose@josemota.net
+PassCmd "echo $MAIL_PASSWORD_JOSEMOTANET"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore josemotanet-remote
+Account josemotanet
+
+MaildirStore josemotanet-local
+SubFolders Verbatim
+Path ~/mail/josemotanet/
+Inbox ~/mail/josemotanet/Inbox
+
+Channel josemotanet
+Master :josemotanet-remote:
+Slave :josemotanet-local:
+Patterns *
+Create Both
+SyncState *

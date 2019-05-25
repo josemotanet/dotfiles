@@ -22,7 +22,8 @@ unset markers
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 
-source ~/.config/mutt/imap/josemota.net.conf
+# source ~/.config/mutt/imap/josemota.net.conf
+source ~/.config/mutt/maildir/josemota.net.conf
 
 bind index g noop
 bind index,pager A group-reply
