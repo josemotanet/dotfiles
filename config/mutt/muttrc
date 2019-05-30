@@ -15,6 +15,8 @@ set timeout = 30
 set mail_check = 60
 set wrap = 80
 set date_format = "%m %d, %T"
+set pager_index_lines = 10
+set sleep_time = 0
 
 unset imap_passive
 unset markers
@@ -33,4 +35,8 @@ macro index g2 '<sync-mailbox><enter-command>source ~/.config/mutt/imap/boldint.
 color indicator black brightwhite
 color index_author red default '.*'
 color index_flags brightred default 'C'
+color index_size blue default
 color status yellow default
+color tree blue default
+color header brightgreen default '.*'
+color attachment blue default
