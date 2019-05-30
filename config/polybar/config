@@ -47,7 +47,7 @@ font-2 = "FontAwesome;0"
 
 modules-left = i3 xwindow
 modules-center = mpd
-modules-right = filesystem volume xkeyboard memory eth date powermenu
+modules-right = email filesystem volume xkeyboard memory eth date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -377,3 +377,10 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+
+[module/email]
+type = custom/script
+format-prefix = 
+format-prefix-padding = 2
+exec = ~/bin/scripts/unread-email
+interval = 30

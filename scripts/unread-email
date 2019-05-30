@@ -1,0 +1,1 @@
+ls -1 ~/mail/josemotanet/Inbox/new | wc -l
