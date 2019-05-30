@@ -9,7 +9,7 @@ URxvt*geometry: 100x40
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: 0
-URxvt*font: xft:Inconsolata:weight=Regular:size=22,xft:DejaVu Sans Mono:size=19,xft:FontAwesome:size=19
+URxvt*font: xft:Roboto Mono:weight=Medium:size=20.5,xft:DejaVu Sans Mono:size=19,xft:FontAwesome:size=19
 URxvt.letterSpace: -1
 URxvt.lineSpace: 7
 URxvt.cursorUnderline: true
