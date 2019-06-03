@@ -35,3 +35,5 @@
   default = current
 [rebase]
   autoStash = true
+[fetch]
+	prune = true
