@@ -17,6 +17,8 @@ set wrap = 80
 set date_format = "%m %d, %T"
 set pager_index_lines = 10
 set sleep_time = 0
+set sidebar_folder_indent = yes
+set delete = yes
 
 unset imap_passive
 unset markers
@@ -29,6 +31,7 @@ source ~/.config/mutt/maildir/josemota.net.conf
 
 bind index g noop
 bind index,pager A group-reply
+bind index,pager B sidebar-toggle-visible
 macro index g1 '<sync-mailbox><enter-command>source ~/.config/mutt/imap/josemota.net.conf<enter><change-folder>!<enter>'
 macro index g2 '<sync-mailbox><enter-command>source ~/.config/mutt/imap/boldint.conf<enter><change-folder>!<enter>'
 
