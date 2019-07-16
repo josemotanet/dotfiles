@@ -109,6 +109,7 @@ Return a list of installed packages or nil for every skipped package."
 (setq-default cursor-type 'box)
 (setq-default evil-normal-state-cursor 'box)
 (setq-default evil-want-C-u-scroll t)
+(setq-default evil-shift-width 2)
 (setq-default frame-title-format "%b (%f)")
 
 ;; Whitespace
