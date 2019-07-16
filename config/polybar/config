@@ -43,7 +43,7 @@ module-margin-right = 2
 
 font-0 = "Roboto:weight=bold;0"
 font-1 = "Iosevka Term SS09:weight=regular;0"
-font-2 = "FontAwesome;0"
+font-2 = "Material Design Icons;0"
 
 modules-left = i3 xwindow
 modules-center = mpd
@@ -152,11 +152,11 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev =  
-icon-stop =  
-icon-play =  
-icon-pause =  
-icon-next =  
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
 label-song = %title%
 label-song-maxlen = 50
@@ -204,9 +204,9 @@ bar-used-foreground-3 = ${xrdb:color1:#ff5555}
 bar-used-fill = ▐
 bar-used-empty = ▐
 bar-used-empty-foreground = #444444
-format = <bar-used>  <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
 format-underline = #4bffdc
 label = %gb_used%
 
@@ -271,9 +271,9 @@ format-volume = <label-volume> <bar-volume>
 label-volume = vol:
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = muted
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground}
+label-muted = ""
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -299,10 +299,13 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = #73ff7c
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = #ffb52a
+
+label-charging = " %percentage%%"
+label-discharging = " %percentage%%"
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
@@ -380,7 +383,7 @@ margin-bottom = 5
 
 [module/email]
 type = custom/script
-format-prefix = 
+format-prefix = 
 format-prefix-padding = 2
 exec = ~/bin/scripts/unread-email
 interval = 30
