@@ -19,6 +19,7 @@ set pager_index_lines = 10
 set sleep_time = 0
 set sidebar_folder_indent = yes
 set delete = yes
+set confirmappend = no
 
 unset imap_passive
 unset markers
