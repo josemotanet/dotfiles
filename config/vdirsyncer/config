@@ -24,8 +24,8 @@ path = "~/.calendars/josemotanet/"
 type = "caldav"
 url = "https://caldav.fastmail.com"
 username = "jose@josemota.net"
-password.fetch = ["prompt", "pwd?"]
-#password.fetch = ["command", "~/bin/scripts/calendar"]
+# password.fetch = ["prompt", "pwd?"]
+password.fetch = ["command", "~/bin/scripts/calendar", "josemotanet"]
 
 #   __
 #  / _|
@@ -48,6 +48,6 @@ path = "~/.calendars/fruux/"
 type = "caldav"
 url = "https://dav.fruux.com"
 username = "b3297426581"
-password.fetch = ["command", "~/bin/scripts/calendar"]
-# password = "koxjwttnfz8q"
+# password.fetch = ["command", "~/bin/scripts/calendar"]
+password = "koxjwttnfz8q"
 # password.fetch = ["prompt", "pwd?"]

@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+echo $CALENDAR_PASSWORD_JOSEMOTANET
