@@ -86,6 +86,7 @@ bindsym $mod+c exec urxvt -e "ranger"
 bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+m exec urxvt -e "neomutt"
 bindsym $mod+Ctrl+u exec maim -s ~/Pictures/screenshots/$(date +%s).png && notify-send -t 2500 "Screenshot $(ls -1 Pictures/screenshots --sort time | head -n 1) saved."
+bindsym $mod+Ctrl+p exec bwmenu
 # }}}
 
 ## Splits {{{
