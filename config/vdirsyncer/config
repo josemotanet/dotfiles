@@ -1,0 +1,53 @@
+[general]
+status_path = "~/.vdirsyncer/status/"
+
+#    _                                _                     _
+#   (_)                              | |                   | |
+#    _  ___  ___  ___ _ __ ___   ___ | |_ __ _   _ __   ___| |_
+#   | |/ _ \/ __|/ _ \ '_ ` _ \ / _ \| __/ _` | | '_ \ / _ \ __|
+#   | | (_) \__ \  __/ | | | | | (_) | || (_| |_| | | |  __/ |_
+#   | |\___/|___/\___|_| |_| |_|\___/ \__\__,_(_)_| |_|\___|\__|
+#  _/ |
+# |__/
+
+[pair josemotanet]
+a = "josemotanet_local"
+b = "josemotanet_remote"
+collections = ["from a", "from b"]
+
+[storage josemotanet_local]
+type = "filesystem"
+fileext = ".ics"
+path = "~/.calendars/josemotanet/"
+
+[storage josemotanet_remote]
+type = "caldav"
+url = "https://caldav.fastmail.com"
+username = "jose@josemota.net"
+password.fetch = ["prompt", "pwd?"]
+#password.fetch = ["command", "~/bin/scripts/calendar"]
+
+#   __
+#  / _|
+# | |_ _ __ _   _ _   ___  __
+# |  _| '__| | | | | | \ \/ /
+# | | | |  | |_| | |_| |>  <
+# |_| |_|   \__,_|\__,_/_/\_\
+
+[pair fruux]
+a = "fruux_local"
+b = "fruux_remote"
+collections = ["from a", "from b"]
+
+[storage fruux_local]
+type = "filesystem"
+fileext = ".ics"
+path = "~/.calendars/fruux/"
+
+[storage fruux_remote]
+type = "caldav"
+url = "https://dav.fruux.com"
+username = "b3297426581"
+password.fetch = ["command", "~/bin/scripts/calendar"]
+# password = "koxjwttnfz8q"
+# password.fetch = ["prompt", "pwd?"]

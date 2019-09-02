@@ -1,0 +1,16 @@
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+[calendars]
+[[josemotanet]]
+path = "~/.calendars/josemotanet/*"
+type = "discover"
+
+[[fruux]]
+path = "~/.calendars/fruux/8109b570-468c-48c4-90a2-5021a470d998"
+type = "discover"
+color = yellow
