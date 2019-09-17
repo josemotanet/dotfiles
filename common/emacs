@@ -91,6 +91,28 @@ Return a list of installed packages or nil for every skipped package."
 (setq x-select-enable-clipboard t)
 (global-prettify-symbols-mode 0)
 (require 'iso-transl)
+(setq-default js2-global-externs
+                  '("module"
+                    "exports"
+                    "require"
+                    "process"
+                    "setTimeout"
+                    "clearTimeout"
+                    "setInterval"
+                    "clearInterval"
+                    "window"
+                    "location"
+                    "__dirname"
+                    "console"
+                    "JSON"
+                    "before"
+                    "beforeEach"
+                    "after"
+                    "afterEach"
+                    "describe"
+                    "it"
+                    "expect"
+                    "fetch"))
 ;; }}}
 
 ;; Colorscheme and font {{{
