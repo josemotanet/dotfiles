@@ -14,3 +14,6 @@ type = "discover"
 path = "~/.calendars/fruux/8109b570-468c-48c4-90a2-5021a470d998"
 type = "discover"
 color = yellow
+
+[default]
+default_calendar = 66ba7df2-8c74-4a91-b3a2-a0885063bb15
