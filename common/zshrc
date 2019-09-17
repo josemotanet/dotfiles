@@ -114,8 +114,8 @@ alias cdp="source cdproject"
 
 source ~/.zshenv
 source ~/.nvm/nvm.sh
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+# source /usr/share/chruby/chruby.sh
+# source /usr/share/chruby/auto.sh
 test -s ~/.kiex/scripts/kiex && source ~/.kiex/scripts/kiex
 test -s direnv && eval "$(direnv hook zsh)"
 test -s ~/.config/shell/less_termcap.sh && source ~/.config/shell/less_termcap.sh
@@ -123,14 +123,6 @@ test -s ~/.config/shell/less_termcap.sh && source ~/.config/shell/less_termcap.s
 # }}}
 
 # vim: foldmethod=marker foldmarker={{{,}}}
-
-_direnv_hook() {
-  eval "$(direnv export zsh)";
-}
-typeset -ag precmd_functions;
-if [[ -z ${precmd_functions[(r)_direnv_hook]} ]]; then
-  precmd_functions+=_direnv_hook;
-fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
