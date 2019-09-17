@@ -87,6 +87,7 @@ bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+m exec urxvt -e "neomutt"
 bindsym $mod+Ctrl+u exec maim -s ~/Pictures/screenshots/$(date +%s).png && notify-send -t 2500 "Screenshot $(ls -1 Pictures/screenshots --sort time | head -n 1) saved."
 bindsym $mod+Ctrl+p exec bwmenu
+bindsym $mod+Ctrl+c exec urxvt -e "ikhal"
 # }}}
 
 ## Splits {{{
@@ -146,6 +147,7 @@ for_window [class="Shutter"]              floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [title="Authy"]                floating enable
 for_window [title="Nitrogen"]             floating enable
+for_window [title="EVE"]                  move to workspace $workspace10, workspace $workspace10
 # }}}
 
 # resize window (you can also use the mouse for that) {{{
@@ -175,7 +177,7 @@ set $indicator-color #00ff00
 set $urgent-color    #e04f26
 
 # class                 border    backgr.       text           indicator
-client.focused          $bg-color $bg-color     $text-color    $indicator-color #999999
+client.focused          #000000   $bg-color     $text-color    $indicator-color #000000
 client.focused_inactive $bg-color $bg-color     $text-color    $indicator-color
 client.unfocused        #333333   #222932       $in-text-color $indicator-color
 client.urgent           #2f343a   $urgent-color #ffffff        $indicator-color
