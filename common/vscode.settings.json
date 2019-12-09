@@ -1,0 +1,66 @@
+{
+  "editor.fontFamily": "Roboto Mono",
+  "editor.tabSize": 2,
+  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+  "editor.fontSize": 12.5,
+  "editor.lineHeight": 21,
+  "editor.rulers": [80,120],
+  "window.zoomLevel": 0,
+  "debug.console.fontSize": 12,
+  "terminal.integrated.fontSize": 12,
+  "vim.hlsearch": true,
+  "vim.leader": ",",
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "workbench.colorCustomizations": {
+      "statusBar.background": "#303030",
+      "statusBar.noFolderBackground": "#222225",
+      "statusBar.debuggingBackground": "#511f1f",
+      "editorIndentGuide.activeBackground": "#ffffff22",
+      "editorIndentGuide.background": "#ffffff06",
+      "editorLineNumber.foreground": "#fff2"
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+      {
+          "before": ["leader", "w"],
+          "commands": [
+              "workbench.action.files.save"
+          ]
+      },
+
+      {
+          "before": ["<leader>", "d"],
+          "commands": [":q"]
+      },
+
+      {
+          "before": ["<leader>", "t"],
+          "commands": [
+              "workbench.action.quickOpen"
+          ]
+      },
+
+      {
+          "before": ["<leader>", "g", "s"],
+          "commands": ["gitlens.showQuickRepoStatus"]
+      },
+
+      {
+          "before": ["<leader>", "m"],
+          "commands": ["workbench.action.toggleSidebarVisibility"]
+      }
+  ],
+  "vim.foldfix": true,
+  "explorer.confirmDragAndDrop": false,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "git.enableSmartCommit": true,
+  "markdown.preview.fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif",
+  "workbench.startupEditor": "newUntitledFile",
+  "git.defaultCloneDirectory": "Projects",
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "Roboto Mono",
+  "diffEditor.renderSideBySide": false,
+  "vim.gdefault": true
+}
