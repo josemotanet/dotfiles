@@ -131,3 +131,5 @@ alias dnfi="sudo dnf install -y"
 if [ -f ~/.config/exercism/exercism_completion.zsh  ]; then
   . ~/.config/exercism/exercism_completion.zsh
 fi
+
+grep --quiet Microsoft /proc/version 2>/dev/null && [[ "$(umask)" == '000' ]] && umask 022
