@@ -1,6 +1,0 @@
---type-set=haml=.haml
---type-set=sass=.sass
---type-set=scss=.scss
---type-set=erb=.erb
---type-set=coffee=.coffee
---type-add=js=.coffee
