@@ -30,7 +30,7 @@ genfstab /mnt >> /mnt/etc/fstab
 
 echo -e "\e[36m=== System installed.\e[39m"
 
-wget -O /mnt/chroot.sh https://raw.githubusercontent.com/josemotanet/dotfiles/archlinux-installer/archlinux-installer/chroot.sh
+wget -O /mnt/chroot.sh https://raw.githubusercontent.com/josemotanet/dotfiles/master/archlinux-installer/chroot.sh
 
 arch-chroot /mnt /bin/bash ./chroot.sh $USER $PASS $HOST $DOTFILES $LANG $TIMEZONE
 
