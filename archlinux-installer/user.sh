@@ -23,7 +23,7 @@ cd dotfiles/stow
 
 for PACKAGE in shell xorg git vim emacs tmux polybar rofi i3 dunst
 do
-  stow -R -v t ~ package
+  stow -R -v -t ~ package
 done
 
 echo -e "\e[36m=== User bootstrapped.\e[39m"
