@@ -29,7 +29,7 @@ setopt PROMPT_SUBST
 set -o emacs
 
 RPROMPT='%~%{$fg[yellow]%}$(git_branch)%{$reset_color%}$(git_status)'
-PROMPT="%{$fg[yellow]%}▶ %{$reset_color%}"
+PROMPT="%{$fg[yellow]%}$ %{$reset_color%}"
 TERM="screen-256color"
 
 # }}}
@@ -107,26 +107,24 @@ alias dc=docker-compose
 alias d=docker
 alias y=yarn
 alias cdp="source cdproject"
+alias dnfi="sudo dnf install -y"
 
 # }}}
 
 # Source external applications {{{
 
-source ~/.zshenv
-source ~/.nvm/nvm.sh
-# source /usr/share/chruby/chruby.sh
-# source /usr/share/chruby/auto.sh
+test -s ~/.zshenv && source ~/.zshenv
+test -s ~/.nvm/nvm.sh && source ~/.nvm/nvm.sh
 test -s ~/.kiex/scripts/kiex && source ~/.kiex/scripts/kiex
 test -s direnv && eval "$(direnv hook zsh)"
 test -s ~/.config/shell/less_termcap.sh && source ~/.config/shell/less_termcap.sh
+test -f ~/.fzf.zsh && source ~/.fzf.zsh
+# source /usr/share/chruby/chruby.sh
+# source /usr/share/chruby/auto.sh
 
 # }}}
 
 # vim: foldmethod=marker foldmarker={{{,}}}
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-alias dnfi="sudo dnf install -y"
 
 if [ -f ~/.config/exercism/exercism_completion.zsh  ]; then
   . ~/.config/exercism/exercism_completion.zsh
