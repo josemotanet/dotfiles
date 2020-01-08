@@ -8,53 +8,10 @@ if has ("autocmd")
   filetype indent on
 endif
 
-" Vundle {{{
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'garbas/vim-snipmate'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'marcweber/vim-addon-mw-utils'
-Plugin 'mattn/emmet-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'mnick/vim-pomodoro'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'nono/vim-handlebars'
-Plugin 'noprompt/vim-yardoc'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/tComment'
-Plugin 'w0ng/vim-hybrid'
-
-call vundle#end()
-
-" }}}
-
 let mapleader = ","
 syntax enable
 let g:hybrid_custom_term_colors = 1
-colorscheme hybrid
+" colorscheme hybrid
 set background=dark
 set laststatus=2
 
