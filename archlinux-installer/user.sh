@@ -2,6 +2,8 @@
 # User bootstrap
 #
 
+export $DOTFILES = ${1:-http://github.com/josemotanet/dotfiles}
+
 echo -e "\e[34m=== Bootstrapping user...\e[39m"
 
 echo -e "\e[34m=== Installing yay...\e[39m"
@@ -16,7 +18,7 @@ echo -e "\e[36m=== Yay installed.\e[39m"
 yay -S --noconfirm ttf-iosevka \
                    polybar
 
-ssh-keygen -N "" -t rsa
+ssh-keygen -N "" -t rsa -f ~/.ssh/id_rsa
 mkdir -vp workspace && cd workspace
 git clone $DOTFILES dotfiles
 cd dotfiles/stow
