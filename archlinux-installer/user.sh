@@ -15,15 +15,19 @@ rm -v PKGBUILD *.tar.gz *.tar.xz
 
 echo -e "\e[36m=== Yay installed.\e[39m"
 
-yay -S --noconfirm ttf-iosevka \
-                   polybar
+yay -S --noconfirm bitwarden-cli-bin \
+                   ttf-iosevka \
+                   polybar \
+                   rofi-bitwarden \
+                   rofi-calc \
+                   urxvt-resize-font-git
 
 ssh-keygen -N "" -t rsa -f ~/.ssh/id_rsa
 mkdir -vp workspace && cd workspace
 git clone $DOTFILES dotfiles
 cd dotfiles/stow
 
-for PACKAGE in shell xorg git vim emacs tmux polybar rofi i3 dunst
+for PACKAGE in shell xorg git vim emacs tmux polybar rofi i3 dunst mailcap scripts streamlink systemd mutt mpd mbsync
 do
   stow -R -v -t ~ package
 done

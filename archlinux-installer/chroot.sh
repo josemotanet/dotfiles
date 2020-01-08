@@ -37,9 +37,10 @@ pacman -S --noconfirm curl \
                       fzf \
                       git \
                       go \
+                      htop \
+                      i3-gaps \
                       lightdm \
                       lightdm-gtk-greeter \
-                      i3-gaps \
                       mpc \
                       mpd \
                       ncdu \
@@ -47,6 +48,8 @@ pacman -S --noconfirm curl \
                       openssh \
                       ranger \
                       ripgrep \
+                      rofi \
+                      rofimoji \
                       rxvt-unicode \
                       stow \
                       sudo \
