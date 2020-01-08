@@ -53,7 +53,8 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
+
+test -s ~/.nvm/nvm.sh && add-zsh-hook chpwd load-nvmrc
 
 function git_status() { # {{{
   local st="$(git status 2> /dev/null)"
