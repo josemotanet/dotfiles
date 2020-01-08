@@ -34,12 +34,16 @@ pacman -Syy
 pacman -S --noconfirm curl \
                       dhcpcd \
                       emacs \
+                      fzf \
                       git \
                       go \
                       lightdm \
                       lightdm-gtk-greeter \
                       i3-gaps \
+                      mpc \
+                      mpd \
                       ncdu \
+                      ncmpcpp \
                       openssh \
                       ranger \
                       ripgrep \
@@ -55,6 +59,9 @@ pacman -S --noconfirm curl \
                       virtualbox-guest-utils \
                       wget \
                       xf86-video-vmware \
+                      xorg-server \
+                      xorg-xrdb \
+                      xorg-xset \
                       xsel \
                       zip \
                       zsh
