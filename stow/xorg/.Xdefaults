@@ -2,14 +2,14 @@
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
 
-Xft.dpi: 96
+Xft.dpi: 144
 
 URxvt.internalBorder: 24
 URxvt*geometry: 100x40
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: 0
-URxvt*font: xft:Roboto Mono:weight=Medium:size=20.5,xft:DejaVu Sans Mono:size=19,xft:FontAwesome:size=19
+URxvt*font: xft:Roboto Mono:weight=Medium:size=11.5,xft:DejaVu Sans Mono:size=11,xft:FontAwesome:size=12
 URxvt.letterSpace: -1
 URxvt.lineSpace: 7
 URxvt.cursorUnderline: true
