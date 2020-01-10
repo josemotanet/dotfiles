@@ -1,0 +1,346 @@
+; -*- mode: Emacs-Lisp -*-
+(require 'package)
+
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+
+(setq package-enable-at-startup nil)
+
+;; Package management {{{
+(defun ensure-package-installed (&rest packages)
+  "Assure every package is installed, ask for installation if it’s not.
+
+Return a list of installed packages or nil for every skipped package."
+  (mapcar
+   (lambda (package)
+     (if (package-installed-p package)
+         nil
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+           (package-install package)
+         package)))
+   packages))
+
+;; Make sure to have downloaded archive description.
+(or (file-exists-p package-user-dir)
+    (package-refresh-contents))
+
+;; Activate installed packages
+(package-initialize)
+
+(ensure-package-installed 'all-the-icons
+                          'auto-complete
+                          'color-theme-sanityinc-tomorrow
+                          'diff-hl
+                          'emmet-mode
+                          'evil
+                          'evil-leader
+                          'evil-surround
+                          'gruvbox-theme
+                          'fill-column-indicator
+                          'gruvbox-theme
+                          'inf-ruby
+                          'haml-mode
+                          'helm
+                          'helm-ag
+                          'helm-projectile
+                          'hlinum
+                          'js2-mode
+                          'magit
+                          ; 'neotree
+                          'nord-theme
+                          'olivetti
+                          'org-bullets
+                          'ox-reveal
+                          'polymode
+                          'powerline
+                          'powerline-evil
+                          'projectile
+                          'rainbow-delimiters
+                          'rainbow-mode
+                          'rspec-mode
+                          'rubocop
+                          'scss-mode
+                          'smartparens
+                          'tide
+                          'treemacs
+                          'treemacs-evil
+                          'treemacs-projectile
+                          'yaml-mode
+                          'yasnippet
+                          'yasnippet-snippets)
+;; }}}
+
+;; Overall settings {{{
+(setq make-backup-files nil)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq js-indent-level 2)
+(setq typescript-indent-level 2)
+(setq scss-indent-level 2)
+(setq css-indent-offset 2)
+(setq sh-basic-offset 2)
+(setq inhibit-startup-message t)
+(setq auto-save-default nil)
+(setq-default fill-column 80)
+(setq create-lockfiles nil)
+(setq ido-enable-flex-matching t)
+(setq mmm-submode-decoration-level 0)
+(setq markdown-open-command "/usr/bin/pandoc")
+(setq mocha-snippets-use-fat-arrows t)
+(setq x-select-enable-clipboard t)
+(global-prettify-symbols-mode 0)
+(require 'iso-transl)
+(setq-default js2-global-externs
+                  '("module"
+                    "exports"
+                    "require"
+                    "process"
+                    "setTimeout"
+                    "clearTimeout"
+                    "setInterval"
+                    "clearInterval"
+                    "window"
+                    "location"
+                    "__dirname"
+                    "console"
+                    "JSON"
+                    "before"
+                    "beforeEach"
+                    "after"
+                    "afterEach"
+                    "describe"
+                    "it"
+                    "expect"
+                    "fetch"))
+;; }}}
+
+;; Colorscheme and font {{{
+(load-theme 'gruvbox t)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(font . "Roboto Mono-12:medium"))
+;; }}}
+
+;; GUI elements {{{
+(ido-mode t)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(global-hl-line-mode t)
+(setq-default line-spacing 8)
+(setq-default cursor-type 'box)
+(setq-default evil-normal-state-cursor 'box)
+(setq-default evil-want-C-u-scroll t)
+(setq-default evil-shift-width 2)
+(setq-default frame-title-format "%b (%f)")
+
+;; Whitespace
+(setq whitespace-style (quote (tabs trailing newline tab-mark newline-mark)))
+(setq whitespace-display-mappings
+  ;; all numbers are Unicode codepoint in decimal. ⁖ (insert-char 182 1)
+  '(
+    (space-mark 32 [183] [46])
+    (newline-mark 10 [172 10])
+    (tab-mark 9 [9656 9] [92 9])
+    ))
+(global-whitespace-mode t)
+(set-face-attribute 'whitespace-newline nil
+                    :background nil
+                    :foreground "DimGrey")
+
+;; Powerline
+;; (powerline-evil-vim-color-theme)
+(display-time-mode t)
+
+;; Projectile
+(projectile-global-mode t)
+(add-to-list 'projectile-globally-ignored-directories "node_modules")
+(add-to-list 'projectile-globally-ignored-directories "spec/cassettes")
+(add-to-list 'projectile-globally-ignored-file-suffixes ".map")
+
+;; Column rule
+(setq fci-rule-column 81)
+(setq fci-rule-color "#444")
+(fci-mode t)
+
+;; Show column number in status bar
+(column-number-mode t)
+
+;; Line numbers
+(global-linum-mode t)
+(hlinum-activate)
+
+;; Autocomplete
+(global-auto-complete-mode t)
+(add-to-list 'ac-sources 'ac-source-yasnippet)
+
+;; Proper brackets behavior
+(electric-pair-mode t)
+
+;; Rainbow mode for fancy CSS color preview
+(rainbow-mode t)
+
+;; Helm
+(setq helm-ag-use-agignore t)
+(setq helm-display-header-line t)
+(setq helm-mode-fuzzy-match t)
+(require 'helm)
+(helm-mode t)
+
+;; All the icons
+(require 'all-the-icons)
+
+;; Org settings
+(org-bullets-mode t)
+
+;; Snippets
+(yas-global-mode t)
+(eval-after-load 'rspec-mode '(rspec-install-snippets))
+
+;; Git gutter
+(global-diff-hl-mode t)
+
+;; Evil-mode {{{
+(require 'evil-leader)
+(global-evil-leader-mode 1)
+(global-evil-surround-mode 1)
+(evil-leader/set-leader ",")
+(setq markdown-fontify-code-blocks-natively t)
+
+(evil-leader/set-key
+  "w" 'save-buffer
+  "d" 'kill-this-buffer
+  "gs" 'magit-status
+  "gbb" 'magit-blame
+  "gbq" 'magit-blame-quit
+  "f" 'ffap
+  "t" 'helm-projectile
+  "m" 'treemacs
+  "rs" 'rspec-verify-all
+  "v" 'rubocop-check-current-file
+  "b" 'switch-to-buffer
+  "x" 'helm-M-x
+  "a" 'helm-do-ag-project-root
+  "<SPC>" 'evil-switch-to-windows-last-buffer
+  "h" 'helm-resume
+  "<RET>" 'projectile-run-eshell
+)
+
+(setq evil-want-C-u-scroll t) ;; Force Ctrl+U to scroll half screen up.
+(setq evil-want-C-d-scroll t) ;; Force Ctrl+D to scroll half screen bottom.
+(setq evil-ex-substitute-global t)
+(define-key evil-insert-state-map "\C-y" 'emmet-expand-line)
+
+(require 'evil)
+(evil-mode t)
+;; }}}
+
+;; Default smartparens config
+(require 'smartparens-config)
+
+;; Keybindings {{{
+(global-set-key (kbd "M-x") 'helm-M-x)
+;; }}}
+
+;; Hooks {{{
+(add-hook 'prog-mode-hook (lambda ()
+                            (turn-on-auto-fill)
+                            (fci-mode)
+                            (set-fill-column 81)
+                            (smartparens-mode t)
+                            (rainbow-delimiters-mode t)))
+
+(add-hook 'text-mode-hook (lambda ()
+                            (turn-on-auto-fill)
+                            (fci-mode)
+                            (set-fill-column 81)))
+
+(add-hook 'org-mode-hook (lambda()
+                           (org-bullets-mode)
+                           (linum-mode 0)
+                           (fci-mode 0)
+                           (olivetti-mode t)
+                           (olivetti-set-width 84)
+                           ))
+
+(add-hook 'markdown-mode-hook (lambda()
+                                (linum-mode 0)
+                                (fci-mode 0)
+                                (olivetti-mode t)
+                                (olivetti-set-width 84)
+                                ))
+
+(add-hook 'js-mode-hook 'hs-minor-mode)
+(add-hook 'js2-mode-hook 'hs-minor-mode)
+(add-hook 'ruby-mode-hook 'hs-minor-mode)
+(add-hook 'scss-mode-hook 'hs-minor-mode)
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;; }}}
+
+(eval-after-load "hideshow"
+  '(add-to-list 'hs-special-modes-alist
+    `(ruby-mode
+      ,(rx (or "def" "class" "module" "do" "{" "[")) ; Block start
+      ,(rx (or "}" "]" "end"))                       ; Block end
+      ,(rx (or "#" "=begin"))                        ; Comment start
+      ruby-forward-sexp nil)))
+
+;; still need:
+;; - hard wrap for specific filetypes
+;; - ctags
+;; - folds
+;; - email (?)
+;; - open split from helm-projectile ;; C-c o
+
+;; (require 'poly-markdown)
+;; (add-to-list 'auto-mode-alist '("\\.md\\'" . poly-markdown-mode))
+
+;; Emacs auto-generated stuff {{{
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil))))
+ '(helm-selection ((t (:background "SteelBlue4"))))
+ '(helm-source-header ((t (:background "#22083397778B" :foreground "white" :weight normal :height 1.0))))
+ '(markdown-code-face ((t (:inherit iosevka :background "#11171d"))))
+ '(neo-dir-link-face ((t (:foreground "#999"))))
+ '(neo-file-link-face ((t (:foreground "#bbb"))))
+ '(neo-root-dir-face ((t (:foreground "#fff"))))
+ '(org-document-title ((t (:foreground "#dc9656" :weight bold :height 1.0)))))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#142229" "#e65b65" "#8ebe8c" "#f4bf75" "#6295ca" "#ab76a6" "#6295ca" "#929ba6"])
+ '(ansi-term-color-vector
+   [unspecified "#1d1f21" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#81a2be" "#c5c8c6"] t)
+ '(custom-safe-themes
+   (quote
+    ("25c06a000382b6239999582dfa2b81cc0649f3897b394a75ad5a670329600b45" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "527df6ab42b54d2e5f4eec8b091bd79b2fa9a1da38f5addd297d1c91aa19b616" "b550fc3d6f0407185ace746913449f6ed5ddc4a9f0cf3be218af4fb3127c7877" "78496062ff095da640c6bb59711973c7c66f392e3ac0127e611221d541850de2" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2" "7527f3308a83721f9b6d50a36698baaedc79ded9f6d5bd4e9a28a22ab13b3cb1" "93268bf5365f22c685550a3cbb8c687a1211e827edc76ce7be3c4bd764054bad" "a632c5ce9bd5bcdbb7e22bf278d802711074413fd5f681f39f21d340064ff292" "16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661" "499929ede38117064d38ba56ae2a8c26786b99b3633df9bfa87c5f4f3df077c9" "aa5a55de49ec343131a3104d8effb0921c6f62608bfc82871b04c01c8f42ef32" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "08b8807d23c290c840bbb14614a83878529359eaba1805618b3be7d61b0b0a32" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "f78de13274781fbb6b01afd43327a4535438ebaeec91d93ebdbba1e3fba34d3c" "ed8cf6d52a2ba9ed7a29a8aac81d83c362a9b62f48b558932a77130163fe9972" "e9776d12e4ccb722a2a732c6e80423331bcb93f02e089ba2a4b02e85de1cf00e" "15a1c7fcbe7ea041e382e1178b3cc5546c6ae8354a3ab1fadbe3e00481f41bdb" "a800120841da457aa2f86b98fb9fd8df8ba682cebde033d7dbf8077c1b7d677a" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "b7ccbe01d825f1cc33d88e3b9f3385250f50465bfa930296d40086f37aadc6e9" "097efe7b08c8dbe5938023580385aaf14c2437a2334739b763250f7b59dd9d72" "19244d3da0cbaf41178bf90c9ca0b81943bb9529145427b74adeba229610c94f" "0c9721db5989cff39fd82f89cab4089df75e9bdbb13a43ba60f106845bb24945" "ffa9bd4df0ee5c638fc7b90de4563cf469d24fc1784df5c2bfcfb3ff46a2284d" "d22b218d4da0d945025553d3dbcc94cf42db5e81cb89cecb85b17a321fbf1112" "9a194526cbe7ff6c609bec13d57f256932a0773f0c2cf00f2157cdc65d4d6f9b" "722777ff8ad7c5d735cfd52065a5b1ff5bedf18a1a1e1cc7b0f674db95331b0a" "02ccf63004ba6cf8fde494835b709b8b18d8bddb77c130749d9f5045e89f38dc" "b511d19385a4b7e7ea411cbbc98b6a4a6eade41fa831be63baf73f85786b8766" "82042fee1eb76fcc510818aaa713f7953ec36c1b6e992ddcf551a6eec748cc91" "995d19f24170efbd23fe7a09421b7c06b2998d937451c518031b7d485cf43e55" "c952a3e4b43b3dafba53a83ad87dfb844689927ddbbc7483d4a179fa2db935d1" "2918844d122142dae1d9e4dba5ee5f20e8c9ecaa3fd9d63c947d47bcf6ffa086" "225db56dabd0546daea9778182cce95ac5aea12aadea122ab2059dfbfd915f03" "b1ec8a515103292ece9cc371cac6abef0a2259ed4fcc534f1b4c6e63e58baeb0" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" "590759adc4a5bf7a183df81654cce13b96089e026af67d92b5eec658fb3fe22f" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "75c0b1d2528f1bce72f53344939da57e290aa34bea79f3a1ee19d6808cb55149" "af214da6d2c72574ededfb50e7985f80ada42b327ed3bffc9b67740fb5e74e58" default)))
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(js2-strict-trailing-comma-warning nil)
+ '(linum-format (quote "%4d "))
+ '(magit-fetch-arguments (quote ("--prune")))
+ '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n50")))
+ '(package-selected-packages
+   (quote
+    (vmd-mode treemacs gruvbox gruvbox-theme dockerfile-mode all-the-icons material-theme spacegray-theme nord-theme rainbow-mode tide json-reformat solarized-theme atom-one-dark-theme js-doc gotham-theme vue-mode zencoding-mode handlebars-mode js2-mode slim-mode web-mode pug-mode elixir-mode olivetti writeroom-mode auto-org-md yasnippet yaml-mode sublime-themes smartparens scss-mode sass-mode rubocop rspec-mode rainbow-delimiters powerline-evil ox-twbs ox-reveal org-bullets neotree monokai-theme markdown-mode magit-gh-pulls inf-ruby hlinum helm-projectile helm-ag flx-ido fiplr fill-column-indicator evil-visual-mark-mode evil-surround evil-leader diff-hl color-theme-sanityinc-tomorrow coffee-mode auto-complete)))
+ '(show-paren-mode t))
+ ;; start maximized
+
+;; }}}
+
+;; vim: foldmethod=marker foldmarker={{{,}}}

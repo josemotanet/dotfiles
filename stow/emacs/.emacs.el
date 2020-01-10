@@ -4,9 +4,7 @@
 (scroll-bar-mode -1)
 (ido-mode t)
 (global-hl-line-mode t)
-; (global-diff-hl-mode t)
 (global-linum-mode t)
-;(hlinum-activate)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(font . "Roboto Mono-18:medium"))
@@ -69,8 +67,13 @@
 ;; Vim mode
 (use-package evil
   :ensure t
+  :init
+  (setq-default evil-normal-state-cursor 'box)
+  (setq-default evil-want-C-u-scroll t)
+  (setq-default evil-shift-width 2)
   :config
   (evil-mode 1))
+
 
 (use-package evil-surround
   :ensure t
@@ -101,8 +104,18 @@
 (use-package magit
   :ensure t)
 
+(use-package diff-hl
+  :ensure t
+  :config
+  (global-diff-hl-mode 1))
+
 (use-package counsel
   :ensure t)
+
+(use-package :hlinum
+  :ensure t
+  :config
+  (hlinum-activate))
 
 (use-package flx
   :ensure t)
@@ -127,10 +140,12 @@
 	   :states '(normal)
 	   :prefix ","
      "a" 'counsel-rg
+     "b" 'ivy-switch-buffer
 	   "d" 'kill-this-buffer
 	   "gbb" 'magit-blame
 	   "gbq" 'magit-blame-quit
 	   "gs" 'magit-status
+     "h" 'ivy-resume
      "t" 'counsel-git
 	   "w" 'save-buffer
 	   "x" 'execute-extended-command
@@ -144,7 +159,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rainbow-delimiters rainbow-mode rg flx counsel magit general fill-column-indicator use-package gruvbox-theme evil))))
+    (hlinum :hlinum diff-hl rainbow-delimiters rainbow-mode rg flx counsel magit general fill-column-indicator use-package gruvbox-theme evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
