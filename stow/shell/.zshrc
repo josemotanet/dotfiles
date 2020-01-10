@@ -54,11 +54,10 @@ load-nvmrc() {
   fi
 }
 
-if [ -s /usr/share/nvm/nvm.sh ]
+if [ -s ~/.nvm/nvm.sh ]
 then
-  source /usr/share/nvm/nvm.sh
-  source /usr/share/nvm/bash_completion
-  source /usr/share/nvm/install-nvm-exec
+  source ~/.nvm/nvm.sh
+  source ~/.nvm/bash_completion
 
   add-zsh-hook chpwd load-nvmrc
 fi
