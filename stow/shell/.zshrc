@@ -54,7 +54,14 @@ load-nvmrc() {
   fi
 }
 
-test -s ~/.nvm/nvm.sh && add-zsh-hook chpwd load-nvmrc
+if [ -s /usr/share/nvm/nvm.sh ]
+then
+  source /usr/share/nvm/nvm.sh
+  source /usr/share/nvm/bash_completion
+  source /usr/share/nvm/install-nvm-exec
+
+  add-zsh-hook chpwd load-nvmrc
+fi
 
 function git_status() { # {{{
   local st="$(git status 2> /dev/null)"
@@ -115,7 +122,6 @@ alias dnfi="sudo dnf install -y"
 # Source external applications {{{
 
 test -s ~/.zshenv && source ~/.zshenv
-test -s ~/.nvm/nvm.sh && source ~/.nvm/nvm.sh
 test -s ~/.kiex/scripts/kiex && source ~/.kiex/scripts/kiex
 test -s direnv && eval "$(direnv hook zsh)"
 test -s ~/.config/shell/less_termcap.sh && source ~/.config/shell/less_termcap.sh

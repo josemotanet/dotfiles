@@ -16,6 +16,7 @@ rm -v PKGBUILD *.tar.gz *.tar.xz
 echo -e "\e[36m=== Yay installed.\e[39m"
 
 yay -S --noconfirm bitwarden-cli-bin \
+                   nvm-git \
                    ttf-iosevka \
                    polybar \
                    rofi-bitwarden \
