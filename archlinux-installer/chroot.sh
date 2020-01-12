@@ -41,6 +41,7 @@ pacman -S --noconfirm curl \
                       i3-gaps \
                       lightdm \
                       lightdm-gtk-greeter \
+                      lxappearance \
                       mpc \
                       mpd \
                       ncdu \
