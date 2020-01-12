@@ -74,8 +74,8 @@ systemctl enable dhcpcd
 systemctl enable vboxservice
 systemctl enable lightdm
 
-useradd -m -G wheel,vboxsf -s /bin/zsh -p $PASS $USER
-
+useradd -m -G wheel,vboxsf -s /bin/zsh $USER
+echo $USER:$PASS | chpasswd
 echo "%wheel      ALL=(ALL) ALL" >> /etc/sudoers
 echo "autologin-user=$USER" >> /etc/lightdm/lightdm.conf
 
