@@ -27,6 +27,7 @@
 (set-face-attribute 'whitespace-newline nil
                     :background nil
                     :foreground "DimGrey")
+(electric-pair-mode t)
 
 ;; Global configuration
 (setq make-backup-files nil)
@@ -134,6 +135,35 @@
   :config
   (rainbow-mode 1))
 
+(use-package markdown-mode
+  :ensure t)
+
+(use-package js2-mode
+  :ensure t
+  :init
+  (setq-default js2-global-externs
+                '("module"
+                  "exports"
+                  "require"
+                  "process"
+                  "setTimeout"
+                  "clearTimeout"
+                  "setInterval"
+                  "clearInterval"
+                  "window"
+                  "location"
+                  "__dirname"
+                  "console"
+                  "JSON"
+                  "before"
+                  "beforeEach"
+                  "after"
+                  "afterEach"
+                  "describe"
+                  "it"
+                  "expect"
+                  "fetch")))
+
 (use-package general
   :ensure t
   :config (general-define-key
@@ -150,7 +180,22 @@
 	   "w" 'save-buffer
 	   "x" 'execute-extended-command
 	   "SPC" 'evil-switch-to-windows-last-buffer))
-  
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode t)
+  (add-to-list 'projectile-globally-ignored-directories "node_modules")
+  (add-to-list 'projectile-globally-ignored-directories "spec/cassettes")
+  (add-to-list 'projectile-globally-ignored-file-suffixes ".map"))
+
+(use-package org-bullets
+  :ensure t
+  :config
+  (org-bullets-mode t))
+
+(use-package olivetti
+  :ensure t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
