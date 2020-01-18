@@ -2,7 +2,7 @@
 # User bootstrap
 #
 
-export $DOTFILES = ${1:-http://github.com/josemotanet/dotfiles}
+DOTFILES=${1:-http://github.com/josemotanet/dotfiles}
 
 echo -e "\e[34m=== Bootstrapping user...\e[39m"
 
@@ -25,11 +25,10 @@ yay -S --noconfirm bitwarden-cli-bin \
 ssh-keygen -N "" -t rsa -f ~/.ssh/id_rsa
 mkdir -vp workspace && cd workspace
 git clone $DOTFILES dotfiles
-cd dotfiles/stow
 
 for PACKAGE in shell xorg git vim emacs tmux polybar rofi i3 dunst mailcap scripts streamlink systemd mutt mpd mbsync
 do
-  stow -R -v -t ~ package
+  stow -R -v -t ~ $PACKAGE
 done
 
 echo -e "\e[36m=== User bootstrapped.\e[39m"
