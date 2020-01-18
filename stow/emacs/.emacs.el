@@ -39,6 +39,8 @@
 (setq css-indent-offset 2)
 (setq sh-basic-offset 2)
 (setq inhibit-startup-message t)
+(setq inhibit-splash-screen t)
+(setq initial-major-mode 'org-mode)
 (setq auto-save-default nil)
 (setq-default fill-column 80)
 (setq create-lockfiles nil)
