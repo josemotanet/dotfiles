@@ -28,7 +28,7 @@ git clone $DOTFILES dotfiles
 
 for PACKAGE in shell xorg git vim emacs tmux polybar rofi i3 dunst mailcap scripts streamlink systemd mutt mpd mbsync
 do
-  stow -R -v -t ~ $PACKAGE
+  stow -R -v -d ./dotfiles/stow -t ~ $PACKAGE
 done
 
 echo -e "\e[36m=== User bootstrapped.\e[39m"
