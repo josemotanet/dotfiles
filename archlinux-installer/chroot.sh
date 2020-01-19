@@ -57,6 +57,7 @@ pacman -S --noconfirm curl \
                       ttf-roboto \
                       ttf-roboto-mono \
                       tmux \
+                      udiskie \
                       vi \
                       vim \
                       virtualbox-guest-modules-arch \
