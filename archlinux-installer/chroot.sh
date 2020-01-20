@@ -42,12 +42,15 @@ pacman -S --noconfirm curl \
                       lightdm \
                       lightdm-gtk-greeter \
                       lxappearance \
+                      man-db \
+                      man-pages \
                       mpc \
                       mpd \
                       ncdu \
                       ncmpcpp \
                       networkmanager \
                       openssh \
+                      powertop \
                       ranger \
                       ripgrep \
                       rofi \
@@ -55,6 +58,7 @@ pacman -S --noconfirm curl \
                       rxvt-unicode \
                       stow \
                       sudo \
+                      tlp \
                       ttf-roboto \
                       ttf-roboto-mono \
                       tmux \
@@ -66,6 +70,7 @@ pacman -S --noconfirm curl \
                       wget \
                       xf86-video-vmware \
                       xorg-server \
+                      xorg-xbacklight \
                       xorg-xrdb \
                       xorg-xset \
                       xsel \
@@ -75,6 +80,7 @@ pacman -S --noconfirm curl \
 systemctl enable vboxservice
 systemctl enable lightdm
 systemctl enable NetworkManager
+systemctl enable tlp
 
 useradd -m -G wheel,vboxsf -s /bin/zsh $USER
 echo $USER:$PASS | chpasswd
