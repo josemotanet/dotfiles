@@ -1,0 +1,4 @@
+/stow/systemd/.config/systemd/user/
+/stow/mpd/.config/mpd/database
+/stow/mpd/.config/mpd/pid
+/stow/mpd/.config/mpd/state
