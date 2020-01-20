@@ -7,12 +7,13 @@
 (global-linum-mode t)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(font . "Roboto Mono-18:medium"))
+(add-to-list 'default-frame-alist '(font . "Iosevka-12:medium"))
+(set-face-attribute 'default nil :font "Iosevka-12" )
+(set-frame-font "Iosevka-12" nil t)
 
 (setq-default line-spacing 8)
 (setq-default cursor-type 'box)
 (setq vc-follow-symlinks t)
-(setq markdown-fontify-code-blocks-natively t)
 (setq linum-format (quote "%4d "))
 
 (setq whitespace-style (quote (tabs trailing newline tab-mark newline-mark)))
@@ -41,6 +42,7 @@
 (setq inhibit-startup-message t)
 (setq inhibit-splash-screen t)
 (setq initial-major-mode 'org-mode)
+(setq initial-scratch-message nil)
 (setq auto-save-default nil)
 (setq-default fill-column 80)
 (setq create-lockfiles nil)
@@ -66,10 +68,11 @@
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package)
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
 
 ;; Vim mode
 (use-package evil
-  :ensure t
   :init
   (setq-default evil-normal-state-cursor 'box)
   (setq-default evil-want-C-u-scroll t)
@@ -77,20 +80,18 @@
   :config
   (evil-mode 1))
 
+(use-package diminish)
 
 (use-package evil-surround
-  :ensure t
   :config
   (global-evil-surround-mode t))
 
 ;; Theme
 (use-package gruvbox-theme
-  :ensure t
   :config
   (load-theme 'gruvbox t))
 
 (use-package fill-column-indicator
-  :ensure t
   :init
   (setq fci-rule-column 81)
   (setq fci-rule-color "#444")
@@ -98,50 +99,46 @@
   (fci-mode 1))
 
 (use-package ivy
-  :ensure t
+  :diminish ivy-mode
   :init
   (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   :config
   (ivy-mode 1))
 
-(use-package magit
-  :ensure t)
+(use-package magit)
 
 (use-package diff-hl
-  :ensure t
   :config
   (global-diff-hl-mode 1))
 
-(use-package counsel
-  :ensure t)
+(use-package counsel)
 
-(use-package :hlinum
-  :ensure t
-  :config
-  (hlinum-activate))
-
-(use-package flx
-  :ensure t)
+(use-package flx)
 
 (use-package rg
-  :ensure t
   :config
   (rg-enable-default-bindings))
 
 (use-package rainbow-delimiters
-  :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package rainbow-mode
-  :ensure t
   :config
   (rainbow-mode 1))
 
 (use-package markdown-mode
-  :ensure t)
+  :init
+  (setq markdown-fontify-code-blocks-natively t))
+
+(use-package olivetti
+  :config
+  (olivetti-set-width 84)
+  :hook
+  (org-mode . olivetti-mode)
+  (markdown-mode . olivetti-mode))
 
 (use-package js2-mode
-  :ensure t
+  :mode "\\.js\\'"
   :init
   (setq-default js2-global-externs
                 '("module"
@@ -167,7 +164,6 @@
                   "fetch")))
 
 (use-package general
-  :ensure t
   :config (general-define-key
 	   :states '(normal)
 	   :prefix ","
@@ -184,7 +180,7 @@
 	   "SPC" 'evil-switch-to-windows-last-buffer))
 
 (use-package projectile
-  :ensure t
+  :diminish projectile-mode
   :config
   (projectile-global-mode t)
   (add-to-list 'projectile-globally-ignored-directories "node_modules")
@@ -192,15 +188,10 @@
   (add-to-list 'projectile-globally-ignored-file-suffixes ".map"))
 
 (use-package org-bullets
-  :ensure t
   :config
   (org-bullets-mode t))
 
-(use-package olivetti
-  :ensure t)
-
 (use-package powerline
-  :ensure t
   :config
   (powerline-default-theme))
 
@@ -211,7 +202,12 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (hlinum :hlinum diff-hl rainbow-delimiters rainbow-mode rg flx counsel magit general fill-column-indicator use-package gruvbox-theme evil))))
+    (diminish hlinum :hlinum diff-hl rainbow-delimiters rainbow-mode rg flx counsel magit general fill-column-indicator use-package gruvbox-theme evil))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
