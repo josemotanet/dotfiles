@@ -24,6 +24,8 @@ yay -S --noconfirm bitwarden-cli-bin \
 
 ssh-keygen -N "" -t rsa -f ~/.ssh/id_rsa
 mkdir -vp workspace && cd workspace
+mkdir ~/music
+systemctl --user enable mpd
 git clone $DOTFILES dotfiles
 
 for PACKAGE in shell xorg git vim emacs tmux polybar rofi i3 dunst mailcap scripts streamlink systemd mutt mpd mbsync
