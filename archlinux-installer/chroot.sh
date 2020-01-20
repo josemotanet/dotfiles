@@ -46,6 +46,7 @@ pacman -S --noconfirm curl \
                       mpd \
                       ncdu \
                       ncmpcpp \
+                      networkmanager \
                       openssh \
                       ranger \
                       ripgrep \
@@ -71,13 +72,14 @@ pacman -S --noconfirm curl \
                       zip \
                       zsh
 
-systemctl enable dhcpcd
 systemctl enable vboxservice
 systemctl enable lightdm
+systemctl enable NetworkManager
 
 useradd -m -G wheel,vboxsf -s /bin/zsh $USER
 echo $USER:$PASS | chpasswd
 echo "%wheel      ALL=(ALL) ALL" >> /etc/sudoers
 echo "autologin-user=$USER" >> /etc/lightdm/lightdm.conf
+echo "nameserver 1.1.1.1" > /etc/resolv.conf
 
 echo -e "\e[36m=== Bootstrap complete.\e[39m"
