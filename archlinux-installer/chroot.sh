@@ -51,6 +51,8 @@ pacman -S --noconfirm curl \
                       networkmanager \
                       openssh \
                       powertop \
+                      pulseaudio \
+                      pavucontrol \
                       ranger \
                       ripgrep \
                       rofi \
