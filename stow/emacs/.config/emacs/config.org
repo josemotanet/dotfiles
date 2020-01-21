@@ -39,7 +39,7 @@
 * General config
 
 #+BEGIN_SRC emacs-lisp
-(electric-pair-mode t)
+(setq vc-follow-symlinks t)
 (setq make-backup-files nil)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
@@ -60,6 +60,7 @@
 (setq mocha-snippets-use-fat-arrows t)
 (setq x-select-enable-clipboard t)
 (global-prettify-symbols-mode 0)
+(electric-pair-mode t)
 #+END_SRC
 
 * Package bootstrap
@@ -275,6 +276,7 @@
      "w" 'save-buffer
      "x" 'execute-extended-command
      "=" (lambda() (interactive) (find-file "~/.emacs.el"))
+     "RET" 'projectile-run-eshell))
 #+END_SRC
 * File associations
 
