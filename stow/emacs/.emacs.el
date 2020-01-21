@@ -85,7 +85,8 @@
   (diminish 'undo-tree-mode)
   (diminish 'eldoc-mode)
   (diminish 'auto-revert-mode)
-  (diminish 'global-whitespace-mode))
+  (diminish 'global-whitespace-mode)
+  (diminish 'visual-line-mode))
 
 (use-package evil-surround
   :config
