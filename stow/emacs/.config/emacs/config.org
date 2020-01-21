@@ -43,17 +43,12 @@
 (setq make-backup-files nil)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
-(setq js-indent-level 2)
-(setq typescript-indent-level 2)
-(setq scss-indent-level 2)
-(setq css-indent-offset 2)
 (setq sh-basic-offset 2)
 (setq inhibit-startup-message t)
 (setq inhibit-splash-screen t)
 (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message nil)
 (setq auto-save-default nil)
-(setq-default fill-column 80)
 (setq create-lockfiles nil)
 (setq ido-enable-flex-matching t)
 (setq mmm-submode-decoration-level 0)
@@ -85,7 +80,6 @@
 #+END_SRC
 
 * Configure packages
-  
 
 ** Diminish
 
@@ -177,6 +171,7 @@
 #+BEGIN_SRC emacs-lisp
 (use-package fill-column-indicator
   :init
+  (setq-default fill-column 80)
   (setq fci-rule-column 81)
   (setq fci-rule-color "#444")
   :config
@@ -224,6 +219,8 @@
 (use-package js2-mode
   :mode "\\.js\\'"
   :init
+  (setq js-indent-level 2)
+  (setq typescript-indent-level 2)
   (setq-default js2-global-externs
                 '("module"
                   "exports"
@@ -247,6 +244,17 @@
                   "expect"
                   "fetch")))
 #+END_SRC
+** CSS
+
+#+BEGIN_SRC emacs-lisp
+(setq css-indent-offset 2)
+(use-package scss-mode
+  :mode
+  "\\.scss\\'"
+  :init
+  (setq scss-indent-level 2))
+#+END_SRC
+
 ** Rainbow
    
 #+BEGIN_SRC emacs-lisp
@@ -283,3 +291,5 @@
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.xprofile\\'" . shell-script-mode))
 #+END_SRC
+
+* TODO Snippets
