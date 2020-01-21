@@ -11,7 +11,7 @@
 (set-face-attribute 'default nil :font "Iosevka-12" )
 (set-frame-font "Iosevka-12" nil t)
 
-(setq-default line-spacing 8)
+(setq-default line-spacing 4)
 (setq-default cursor-type 'box)
 (setq vc-follow-symlinks t)
 (setq linum-format (quote "%4d "))
