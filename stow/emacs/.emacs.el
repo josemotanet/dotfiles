@@ -80,7 +80,11 @@
   :config
   (evil-mode 1))
 
-(use-package diminish)
+(use-package diminish
+  :config
+  (diminish 'undo-tree-mode)
+  (diminish 'eldoc-mode)
+  (diminish 'auto-revert-mode))
 
 (use-package evil-surround
   :config
@@ -131,6 +135,7 @@
   (setq markdown-fontify-code-blocks-natively t))
 
 (use-package olivetti
+  :diminish olivetti-mode
   :config
   (olivetti-set-width 84)
   :hook
