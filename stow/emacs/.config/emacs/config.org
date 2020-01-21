@@ -275,7 +275,7 @@
      "t" 'counsel-git
      "w" 'save-buffer
      "x" 'execute-extended-command
-     "=" (lambda() (interactive) (find-file "~/.emacs.el"))
+     "=" (lambda() (interactive) (find-file "~/.config/emacs/config.org"))
      "RET" 'projectile-run-eshell))
 #+END_SRC
 * File associations
