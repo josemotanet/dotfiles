@@ -3,18 +3,10 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (ido-mode t)
-(global-hl-line-mode t)
-(global-linum-mode t)
-
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(font . "Iosevka-12:medium"))
-(set-face-attribute 'default nil :font "Iosevka-12" )
-(set-frame-font "Iosevka-12" nil t)
-
 (setq-default line-spacing 4)
 (setq-default cursor-type 'box)
-(setq vc-follow-symlinks t)
 (setq linum-format (quote "%4d "))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (setq whitespace-style (quote (tabs trailing newline tab-mark newline-mark)))
 (setq whitespace-display-mappings
@@ -28,9 +20,15 @@
 (set-face-attribute 'whitespace-newline nil
                     :background nil
                     :foreground "DimGrey")
-(electric-pair-mode t)
+
+(add-to-list 'default-frame-alist '(font . "Iosevka-12:medium"))
+(set-face-attribute 'default nil :font "Iosevka-12" )
+(set-frame-font "Iosevka-12" nil t)
+
+(setq vc-follow-symlinks t)
 
 ;; Global configuration
+(electric-pair-mode t)
 (setq make-backup-files nil)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
@@ -203,6 +201,8 @@
   :config
   (powerline-default-theme))
 
+(global-hl-line-mode t)
+(global-linum-mode t)
 (use-package hlinum
   :config
   (hlinum-activate))
