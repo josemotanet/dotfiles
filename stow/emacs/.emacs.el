@@ -182,6 +182,7 @@
      "t" 'counsel-git
 	   "w" 'save-buffer
 	   "x" 'execute-extended-command
+     "=" (lambda() (interactive) (find-file "~/.emacs.el"))
 	   "SPC" 'evil-switch-to-windows-last-buffer))
 
 (use-package projectile
