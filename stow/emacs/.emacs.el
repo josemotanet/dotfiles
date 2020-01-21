@@ -203,6 +203,12 @@
   :config
   (powerline-default-theme))
 
+(use-package hlinum
+  :config
+  (hlinum-activate))
+
+(add-to-list 'auto-mode-alist '("\\.xprofile\\'" . shell-script-mode))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -210,7 +216,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (diminish hlinum :hlinum diff-hl rainbow-delimiters rainbow-mode rg flx counsel magit general fill-column-indicator use-package gruvbox-theme evil))))
+    (diminish hlinum diff-hl rainbow-delimiters rainbow-mode rg flx counsel magit general fill-column-indicator use-package gruvbox-theme evil))))
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
