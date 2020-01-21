@@ -38,6 +38,8 @@
 
 * General config
 
+** Variables
+
 #+BEGIN_SRC emacs-lisp
 (setq vc-follow-symlinks t)
 (setq make-backup-files nil)
@@ -57,6 +59,10 @@
 (global-prettify-symbols-mode 0)
 (electric-pair-mode t)
 #+END_SRC
+
+** Hooks
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 * Package bootstrap
 
@@ -154,7 +160,7 @@
 #+END_SRC
 
 ** Ivy
-   
+
 #+BEGIN_SRC emacs-lisp
 (use-package ivy
   :diminish ivy-mode
@@ -167,7 +173,7 @@
 #+END_SRC
 
 ** Vertical column (fci)
-   
+
 #+BEGIN_SRC emacs-lisp
 (use-package fill-column-indicator
   :init
@@ -202,7 +208,7 @@
 #+END_SRC
 
 ** Olivetti
-   
+
 #+BEGIN_SRC emacs-lisp
 (use-package olivetti
   :diminish olivetti-mode
@@ -256,7 +262,7 @@
 #+END_SRC
 
 ** Rainbow
-   
+
 #+BEGIN_SRC emacs-lisp
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
