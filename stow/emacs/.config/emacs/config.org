@@ -1,0 +1,283 @@
+#+TITLE: Emacs config
+
+* UI settings
+
+#+BEGIN_SRC emacs-lisp
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(ido-mode t)
+(global-hl-line-mode t)
+(global-linum-mode t)
+(setq-default line-spacing 4)
+(setq-default cursor-type 'box)
+(setq linum-format (quote "%4d "))
+
+(setq whitespace-style (quote (tabs trailing newline tab-mark newline-mark)))
+(setq whitespace-display-mappings
+  ;; all numbers are Unicode codepoint in decimal. ⁖ (insert-char 182 1)
+  '(
+    (space-mark 32 [183] [46])
+    (newline-mark 10 [172 10])
+    (tab-mark 9 [9656 9] [92 9])
+    ))
+(global-whitespace-mode t)
+(set-face-attribute 'whitespace-newline nil
+                    :background nil
+                    :foreground "DimGrey")
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+#+END_SRC
+
+* Font settings
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'default-frame-alist '(font . "Iosevka-12:medium"))
+(set-face-attribute 'default nil :font "Iosevka-12" )
+(set-frame-font "Iosevka-12" nil t)
+#+END_SRC
+
+* General config
+
+#+BEGIN_SRC emacs-lisp
+(electric-pair-mode t)
+(setq make-backup-files nil)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq js-indent-level 2)
+(setq typescript-indent-level 2)
+(setq scss-indent-level 2)
+(setq css-indent-offset 2)
+(setq sh-basic-offset 2)
+(setq inhibit-startup-message t)
+(setq inhibit-splash-screen t)
+(setq initial-major-mode 'org-mode)
+(setq initial-scratch-message nil)
+(setq auto-save-default nil)
+(setq-default fill-column 80)
+(setq create-lockfiles nil)
+(setq ido-enable-flex-matching t)
+(setq mmm-submode-decoration-level 0)
+(setq mocha-snippets-use-fat-arrows t)
+(setq x-select-enable-clipboard t)
+(global-prettify-symbols-mode 0)
+#+END_SRC
+
+* Package bootstrap
+
+#+BEGIN_SRC emacs-lisp
+(require 'package)
+
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+
+;; Activate installed packages
+(package-initialize)
+
+;; Bootstrap `use-package`
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
+#+END_SRC
+
+* Configure packages
+  
+
+** Diminish
+
+#+BEGIN_SRC emacs-lisp
+(use-package diminish
+  :config
+  (diminish 'undo-tree-mode)
+  (diminish 'eldoc-mode)
+  (diminish 'auto-revert-mode)
+  (diminish 'global-whitespace-mode)
+  (diminish 'visual-line-mode))
+#+END_SRC
+
+** Projectile
+
+#+BEGIN_SRC emacs-lisp
+(use-package projectile
+  :diminish projectile-mode
+  :config
+  (projectile-global-mode t)
+  (add-to-list 'projectile-globally-ignored-directories "node_modules")
+  (add-to-list 'projectile-globally-ignored-directories "spec/cassettes")
+  (add-to-list 'projectile-globally-ignored-file-suffixes ".map"))
+#+END_SRC
+** Evil
+
+#+BEGIN_SRC emacs-lisp
+(use-package evil
+  :init
+  (setq-default evil-normal-state-cursor 'box)
+  (setq-default evil-want-C-u-scroll t)
+  (setq-default evil-shift-width 2)
+  :config
+  (evil-mode 1))
+
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode t))
+#+END_SRC
+
+** Theme
+
+#+BEGIN_SRC emacs-lisp
+(use-package gruvbox-theme
+  :config
+  (load-theme 'gruvbox t))
+#+END_SRC
+** Org
+
+#+BEGIN_SRC emacs-lisp
+(use-package org-bullets
+  :config
+  (org-bullets-mode t))
+#+END_SRC
+
+** Powerline
+
+#+BEGIN_SRC emacs-lisp
+(use-package powerline
+  :config
+  (powerline-default-theme))
+#+END_SRC
+
+** Line numbers
+
+#+BEGIN_SRC emacs-lisp
+(global-hl-line-mode t)
+(global-linum-mode t)
+(use-package hlinum
+  :config
+  (hlinum-activate))
+#+END_SRC
+
+** Ivy
+   
+#+BEGIN_SRC emacs-lisp
+(use-package ivy
+  :diminish ivy-mode
+  :init
+  (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  :config
+  (ivy-mode 1))
+
+(use-package counsel)
+#+END_SRC
+
+** Vertical column (fci)
+   
+#+BEGIN_SRC emacs-lisp
+(use-package fill-column-indicator
+  :init
+  (setq fci-rule-column 81)
+  (setq fci-rule-color "#444")
+  :config
+  (fci-mode 1))
+#+END_SRC
+
+** Git
+
+#+BEGIN_SRC emacs-lisp
+(use-package magit)
+
+(use-package diff-hl
+  :config
+  (global-diff-hl-mode 1))
+#+END_SRC
+** Fuzzy matching
+
+#+BEGIN_SRC emacs-lisp
+(use-package flx)
+#+END_SRC
+** Markdown
+
+#+BEGIN_SRC emacs-lisp
+(use-package markdown-mode
+  :init
+  (setq markdown-open-command "/usr/bin/pandoc")
+  (setq markdown-fontify-code-blocks-natively t))
+#+END_SRC
+
+** Olivetti
+   
+#+BEGIN_SRC emacs-lisp
+(use-package olivetti
+  :diminish olivetti-mode
+  :config
+  (olivetti-set-width 84)
+  :hook
+  (org-mode . olivetti-mode)
+  (markdown-mode . olivetti-mode))
+#+END_SRC
+
+** Javascript
+
+#+BEGIN_SRC emacs-lisp
+(use-package js2-mode
+  :mode "\\.js\\'"
+  :init
+  (setq-default js2-global-externs
+                '("module"
+                  "exports"
+                  "require"
+                  "process"
+                  "setTimeout"
+                  "clearTimeout"
+                  "setInterval"
+                  "clearInterval"
+                  "window"
+                  "location"
+                  "__dirname"
+                  "console"
+                  "JSON"
+                  "before"
+                  "beforeEach"
+                  "after"
+                  "afterEach"
+                  "describe"
+                  "it"
+                  "expect"
+                  "fetch")))
+#+END_SRC
+** Rainbow
+   
+#+BEGIN_SRC emacs-lisp
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package rainbow-mode
+  :config
+  (rainbow-mode 1))
+#+END_SRC
+
+* Keybindings
+
+#+BEGIN_SRC emacs-lisp
+(use-package general
+  :config (general-define-key
+     :states '(normal)
+     :prefix ","
+     "a" 'counsel-rg
+     "b" 'ivy-switch-buffer
+     "d" 'kill-this-buffer
+     "gbb" 'magit-blame
+     "gbq" 'magit-blame-quit
+     "gs" 'magit-status
+     "h" 'ivy-resume
+     "t" 'counsel-git
+     "w" 'save-buffer
+     "x" 'execute-extended-command
+     "=" (lambda() (interactive) (find-file "~/.emacs.el"))
+#+END_SRC
+* File associations
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'auto-mode-alist '("\\.xprofile\\'" . shell-script-mode))
+#+END_SRC
