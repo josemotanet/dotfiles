@@ -17,6 +17,7 @@ echo -e "\e[36m=== Yay installed.\e[39m"
 
 yay -S --noconfirm bitwarden-cli-bin \
                    ttf-iosevka \
+                   ttf-material-design-icons-git \
                    polybar \
                    rofi-bitwarden \
                    rofi-calc \
