@@ -3,4 +3,6 @@ Xft.hintstyle: hintslight
 Xft.antialias: RGB
 Xft.rgba: rgb
 
+Xft.dpi: 110
+
 #include ".config/Xresources/gruvbox.Xresources"

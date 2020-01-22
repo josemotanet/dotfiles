@@ -2,7 +2,7 @@
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
 
-Xft.dpi: 144
+Xft.dpi: 110
 
 URxvt.internalBorder: 24
 URxvt*geometry: 100x40

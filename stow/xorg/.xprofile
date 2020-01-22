@@ -6,15 +6,8 @@ emacs --daemon &
 udiskie &
 
 case $1 in
-  *openbox*)
-    export GDK_SCALE=2
-    sleep 0.1
-    nitrogen --restore &
-    compton -b --config ~/.config/compton.conf &
-    ;;
   *i3*)
-    export GDK_SCALE=2
-    xrandr --output DP-4 --scale 1.2x1.2 &
+    export GDK_SCALE=1.3
     sleep 0.1
     nitrogen --restore &
     dunst &
