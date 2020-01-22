@@ -57,9 +57,9 @@ bindsym $mod+w layout tabbed
 # }}}
 
 ## Volume adjustment {{{
-bindsym XF86AudioRaiseVolume exec mpc vol +5
-bindsym XF86AudioLowerVolume exec mpc vol -5
-# bindsym XF86AudioMute exec mpc 
+bindsym XF86AudioRaiseVolume exec pamixer --sink 0 -i 3
+bindsym XF86AudioLowerVolume exec pamixer --sink 0 -d 3
+bindsym XF86AudioMute exec pamixer --sink 0 -t
 # }}}
 
 ## MPD commands {{{
