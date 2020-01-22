@@ -17,12 +17,9 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/example]
-dpi=144
-;monitor = ${env:MONITOR:HDMI-1}
+dpi=96
 width = 100%
-height = 50
-; offset-x = -1%
-; offset-y = -1
+height = 32
 radius = 0.0
 fixed-center = false
 
@@ -36,18 +33,17 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-font-0 = "Roboto:weight=bold;0"
-font-1 = "Iosevka:weight=regular;0"
-font-2 = "Material Design Icons;0"
+font-0 = "Iosevka:weight=medium;0"
+font-1 = "Material Design Icons;0"
 
 modules-left = i3 xwindow
 modules-center = mpd
-modules-right = filesystem volume battery xkeyboard memory eth date powermenu
+modules-right = filesystem pulseaudio battery xkeyboard memory eth date wlan
 
 tray-position = right
 tray-padding = 2
@@ -73,15 +69,15 @@ label = %title:0:60:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
 label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
-label-indicator-margin = 1
+label-indicator-margin = 2
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
@@ -91,7 +87,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#0a81f5}%mountpoint%%{F-} %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -101,18 +97,18 @@ type = internal/bspwm
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
 
 [module/i3]
 type = internal/i3
@@ -123,7 +119,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 0
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -212,25 +208,24 @@ label = %gb_used%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp58s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
+format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
@@ -252,17 +247,30 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = "%a, %B %d |"
+date = "%a, %B %d •"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
 format-underline = #0a6cf5
 
 label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+
+label-muted =  muted
+label-muted-foreground = #999
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+click-right = pavucontrol &
 
 [module/volume]
 type = internal/volume
@@ -344,12 +352,12 @@ animation-charging-framerate = 750
 [module/powermenu]
 type = custom/menu
 
-format-spacing = 1
+format-spacing = 0
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-open = 
+label-open-foreground = ${colors.foreground}
+label-close = cancel
+label-close-foreground = ${colors.foreground}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
@@ -383,7 +391,7 @@ margin-bottom = 5
 
 [module/email]
 type = custom/script
-format-prefix = 
+format-prefix = " "
 format-prefix-padding = 2
 exec = ~/bin/scripts/unread-email
 interval = 30
