@@ -15,13 +15,14 @@ rm -v PKGBUILD *.tar.gz *.tar.xz
 
 echo -e "\e[36m=== Yay installed.\e[39m"
 
-yay -S --noconfirm bitwarden-cli-bin \
-                   ttf-iosevka \
-                   ttf-material-design-icons-git \
-                   polybar \
-                   rofi-bitwarden \
-                   rofi-calc \
-                   urxvt-resize-font-git
+yay -S --removemake --noprovides --nodiffmenu --noconfirm \
+    bitwarden-cli-bin \
+    bitwarden-rofi \
+    ttf-iosevka \
+    ttf-material-design-icons-git \
+    polybar \
+    rofi-calc \
+    urxvt-resize-font-git
 
 ssh-keygen -N "" -t rsa -f ~/.ssh/id_rsa
 mkdir -vp workspace && cd workspace
