@@ -31,7 +31,8 @@ echo -e "\e[36m=== Post installation successful.\e[39m"
 echo -e "\e[33m=== Bootstrapping...\e[39m"
 
 pacman -Syy
-pacman -S --noconfirm curl \
+pacman -S --noconfirm arandr \
+                      curl \
                       dhcpcd \
                       emacs \
                       fzf \
