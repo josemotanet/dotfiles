@@ -66,6 +66,13 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+END_SRC
 
+
+** Aliases
+
+#+BEGIN_SRC emacs-lisp
+(defalias 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+
 * Package bootstrap
 
 #+BEGIN_SRC emacs-lisp
