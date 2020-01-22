@@ -75,8 +75,8 @@ bindsym $mod+Ctrl+slash exec mpc next
 # }}}
 
 ## Brightness {{{
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec light -A 10
 # }}}
 
 ## Application bindings {{{
