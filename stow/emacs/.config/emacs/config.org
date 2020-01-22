@@ -62,7 +62,9 @@
 
 ** Hooks
 
+#+BEGIN_SRC emacs-lisp
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+#+END_SRC
 
 * Package bootstrap
 
@@ -302,6 +304,8 @@
 
 #+BEGIN_SRC emacs-lisp
 (use-package yasnippet
+  :diminish yas-global-mode
+  :diminish yas-minor-mode
   :config
   (yas-global-mode 1))
 
