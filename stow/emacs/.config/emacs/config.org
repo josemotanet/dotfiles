@@ -205,8 +205,10 @@
 #+BEGIN_SRC emacs-lisp
 (use-package markdown-mode
   :init
-  (setq markdown-open-command "/usr/bin/pandoc")
-  (setq markdown-fontify-code-blocks-natively t))
+  (setq markdown-command "/usr/bin/marked")
+  (setq markdown-fontify-code-blocks-natively t)
+  :custom-face
+  (markdown-code-face ((t (:inherit nil)))))
 #+END_SRC
 
 ** Olivetti
@@ -288,6 +290,7 @@
      "gbq" 'magit-blame-quit
      "gs" 'magit-status
      "h" 'ivy-resume
+     "p" 'projectile-switch-project
      "t" 'counsel-git
      "w" 'save-buffer
      "x" 'execute-extended-command
