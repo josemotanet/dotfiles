@@ -44,6 +44,7 @@ pacman -S --noconfirm curl \
                       lxappearance \
                       man-db \
                       man-pages \
+                      marked \
                       mpc \
                       mpd \
                       ncdu \
