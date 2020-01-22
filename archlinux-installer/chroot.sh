@@ -39,6 +39,7 @@ pacman -S --noconfirm curl \
                       go \
                       htop \
                       i3-gaps \
+                      isync \
                       lightdm \
                       lightdm-gtk-greeter \
                       lxappearance \
@@ -49,6 +50,7 @@ pacman -S --noconfirm curl \
                       mpd \
                       ncdu \
                       ncmpcpp \
+                      neomutt \
                       networkmanager \
                       openssh \
                       powertop \
@@ -70,6 +72,7 @@ pacman -S --noconfirm curl \
                       vim \
                       virtualbox-guest-modules-arch \
                       virtualbox-guest-utils \
+                      weechat \
                       wget \
                       xf86-video-vmware \
                       xorg-server \
