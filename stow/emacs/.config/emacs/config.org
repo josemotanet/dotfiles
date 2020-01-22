@@ -276,6 +276,12 @@
   (rainbow-mode 1))
 #+END_SRC
 
+** File explorer
+
+#+BEGIN_SRC emacs-lisp
+(use-package treemacs)
+#+END_SRC
+
 * Keybindings
 
 #+BEGIN_SRC emacs-lisp
@@ -290,6 +296,7 @@
      "gbq" 'magit-blame-quit
      "gs" 'magit-status
      "h" 'ivy-resume
+     "m" 'treemacs
      "p" 'projectile-switch-project
      "t" 'counsel-git
      "w" 'save-buffer
@@ -297,6 +304,7 @@
      "=" (lambda() (interactive) (find-file "~/.config/emacs/config.org"))
      "RET" 'projectile-run-eshell))
 #+END_SRC
+
 * File associations
 
 #+BEGIN_SRC emacs-lisp
