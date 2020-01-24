@@ -43,7 +43,7 @@ font-1 = "Material Design Icons;0"
 
 modules-left = i3 xwindow
 modules-center = mpd
-modules-right = filesystem pulseaudio battery xkeyboard memory eth date wlan
+modules-right = filesystem pulseaudio battery xkeyboard memory eth wlan date
 
 tray-position = right
 tray-padding = 2
