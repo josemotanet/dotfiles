@@ -147,7 +147,11 @@
 #+BEGIN_SRC emacs-lisp
 (use-package org-bullets
   :config
-  (org-bullets-mode t))
+  (org-bullets-mode t)
+  :custom-face
+  (org-document-title ((t (:foreground "#f90"))))
+  (org-block-begin-line ((t (:foreground "#777" :background nil))))
+  (org-block-end-line ((t (:foreground "#777" :background nil)))))
 #+END_SRC
 
 ** Powerline
