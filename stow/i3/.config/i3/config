@@ -203,7 +203,7 @@ exec_always setxkbmap us,pt -option caps:ctrl_modifier -option grp:ctrls_toggle 
 # -option altwin:swap_lalt_lwin <-- if using regular keyboard
 
 exec mpd
-exec polybar example
+exec polybar -r example
 # }}}
 
 # vim: foldmethod=marker foldmarker={{{,}}}
