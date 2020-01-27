@@ -6,6 +6,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(setq ido-enable-flex-matching t)
 (ido-mode t)
 (global-hl-line-mode t)
 (global-linum-mode t)
@@ -322,6 +323,7 @@
 
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.xprofile\\'" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("\\.muttrc\\'" . conf-mode))
 #+END_SRC
 
 * Snippets
