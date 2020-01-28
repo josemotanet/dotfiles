@@ -44,6 +44,7 @@ pacman -S --noconfirm arandr \
                       lightdm \
                       lightdm-gtk-greeter \
                       lxappearance \
+                      lynx \
                       man-db \
                       man-pages \
                       marked \
