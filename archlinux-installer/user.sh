@@ -22,6 +22,7 @@ yay -S --removemake --noprovides --nodiffmenu --noconfirm \
     ttf-material-design-icons-git \
     polybar \
     rofi-calc \
+    urlview \
     urxvt-resize-font-git
 
 ssh-keygen -N "" -t rsa -f ~/.ssh/id_rsa
