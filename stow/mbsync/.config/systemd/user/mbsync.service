@@ -3,4 +3,5 @@ Description=Mailbox synchronization service
 
 [Service]
 Type=oneshot
+EnvironmentFile=/home/jose/.config/systemd/user/mbsync.env
 ExecStart=/usr/bin/mbsync -Va
