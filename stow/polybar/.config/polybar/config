@@ -3,6 +3,7 @@ background = #111b21
 background-alt = #4C566A
 foreground = #fff
 foreground-alt = ${xrdb:color4:#999}
+icons = #777
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -61,7 +62,7 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.icons}
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
@@ -115,23 +116,23 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
@@ -157,7 +158,7 @@ label = BL
 
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = #ff
+bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
@@ -193,7 +194,7 @@ bar-used-empty = ▐
 bar-used-empty-foreground = #444444
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.icons}
 format-underline = #4bffdc
 label = %gb_used%
 
@@ -216,7 +217,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground}
+ramp-signal-foreground = ${colors.icons}
 
 [module/eth]
 type = internal/network
@@ -225,7 +226,7 @@ interval = 2.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
-format-conn ected-prefix-foreground = ${colors.foreground-alt}
+format-conn ected-prefix-foreground = ${colors.icons}
 label-connected = ↑ %upspeed% ↓ %downspeed% - %local_ip%
 
 format-disconnected =
@@ -245,7 +246,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.icons}
 format-underline = #0a6cf5
 
 label = %date% %time%
@@ -263,6 +264,7 @@ format-volume-underline = #999999
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
+ramp-volume-foreground = ${colors.icons}
 click-right = pavucontrol &
 
 bar-volume-width = 10
@@ -294,21 +296,25 @@ format-charging-underline = #73ff7c
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = #ffb52a
 
-label-charging = " %percentage%%"
-label-discharging = " %percentage%%"
+label-charging = "%percentage%%"
+label-discharging = "%percentage%%"
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.icons}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.icons}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -374,7 +380,8 @@ margin-bottom = 5
 [module/email]
 type = custom/script
 format-prefix = " "
+format-prefix-foreground = ${colors.icons}
 format-prefix-padding = 0
-format-underline = #e2c
+format-underline = ${xrdb:color5}
 exec = ~/bin/scripts/unread-email
 interval = 30
