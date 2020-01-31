@@ -50,6 +50,7 @@ pacman -S --noconfirm arandr \
                       marked \
                       mpc \
                       mpd \
+                      mpv \
                       ncdu \
                       ncmpcpp \
                       neomutt \
