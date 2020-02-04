@@ -35,7 +35,7 @@ font-1 = "Material Design Icons;0"
 
 modules-left = i3 xwindow
 modules-center = mpd
-modules-right = filesystem pulseaudio battery xkeyboard memory eth wlan email date
+modules-right = wttr filesystem pulseaudio battery xkeyboard memory eth wlan email date
 
 tray-position = right
 tray-padding = 2
@@ -385,3 +385,9 @@ format-prefix-padding = 0
 format-underline = ${xrdb:color5}
 exec = ~/bin/scripts/unread-email
 interval = 30
+
+[module/wttr]
+type = custom/script
+format-underline = ${xrdb:color6}
+exec = ~/bin/scripts/weather
+interval = 1800
