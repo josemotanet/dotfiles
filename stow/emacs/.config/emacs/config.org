@@ -236,10 +236,7 @@
 (use-package olivetti
   :diminish olivetti-mode
   :config
-  (olivetti-set-width 84)
-  :hook
-  (org-mode . olivetti-mode)
-  (markdown-mode . olivetti-mode))
+  (olivetti-set-width 84))
 #+END_SRC
 
 ** Javascript
