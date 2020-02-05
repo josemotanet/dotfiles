@@ -149,6 +149,11 @@
 (use-package org-bullets
   :config
   (org-bullets-mode t)
+  :init
+  (setq org-directory "~/org/")
+  (setq org-agenda-files (list org-directory))
+  (setq org-default-notes-file (concat org-directory "refile.org"))
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   :custom-face
   (org-document-title ((t (:foreground "#f90"))))
   (org-block-begin-line ((t (:foreground "#777" :background nil))))
@@ -326,6 +331,8 @@
      "t" 'counsel-git
      "w" 'save-buffer
      "x" 'execute-extended-command
+     "]" 'org-agenda-list
+     "[" 'org-capture
      "SPC" 'evil-switch-to-windows-last-buffer
      "=" (lambda() (interactive) (find-file "~/.config/emacs/config.org"))
      "RET" 'projectile-run-eshell))
