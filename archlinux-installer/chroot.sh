@@ -71,6 +71,7 @@ pacman -S --noconfirm arandr \
                       ttf-roboto-mono \
                       tmux \
                       udiskie \
+                      urxvt-perls \
                       vi \
                       vim \
                       virtualbox-guest-modules-arch \
