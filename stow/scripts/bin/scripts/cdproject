@@ -2,6 +2,16 @@
 
 CACHEFILE=$HOME/.projects
 
+while [ -n "$1" ]; do
+  case "$1" in
+    -f)
+      rm $CACHEFILE
+      echo "Refreshing list of projects."
+      ;;
+  esac
+  shift
+done
+
 # Check if there is a cached list of git projects. If not, create it.
 test -s $CACHEFILE || find ~/projects ~/workspace ~/Documents ~/code -type d -iname .git 2>/dev/null >$CACHEFILE
 
