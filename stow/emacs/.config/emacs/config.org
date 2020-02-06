@@ -67,7 +67,6 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+END_SRC
 
-
 ** Aliases
 
 #+BEGIN_SRC emacs-lisp
@@ -328,8 +327,9 @@
      "t" 'counsel-git
      "w" 'save-buffer
      "x" 'execute-extended-command
-     "]" 'org-agenda-list
-     "[" 'org-capture
+     "1" 'org-agenda-list
+     "2" 'org-todo-list
+     "3" 'org-capture
      "SPC" 'evil-switch-to-windows-last-buffer
      "=" (lambda() (interactive) (find-file "~/.config/emacs/config.org"))
      "RET" 'projectile-run-eshell))
