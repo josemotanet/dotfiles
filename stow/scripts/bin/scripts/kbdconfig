@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+while [ -n "$1" ]
+do
+  case $1 in
+    -s) OPTION=1
+        ;;
+    -r) OPTION=2
+        ;;
+    -rac) OPTION=3
+          ;;
+    -rwc) OPTION=4
+  esac
+  shift
+done
+
+if [ -z $OPTION ]; then
+  cat <<EOF
+What would you like to do?
+
+[1] Swap Left Win with Left Alt
+[2] Reset Left Win and Left Alt
+[3] Use Right Alt as Compose
+[4] Use Right Win as Compose
+EOF
+
+  read -p "> " OPTION
+fi
+
+setxkbmap us,pt -option
+setxkbmap -option caps:ctrl_modifier -option grp:ctrls_toggle
+
+case $OPTION in
+  1) setxkbmap -option altwin:swap_lalt_lwin
+     ;;
+  3) setxkbmap -option compose:ralt
+     ;;
+  4) setxkbmap -option compose:rwin
+     ;;
+  *) exit 1
+     ;;
+esac
