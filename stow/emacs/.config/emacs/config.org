@@ -208,7 +208,7 @@
 #+BEGIN_SRC emacs-lisp
 (use-package magit
   :hook
-  ('git-commit-mode . 'evil-insert-state))
+  ('git-commit-mode . 'evil-emacs-state))
 
 (use-package diff-hl
   :config
