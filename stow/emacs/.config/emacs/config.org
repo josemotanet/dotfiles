@@ -308,6 +308,15 @@
 (use-package treemacs)
 #+END_SRC
 
+** Zencoding
+
+Expand HTML through CSS selectors.
+
+#+BEGIN_SRC emacs-lisp
+(use-package zencoding-mode
+  :hook sgml-mode)
+#+END_SRC
+
 * Keybindings
 
 #+BEGIN_SRC emacs-lisp

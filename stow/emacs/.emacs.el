@@ -6,7 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rjsx-mode treemacs yasnippet-snippets yasnippet scss-mode use-package rg rainbow-mode rainbow-delimiters projectile powerline org-bullets olivetti markdown-mode magit js2-mode hlinum gruvbox-theme general flx fill-column-indicator evil-surround diminish diff-hl counsel))))
+    (zencoding-mode rjsx-mode treemacs yasnippet-snippets yasnippet scss-mode use-package rg rainbow-mode rainbow-delimiters projectile powerline org-bullets olivetti markdown-mode magit js2-mode hlinum gruvbox-theme general flx fill-column-indicator evil-surround diminish diff-hl counsel))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
