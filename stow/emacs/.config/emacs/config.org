@@ -327,7 +327,7 @@ Expand HTML through CSS selectors.
      :states '(normal)
      :prefix ","
      "a" 'counsel-rg
-     "b" 'ivy-switch-buffer
+     "b" 'ibuffer-list-buffers
      "d" 'kill-this-buffer
      "gbb" 'magit-blame
      "gbq" 'magit-blame-quit
