@@ -20,6 +20,7 @@ yay -S --removemake --noprovides --nodiffmenu --noconfirm \
     bitwarden-rofi \
     ttf-iosevka \
     ttf-material-design-icons-git \
+    pistol-git \
     polybar \
     rofi-calc \
     urlview \
