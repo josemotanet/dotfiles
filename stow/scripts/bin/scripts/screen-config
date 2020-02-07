@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+OPTION=$1
+
+if [ -z $1 ]; then
+  echo "No option selected. Choose 'laptop' or 'workstation'."
+  exit 1
+fi
+
+case $OPTION in
+  workstation) xrandr --output eDP-1 --off \
+                 --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal \
+                 --output DP-2 --off
+          ;;
+
+  laptop) xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal \
+                 --output DP-1 --off \
+                 --output DP-2 --off
+          ;;
+esac
