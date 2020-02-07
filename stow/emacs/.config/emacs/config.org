@@ -207,7 +207,9 @@
 #+BEGIN_SRC emacs-lisp
 (use-package magit
   :hook
-  ('git-commit-mode . 'evil-emacs-state))
+  ('git-commit-mode . 'evil-emacs-state)
+  :custom-face
+  (magit-branch-remote ((t (:foreground "orange")))))
 
 (use-package diff-hl
   :config
