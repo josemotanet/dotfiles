@@ -85,6 +85,7 @@ pacman -S --noconfirm arandr \
                       xorg-xrdb \
                       xorg-xset \
                       xsel \
+                      zathura-pdf-mupdf \
                       zip \
                       zsh
 

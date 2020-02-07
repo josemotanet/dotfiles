@@ -1,4 +1,4 @@
 text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput;
 video/*; mpv %s
 image/*; feh %s
-application/pdf; evince %s
+application/pdf; zathura %s
