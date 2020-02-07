@@ -352,6 +352,7 @@ Expand HTML through CSS selectors.
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.xprofile\\'" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.muttrc\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.dunstrc\\'" . conf-mode))
 #+END_SRC
 
 * Snippets
