@@ -127,6 +127,7 @@
   (setq-default evil-normal-state-cursor 'box)
   (setq-default evil-want-C-u-scroll t)
   (setq-default evil-shift-width 2)
+  (setq evil-ex-substitute-global t)
   :config
   (evil-mode 1))
 
