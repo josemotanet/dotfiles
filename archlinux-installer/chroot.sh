@@ -64,6 +64,7 @@ pacman -S --noconfirm arandr \
                       rofi \
                       rofimoji \
                       rxvt-unicode \
+                      simplescreenrecorder \
                       stow \
                       sudo \
                       tlp \
