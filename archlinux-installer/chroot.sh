@@ -51,6 +51,7 @@ pacman -S --noconfirm arandr \
                       mpc \
                       mpd \
                       mpv \
+                      msmtp \
                       ncdu \
                       ncmpcpp \
                       neomutt \
@@ -58,6 +59,7 @@ pacman -S --noconfirm arandr \
                       openssh \
                       powertop \
                       pulseaudio \
+                      pulseaudio-equalizer \
                       pavucontrol \
                       ranger \
                       ripgrep \
@@ -68,9 +70,10 @@ pacman -S --noconfirm arandr \
                       stow \
                       sudo \
                       tlp \
+                      tmux \
+                      tree \
                       ttf-roboto \
                       ttf-roboto-mono \
-                      tmux \
                       udiskie \
                       urxvt-perls \
                       vi \
