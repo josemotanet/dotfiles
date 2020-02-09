@@ -154,6 +154,13 @@
   (setq org-agenda-files (list org-directory))
   (setq org-default-notes-file (concat org-directory "refile.org"))
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+  (setq org-capture-templates '(
+    ("t" "Task" entry (file+headline ("~/org/index.org") "Tasks")
+                      (file "~/org/templates/task.org"))
+    ("m" "Work meeting" entry (file+headline "~/org/work.org" "Events")
+                              (file "~/org/templates/work-meeting.org"))
+    ("g" "Groceries" checkitem (file+headline "~/org/index.org" "Groceries")
+                               (file "~/org/templates/groceries.org"))))
   :custom-face
   (org-document-title ((t (:foreground "#f90"))))
   (org-block-begin-line ((t (:foreground "#777" :background nil))))
@@ -311,13 +318,12 @@
 (use-package treemacs)
 #+END_SRC
 
-** Zencoding
+** Emmet
 
 Expand HTML through CSS selectors.
 
 #+BEGIN_SRC emacs-lisp
-(use-package zencoding-mode
-  :hook sgml-mode)
+(use-package emmet-mode)
 #+END_SRC
 
 * Keybindings
