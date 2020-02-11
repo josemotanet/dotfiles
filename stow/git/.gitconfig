@@ -23,6 +23,7 @@
   rbc = rebase --continue
   ri = rebase -i
   fa = fetch --all --prune
+  pushf = push --force-with-lease
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(blue)<%an %ae>%Creset
 [branch]
