@@ -69,6 +69,7 @@ pacman -S --noconfirm arandr \
                       simplescreenrecorder \
                       stow \
                       sudo \
+                      syncthing \
                       tlp \
                       tmux \
                       tree \
