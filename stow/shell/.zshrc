@@ -15,9 +15,6 @@ setopt clobber
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export TERMINAL=urxvtc
-export GOPATH=/home/jose/.go
-
-export PATH=$PATH:/usr/local/sbin:$HOME/bin:$HOME/bin/scripts:/usr/local/heroku/bin:$HOME/.yarn/bin:$GOPATH/bin
 
 zstyle :compinstall filename '/home/jose/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
