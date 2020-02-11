@@ -18,8 +18,8 @@ locale-gen
 echo $HOST > /etc/hostname
 mkinitcpio -P
 echo 'root:'$PASS | chpasswd
-pacman -S --noconfirm grub efibootmgr osprober ntfs-3g
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
+pacman -S --noconfirm grub efibootmgr os-prober ntfs-3g
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo -e "\e[36m=== Post installation successful.\e[39m"
