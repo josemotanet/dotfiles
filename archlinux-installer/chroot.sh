@@ -57,10 +57,11 @@ pacman -S --noconfirm arandr \
                       neomutt \
                       networkmanager \
                       openssh \
+                      pamixer \
+                      pavucontrol \
                       powertop \
                       pulseaudio \
                       pulseaudio-equalizer \
-                      pavucontrol \
                       ranger \
                       ripgrep \
                       rofi \
