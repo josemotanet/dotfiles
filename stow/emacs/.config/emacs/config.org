@@ -328,9 +328,15 @@ Expand HTML through CSS selectors.
 (use-package emmet-mode)
 #+END_SRC
 
+** Origami :folding:
+#+BEGIN_SRC emacs-lisp
+(use-package origami
+  :config
+  (global-origami-mode))
+#+END_SRC
 * Keybindings
 
-#+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp
 (use-package general
   :config (general-define-key
      :states '(normal)
@@ -353,7 +359,7 @@ Expand HTML through CSS selectors.
      "SPC" 'evil-switch-to-windows-last-buffer
      "=" (lambda() (interactive) (find-file "~/.config/emacs/config.org"))
      "RET" 'projectile-run-eshell))
-#+END_SRC
+  #+END_SRC
 
 * File associations
 
