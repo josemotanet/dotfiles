@@ -205,7 +205,9 @@
   :init
   (setq-default fill-column 80)
   (setq fci-rule-column 81)
-  (setq fci-rule-color "#444")
+  (setq fci-rule-color "#777")
+  :hook
+  ('after-change-major-mode . 'fci-mode)-
   :config
   (fci-mode 1))
 #+END_SRC
