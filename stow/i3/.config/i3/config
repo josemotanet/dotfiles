@@ -88,6 +88,7 @@ bindsym $mod+m exec urxvt -e "neomutt"
 bindsym $mod+Ctrl+u exec maim -s ~/Pictures/screenshots/$(date +%s).png && notify-send -t 2500 "Screenshot $(ls -1 Pictures/screenshots --sort time | head -n 1) saved."
 bindsym $mod+Ctrl+p exec bwmenu
 bindsym $mod+Ctrl+c exec urxvt -e "ikhal"
+bindsym $mod+Ctrl+l exec betterlockscreen -l
 # }}}
 
 ## Splits {{{

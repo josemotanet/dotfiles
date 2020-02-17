@@ -16,6 +16,7 @@ rm -v PKGBUILD *.tar.gz *.tar.xz
 echo -e "\e[36m=== Yay installed.\e[39m"
 
 yay -S --removemake --noprovides --nodiffmenu --noconfirm \
+    betterlockscreen \
     bitwarden-cli-bin \
     bitwarden-rofi \
     ttf-iosevka \
