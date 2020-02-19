@@ -325,7 +325,10 @@
 Expand HTML through CSS selectors.
 
 #+BEGIN_SRC emacs-lisp
-(use-package emmet-mode)
+(use-package emmet-mode
+  :general
+    (:states '(insert)
+    "C-y" 'emmet-expand-yas))
 #+END_SRC
 
 ** Origami :folding:
