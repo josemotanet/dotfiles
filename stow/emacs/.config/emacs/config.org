@@ -385,3 +385,10 @@ Expand HTML through CSS selectors.
 
 (use-package yasnippet-snippets)
 #+END_SRC
+* Autorun
+
+Because a list of tasks is more useful than an empty buffer.
+
+#+BEGIN_SRC emacs-lisp
+(org-todo-list)
+#+END_SRC
