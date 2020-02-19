@@ -361,8 +361,10 @@ Expand HTML through CSS selectors.
      "3" 'org-capture
      "SPC" 'evil-switch-to-windows-last-buffer
      "=" (lambda() (interactive) (find-file "~/.config/emacs/config.org"))
-     "RET" 'projectile-run-eshell))
-  #+END_SRC
+     "RET" 'projectile-run-eshell)
+  (general-define-key
+    "C-y" 'emmet-expand-yas))
+#+END_SRC
 
 * File associations
 
