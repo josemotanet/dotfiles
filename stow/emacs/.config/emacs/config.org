@@ -342,26 +342,26 @@ Expand HTML through CSS selectors.
   #+BEGIN_SRC emacs-lisp
 (use-package general
   :config (general-define-key
-     :states '(normal)
-     :prefix ","
-     "a" 'counsel-rg
-     "b" 'ibuffer-list-buffers
-     "d" 'kill-this-buffer
-     "gbb" 'magit-blame
-     "gbq" 'magit-blame-quit
-     "gs" 'magit-status
-     "h" 'ivy-resume
-     "m" 'treemacs
-     "p" 'projectile-switch-project
-     "t" 'counsel-git
-     "w" 'save-buffer
-     "x" 'execute-extended-command
-     "1" 'org-agenda-list
-     "2" 'org-todo-list
-     "3" 'org-capture
-     "SPC" 'evil-switch-to-windows-last-buffer
-     "=" (lambda() (interactive) (find-file "~/.config/emacs/config.org"))
-     "RET" 'projectile-run-eshell)
+    :states '(normal)
+    :prefix ","
+    "a" 'counsel-rg
+    "b" 'ibuffer-list-buffers
+    "d" 'kill-this-buffer
+    "gbb" 'magit-blame
+    "gbq" 'magit-blame-quit
+    "gs" 'magit-status
+    "h" 'ivy-resume
+    "m" 'treemacs
+    "p" 'projectile-switch-project
+    "t" 'counsel-git
+    "w" 'save-buffer
+    "x" 'execute-extended-command
+    "1" 'org-agenda-list
+    "2" 'org-todo-list
+    "3" 'org-capture
+    "SPC" 'evil-switch-to-windows-last-buffer
+    "=" (lambda() (interactive) (find-file "~/.config/emacs/config.org"))
+    "RET" 'projectile-run-eshell)
   (general-define-key
     "C-y" 'emmet-expand-yas))
 #+END_SRC
