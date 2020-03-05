@@ -149,6 +149,7 @@ for_window [class="SimpleScreenRecorder"] floating enable
 for_window [title="Authy"]                floating enable
 for_window [title="Nitrogen"]             floating enable
 for_window [title="EVE"]                  move to workspace $workspace10, workspace $workspace10
+for_window [title="Minecraft"]            move to workspace $workspace3, workspace $workspace3
 # }}}
 
 # resize window (you can also use the mouse for that) {{{
