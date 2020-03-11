@@ -58,6 +58,7 @@ pacman -S --noconfirm arandr \
                       networkmanager \
                       openssh \
                       pamixer \
+                      pass \
                       pavucontrol \
                       powertop \
                       pulseaudio \
