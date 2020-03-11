@@ -28,8 +28,7 @@ yay -S --removemake --noprovides --nodiffmenu --noconfirm \
     urxvt-resize-font-git
 
 ssh-keygen -N "" -t rsa -f ~/.ssh/id_rsa
-mkdir -vp workspace && cd workspace
-mkdir ~/music
+mkdir -vp workspace music
 systemctl --user enable mpd
 git clone $DOTFILES dotfiles
 
