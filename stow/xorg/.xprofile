@@ -4,7 +4,7 @@ xset m 8/1 2
 xrdb -load ~/.Xresources &
 urxvtd &
 emacs --daemon &
-VBoxClient-all &
+udiskie &
 
 case $1 in
   *openbox*)
