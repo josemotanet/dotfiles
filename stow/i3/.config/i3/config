@@ -1,4 +1,5 @@
 set $mod Mod4
+set $terminal alacritty
 
 font pango:Iosevka, FontAwesome 10
 
@@ -41,11 +42,11 @@ bindsym $mod+Shift+Right move right
 
 ## i3 {{{
 bindsym $mod+Shift+a focus child
-bindsym $mod+Return exec TERMINAL=urxvtc i3-sensible-terminal
+bindsym $mod+Return exec $terminal
 bindsym $mod+Ctrl+Return exec emacsclient -c
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+z exec "setxkbmap us,pt -option caps:ctrl_modifier -option grp:ctrls_toggle -option compose:rwin; xset r rate 190 30; notify-send 'Keyboard settings were reloaded.'"
+bindsym $mod+Shift+z exec "setxkbmap us,pt -option caps:ctrl_modifier -option grp:ctrls_toggle -option compose:ralt; xset r rate 190 30; notify-send 'Keyboard settings were reloaded.'"
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
@@ -83,12 +84,12 @@ bindsym XF86MonBrightnessUp exec light -A 5
 ## Application bindings {{{
 bindsym $mod+d exec "rofi -show run -modi run,calc,drun,ssh,window"
 bindsym $mod+b exec chromium
-bindsym $mod+c exec urxvt -e "ranger"
+bindsym $mod+c exec $terminal -e "ranger"
 bindsym $mod+Shift+m exec pavucontrol
-bindsym $mod+m exec urxvt -e "neomutt"
+bindsym $mod+m exec $terminal -e "neomutt"
 bindsym $mod+Ctrl+u exec maim -s ~/Pictures/screenshots/$(date +%s).png && notify-send -t 2500 "Screenshot $(ls -1 Pictures/screenshots --sort time | head -n 1) saved."
 bindsym $mod+Ctrl+p exec bwmenu
-bindsym $mod+Ctrl+c exec urxvt -e "ikhal"
+bindsym $mod+Ctrl+c exec $terminal -e "ikhal"
 bindsym $mod+Ctrl+l exec betterlockscreen -l
 # }}}
 
