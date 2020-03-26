@@ -165,7 +165,7 @@
     ("g" "Groceries" checkitem (file+headline "~/org/index.org" "Groceries")
                                (file "~/org/templates/groceries.org"))))
   :custom-face
-  (org-document-title ((t (:foreground "#f90"))))
+  (org-document-title ((t (:foreground "#f90" :weight bold))))
   (org-block-begin-line ((t (:foreground "#777" :background nil))))
   (org-block-end-line ((t (:foreground "#777" :background nil)))))
 #+END_SRC

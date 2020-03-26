@@ -9,7 +9,7 @@
     ("8e797edd9fa9afec181efbfeeebf96aeafbd11b69c4c85fa229bb5b9f7f7e66c" "2b9dc43b786e36f68a9fd4b36dd050509a0e32fe3b0a803310661edb7402b8b6" default)))
  '(package-selected-packages
    (quote
-    (origami emmet-mode zencoding-mode rjsx-mode treemacs yasnippet-snippets yasnippet scss-mode use-package rg rainbow-mode rainbow-delimiters projectile powerline org-bullets olivetti markdown-mode magit js2-mode hlinum gruvbox-theme general flx fill-column-indicator evil-surround diminish diff-hl counsel))))
+    (ag ripgrep yaml-mode which-key csharp-mode origami emmet-mode zencoding-mode rjsx-mode treemacs yasnippet-snippets yasnippet scss-mode use-package rg rainbow-mode rainbow-delimiters projectile powerline org-bullets olivetti markdown-mode magit js2-mode hlinum gruvbox-theme general flx fill-column-indicator evil-surround diminish diff-hl counsel))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
