@@ -113,6 +113,8 @@
 #+BEGIN_SRC emacs-lisp
 (use-package projectile
   :diminish projectile-mode
+  :init
+  (setq projectile-completion-system 'ivy)
   :config
   (projectile-global-mode t)
   (add-to-list 'projectile-globally-ignored-directories "node_modules")
@@ -345,8 +347,8 @@ Expand HTML through CSS selectors.
   :config (general-define-key
     :states '(normal)
     :prefix ","
-    "a" 'counsel-rg
-    "b" 'ibuffer-list-buffers
+    "a" 'projectile-ag
+    "b" 'ibuffer-other-window
     "d" 'kill-this-buffer
     "gbb" 'magit-blame
     "gbq" 'magit-blame-quit
@@ -354,7 +356,7 @@ Expand HTML through CSS selectors.
     "h" 'ivy-resume
     "m" 'treemacs
     "p" 'projectile-switch-project
-    "t" 'counsel-git
+    "t" 'projectile-find-file
     "w" 'save-buffer
     "x" 'execute-extended-command
     "1" 'org-agenda-list
