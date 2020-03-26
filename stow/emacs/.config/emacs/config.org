@@ -154,16 +154,16 @@
   :init
   (setq org-return-follows-link t)
   (setq org-directory "~/org/")
-  (setq org-agenda-files (list org-directory))
+  (setq org-agenda-files (directory-files-recursively org-directory "\.org$"))
   (setq org-default-notes-file (concat org-directory "refile.org"))
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   (setq org-capture-templates '(
     ("t" "Task" entry (file+headline ("~/org/index.org") "Tasks")
-                      (file "~/org/templates/task.org"))
+                      (file "~/org/templates/task.orgtemplate"))
     ("m" "Work meeting" entry (file+headline "~/org/work.org" "Events")
-                              (file "~/org/templates/work-meeting.org"))
+                              (file "~/org/templates/work-meeting.orgtemplate"))
     ("g" "Groceries" checkitem (file+headline "~/org/index.org" "Groceries")
-                               (file "~/org/templates/groceries.org"))))
+                               (file "~/org/templates/groceries.orgtemplate"))))
   :custom-face
   (org-document-title ((t (:foreground "#f90" :weight bold))))
   (org-block-begin-line ((t (:foreground "#777" :background nil))))
@@ -329,10 +329,7 @@
 Expand HTML through CSS selectors.
 
 #+BEGIN_SRC emacs-lisp
-(use-package emmet-mode
-  :general
-    (:states '(insert)
-    "C-y" 'emmet-expand-yas))
+(use-package emmet-mode)
 #+END_SRC
 
 ** Origami :folding:
