@@ -340,6 +340,22 @@ Expand HTML through CSS selectors.
   :config
   (global-origami-mode))
 #+END_SRC
+** Which-key
+   #+BEGIN_SRC emacs-lisp
+   (use-package which-key
+   :diminish which-key-mode
+   :hook
+   ('after-init . 'which-key))
+   #+END_SRC
+** Find stuff in files (rg, ack, ag, ...)
+   #+BEGIN_SRC emacs-lisp
+   (use-package ripgrep)
+   (use-package ag)
+   #+END_SRC
+** Yaml
+   #+BEGIN_SRC emacs-lisp
+   (use-package yaml-mode)
+   #+END_SRC
 * Keybindings
 
   #+BEGIN_SRC emacs-lisp
