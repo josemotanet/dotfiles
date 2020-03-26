@@ -343,7 +343,7 @@ Expand HTML through CSS selectors.
    (use-package which-key
    :diminish which-key-mode
    :hook
-   ('after-init . 'which-key))
+   ('after-init . 'which-key-mode))
    #+END_SRC
 ** Find stuff in files (rg, ack, ag, ...)
    #+BEGIN_SRC emacs-lisp
