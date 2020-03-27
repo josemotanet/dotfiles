@@ -57,6 +57,7 @@
 (setq mmm-submode-decoration-level 0)
 (setq mocha-snippets-use-fat-arrows t)
 (setq x-select-enable-clipboard t)
+(prefer-coding-system 'utf-8-unix)
 (global-prettify-symbols-mode 0)
 (electric-pair-mode t)
 #+END_SRC
