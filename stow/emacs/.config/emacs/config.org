@@ -66,6 +66,7 @@
 
 #+BEGIN_SRC emacs-lisp
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'text-mode-hook 'auto-fill-mode)
 #+END_SRC
 
 ** Aliases
@@ -340,21 +341,36 @@ Expand HTML through CSS selectors.
   (global-origami-mode))
 #+END_SRC
 ** Which-key
+
    #+BEGIN_SRC emacs-lisp
    (use-package which-key
    :diminish which-key-mode
    :hook
    ('after-init . 'which-key-mode))
    #+END_SRC
+
 ** Find stuff in files (rg, ack, ag, ...)
+
    #+BEGIN_SRC emacs-lisp
    (use-package ripgrep)
    (use-package ag)
    #+END_SRC
+
 ** Yaml
+
    #+BEGIN_SRC emacs-lisp
    (use-package yaml-mode)
    #+END_SRC
+
+** Autofill
+
+#+BEGIN_SRC emacs-lisp
+(use-package filladapt
+  :hook
+  (markdown-mode . filladapt-mode)
+  (org-mode . filladapt-mode))
+#+END_SRC
+
 * Keybindings
 
   #+BEGIN_SRC emacs-lisp
