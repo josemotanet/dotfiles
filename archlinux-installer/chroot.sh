@@ -45,6 +45,7 @@ pacman -S --noconfirm arandr \
                       lightdm-gtk-greeter \
                       lxappearance \
                       lynx \
+                      maim \
                       man-db \
                       man-pages \
                       marked \
@@ -75,6 +76,7 @@ pacman -S --noconfirm arandr \
                       tlp \
                       tmux \
                       tree \
+                      ttf-jetbrains-mono \
                       ttf-roboto \
                       ttf-roboto-mono \
                       udiskie \
