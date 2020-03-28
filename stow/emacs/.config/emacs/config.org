@@ -366,6 +366,7 @@ Expand HTML through CSS selectors.
 
 #+BEGIN_SRC emacs-lisp
 (use-package filladapt
+  :diminish filladapt-mode
   :hook
   (markdown-mode . filladapt-mode)
   (org-mode . filladapt-mode))
