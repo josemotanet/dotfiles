@@ -152,7 +152,7 @@
 #+BEGIN_SRC emacs-lisp
 (use-package org-bullets
   :config
-  (org-bullets-mode t)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :init
   (setq org-return-follows-link t)
   (setq org-directory "~/org/")
