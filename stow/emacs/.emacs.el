@@ -19,4 +19,4 @@
  '(markdown-code-face ((t (:inherit nil))))
  '(org-block-begin-line ((t (:foreground "#777" :background nil))))
  '(org-block-end-line ((t (:foreground "#777" :background nil))))
- '(org-document-title ((t (:foreground "#f90")))))
+ '(org-document-title ((t (:foreground "#f90" :weight bold)))))
