@@ -91,6 +91,7 @@ bindsym $mod+Ctrl+u exec maim -s ~/Pictures/screenshots/$(date +%s).png && notif
 bindsym $mod+Ctrl+p exec bwmenu
 bindsym $mod+Ctrl+c exec $terminal -e "ikhal"
 bindsym $mod+Ctrl+l exec betterlockscreen -l
+bindsym $mod+period exec rofimoji
 # }}}
 
 ## Splits {{{
