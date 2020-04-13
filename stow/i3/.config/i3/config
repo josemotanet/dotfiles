@@ -139,20 +139,21 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # }}}
 
 # Application specific behavior {{{
-for_window [window_role="browser"]        move to workspace $workspace2; workspace $workspace2
-for_window [class="Skype"]                move to workspace $workspace3
-for_window [class="Slack"]                move to workspace $workspace3, workspace $workspace3
-for_window [class="Thunderbird"]          move to workspace $workspace4, workspace $workspace4
-for_window [class="Nylas"]                move to workspace $workspace4, workspace $workspace4
-for_window [class="Corebird"]             move to workspace $workspace3, workspace $workspace3
-for_window [class="Discord"]              move to workspace $workspace3, workspace $workspace3
-for_window [class="Pavucontrol"]          floating enable
-for_window [class="Shutter"]              floating enable
-for_window [class="SimpleScreenRecorder"] floating enable
-for_window [title="Authy"]                floating enable
-for_window [title="Nitrogen"]             floating enable
-for_window [title="EVE"]                  move to workspace $workspace10, workspace $workspace10
-for_window [title="Minecraft"]            move to workspace $workspace3, workspace $workspace3
+for_window [window_role="browser"]             move to workspace $workspace2; workspace $workspace2
+for_window [class="Skype"]                     move to workspace $workspace3
+for_window [class="Slack"]                     move to workspace $workspace3, workspace $workspace3
+for_window [class="Thunderbird"]               move to workspace $workspace4, workspace $workspace4
+for_window [class="Nylas"]                     move to workspace $workspace4, workspace $workspace4
+for_window [class="Corebird"]                  move to workspace $workspace3, workspace $workspace3
+for_window [class="Discord"]                   move to workspace $workspace3, workspace $workspace3
+for_window [class="Pavucontrol"]               floating enable
+for_window [class="Shutter"]                   floating enable
+for_window [class="SimpleScreenRecorder"]      floating enable
+for_window [title="Authy"]                     floating enable
+for_window [title="Nitrogen"]                  floating enable
+for_window [title="microsoft teams - preview"] floating enable
+for_window [title="EVE"]                       move to workspace $workspace10, workspace $workspace10
+for_window [title="Minecraft"]                 move to workspace $workspace3, workspace $workspace3
 # }}}
 
 # resize window (you can also use the mouse for that) {{{
