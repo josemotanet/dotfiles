@@ -1,9 +1,9 @@
 [colors]
 background = #111b21
 background-alt = #4C566A
-foreground = #fff
+foreground = #ccc
 foreground-alt = ${xrdb:color4:#999}
-icons = #777
+icons = #666
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
