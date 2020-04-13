@@ -32,9 +32,9 @@
 * Font settings
 
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'default-frame-alist '(font . "Iosevka-12:medium"))
-(set-face-attribute 'default nil :font "Iosevka-12" )
-(set-frame-font "Iosevka-12" nil t)
+(add-to-list 'default-frame-alist '(font . "JetBrains Mono-10:medium"))
+(set-face-attribute 'default nil :font "JetBrains Mono-10" )
+(set-frame-font "JetBrains Mono-10" nil t)
 #+END_SRC
 
 * General config
