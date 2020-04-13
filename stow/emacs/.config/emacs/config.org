@@ -152,14 +152,26 @@
 
 #+BEGIN_SRC emacs-lisp
 (use-package org-bullets
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  ; :config
+  ; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :init
-  (setq org-return-follows-link t)
   (setq org-directory "~/org/")
   (setq org-agenda-files (directory-files-recursively org-directory "\.org$"))
   (setq org-default-notes-file (concat org-directory "refile.org"))
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+  (setq org-return-follows-link t)
+  (setq org-hide-leading-stars 1)
+  (setq org-priority-start-cycle-with-default t)
+  (setq org-default-priority ?C)
+  (setq org-highest-priority ?A)
+  (setq org-lowest-priority ?E)
+  (setq org-priority-faces '(
+    (?A :foreground "orange" :weight "bold")
+    (?B :foreground "yellow")
+    (?C :foreground "forestgreen")
+    (?D :foreground "dodgerblue")
+    (?E :foreground "gray")
+  ))
   (setq org-capture-templates '(
     ("t" "Task" entry (file+headline "index.org" "Tasks")
                       (file "templates/task.orgtemplate"))
