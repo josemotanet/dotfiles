@@ -46,7 +46,7 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+Ctrl+Return exec emacsclient -c
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+z exec "setxkbmap us,pt -option caps:ctrl_modifier -option grp:ctrls_toggle -option compose:ralt; xset r rate 190 30; notify-send 'Keyboard settings were reloaded.'"
+bindsym $mod+Shift+z exec "setxkbmap us,pt -option caps:ctrl_modifier -option grp:ctrls_toggle -option compose:rwin; xset r rate 190 30; notify-send 'Keyboard settings were reloaded.'"
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
