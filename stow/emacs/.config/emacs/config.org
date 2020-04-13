@@ -117,6 +117,7 @@
   :diminish projectile-mode
   :init
   (setq projectile-completion-system 'ivy)
+  (setq projectile-project-search-path '("~/workspace/"))
   :config
   (projectile-global-mode t)
   (add-to-list 'projectile-globally-ignored-directories "node_modules")
