@@ -119,8 +119,8 @@ alias dnfi="sudo dnf install -y"
 
 test -s ~/.zshenv && source ~/.zshenv
 test -s ~/.kiex/scripts/kiex && source ~/.kiex/scripts/kiex
-test -s direnv && eval "$(direnv hook zsh)"
-test -s ~/.config/shell/less_termcap.sh && source ~/.config/shell/less_termcap.sh
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"
+test -s ~/.less_termcap.sh && source ~/.less_termcap.sh
 test -f ~/.fzf.zsh && source ~/.fzf.zsh
 # source /usr/share/chruby/chruby.sh
 # source /usr/share/chruby/auto.sh
