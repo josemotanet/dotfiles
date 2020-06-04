@@ -17,6 +17,7 @@ case $1 in
     xrandr --output DP-4 --scale 1.2x1.2 &
     sleep 0.1
     nitrogen --restore &
+    dunst &
     xmodmap ~/.Xmodmap-i3 &
     # picom -b &
     ;;
