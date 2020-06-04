@@ -1,7 +1,7 @@
 set $mod Mod4
 set $terminal alacritty
 
-font pango:Iosevka, FontAwesome 10
+font pango:JetBrains Mono, FontAwesome 9
 
 floating_modifier $mod
 
@@ -59,9 +59,9 @@ bindsym $mod+w layout tabbed
 # }}}
 
 ## Volume adjustment {{{
-bindsym XF86AudioRaiseVolume exec pamixer --sink 0 -i 3
-bindsym XF86AudioLowerVolume exec pamixer --sink 0 -d 3
-bindsym XF86AudioMute exec pamixer --sink 0 -t
+bindsym XF86AudioRaiseVolume exec pamixer -i 3
+bindsym XF86AudioLowerVolume exec pamixer -d 3
+bindsym XF86AudioMute exec pamixer -t
 # }}}
 
 ## MPD commands {{{
@@ -70,10 +70,10 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc prev
 bindsym XF86AudioPrev exec mpc next
 
-bindsym $mod+Ctrl+m exec mpc stop
-bindsym $mod+Ctrl+comma exec mpc toggle
-bindsym $mod+Ctrl+period exec mpc prev
-bindsym $mod+Ctrl+slash exec mpc next
+bindsym $mod+Ctrl+comma exec mpc stop
+bindsym $mod+Ctrl+period exec mpc toggle
+
+bindsym $mod+Ctrl+m exec $terminal -e "ncmpcpp"
 # }}}
 
 ## Brightness {{{
@@ -138,7 +138,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 # }}}
 
-# Application specific behavior {{{
+# Application specific behavior / rules {{{
 for_window [window_role="browser"]             move to workspace $workspace2; workspace $workspace2
 for_window [class="Skype"]                     move to workspace $workspace3
 for_window [class="Slack"]                     move to workspace $workspace3, workspace $workspace3
@@ -152,6 +152,7 @@ for_window [class="SimpleScreenRecorder"]      floating enable
 for_window [title="Authy"]                     floating enable
 for_window [title="Nitrogen"]                  floating enable
 for_window [title="microsoft teams - preview"] floating enable
+for_window [title="ncmpcpp"]                   floating enable
 for_window [title="EVE"]                       move to workspace $workspace10, workspace $workspace10
 for_window [title="Minecraft"]                 move to workspace $workspace3, workspace $workspace3
 # }}}

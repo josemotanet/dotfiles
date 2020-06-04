@@ -1,4 +1,4 @@
-rofi.font: Roboto 14
+rofi.font: JetBrains Mono 12
 rofi.theme: ~/.config/rofi/gruvbox-dark
 rofi.width: 30
 rofi.padding: 20

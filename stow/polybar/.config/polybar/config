@@ -25,12 +25,11 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 1
+padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin = 1
 
-font-0 = "JetBrains Mono:weight=medium:size=10;0"
+font-0 = "Barlow:weight=medium:size=10.5;0"
 font-1 = "Material Design Icons:size=11;0"
 font-2 = "Noto Color Emoji:scale=10;0"
 
@@ -112,7 +111,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 0
+label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -371,6 +370,7 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
+format-padding = 2
 
 [global/wm]
 margin-top = 5
