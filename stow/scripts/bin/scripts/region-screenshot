@@ -1,0 +1,4 @@
+#!/bin/bash
+
+maim -s ~/Pictures/screenshots/$(date +%s).png && \
+  notify-send -t 2500 "Screenshot $(ls -1 Pictures/screenshots --sort time | head -n 1) saved."
