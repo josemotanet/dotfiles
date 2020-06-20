@@ -1,4 +1,9 @@
 #!/bin/bash
 
+FOLDER="~/Pictures/screenshots"
+
+mkdir -p $FOLDER
+
 maim -s ~/Pictures/screenshots/$(date +%s).png && \
-  notify-send -t 2500 "Screenshot $(ls -1 Pictures/screenshots --sort time | head -n 1) saved."
+  FILE=$(ls -1 Pictures/screenshots --sort time | head -n 1) && \
+  notify-send -t 2500 "Screenshot $($FILE) saved."
