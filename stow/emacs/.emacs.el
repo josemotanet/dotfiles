@@ -16,7 +16,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(magit-branch-remote ((t (:foreground "orange"))))
- '(markdown-code-face ((t (:inherit nil))))
+ '(markdown-code-face ((t (:inherit nil :background "black"))))
  '(org-block-begin-line ((t (:foreground "#777" :background nil))))
  '(org-block-end-line ((t (:foreground "#777" :background nil))))
  '(org-document-title ((t (:foreground "#f90" :weight bold)))))

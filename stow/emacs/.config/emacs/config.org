@@ -254,9 +254,9 @@
 (use-package markdown-mode
   :init
   (setq markdown-command "/usr/bin/marked")
-  (setq markdown-fontify-code-blocks-natively t)
-  :custom-face
-  (markdown-code-face ((t (:inherit nil)))))
+  (setq markdown-fontify-code-blocks-natively t))
+  ;:custom-face
+  ;(markdown-code-face ((t (:inherit nil)))))
 #+END_SRC
 
 ** Olivetti
